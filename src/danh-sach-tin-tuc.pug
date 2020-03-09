@@ -1,0 +1,19 @@
+extends _components/_layout/_layout.pug
+
+block var
+	- let title = 'Danh sách tin tức';
+	- let bodyClass = 'list-news-page';
+
+block banner,breadcrumb
+block main
+	section.list-news
+		.container
+			.row
+				.col-lg-1
+				.col-lg-2
+					include ./_components/news/aside-filter
+				.col-lg-8
+					include ./_components/news/list-news
+				.col-lg-1
+	include _components/news/news-others
+block scripts

@@ -1,9 +1,14 @@
 extends _components/_layout/_layout.pug
 
 block var
-	- let title = 'Woo Media';
+	- let title = 'Trang chủ';
 	- let bodyClass = 'index-page';
 
 block banner,breadcrumb
 block main
+	include _components/index/i-1
+	include _components/index/i-2
+	include _components/index/i-3
+	include _components/index/i-4
+	include _components/index/i-5
 block scripts
