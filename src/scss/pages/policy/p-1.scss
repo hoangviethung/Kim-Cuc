@@ -1,0 +1,61 @@
+.policy-1{
+    margin-left: auto;
+    margin: 50px 0;
+    .policy-block{
+        // margin: 0 138px;
+        .aside-tab{
+            width: 260px;
+            height: 190px;
+            border-radius: 5px;
+            background-color: #EFEFEF;
+            display: flex;
+            align-items: center;
+            .tab-container{
+                width: 208px;
+                height: 140px;
+                margin: 0 auto;
+                ul {
+                    list-style-type: none;
+                    padding-left   : 0;
+
+                    li {
+                        margin-bottom: 25px;
+                        text-align: center;
+                        padding-bottom: 5px;
+                        border-bottom: solid 2px #fff;
+                        font-size: 18px;
+                        color: #464646;
+                        &.active{
+                            color: #BE1622;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-content{
+            padding-left: 40px;
+            margin-left: auto;
+            .content{
+                .ckeditor{
+                    .desc-tab-information {
+                        h5 {
+                            font-size: 25px;
+                            color: #BE1622;
+                            font-weight: 700;
+                        }
+                        p {
+                            color: #464646;
+                        }
+                        @media (max-width: 767.98px) {
+                            p {
+                                font-size: 14px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
