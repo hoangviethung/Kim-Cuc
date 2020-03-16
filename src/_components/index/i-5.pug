@@ -1,0 +1,16 @@
+.index-5
+	.container
+		.block-title
+			h2 KHÁCH HÀNG CỦA CHÚNG TÔI
+		.slider-customer
+			.swiper-container
+				.swiper-wrapper
+					-for(x=1;x<6;x++)
+						.swiper-slide
+							figure
+								.img.ov-h
+									img.ofcv(src="./assets/images/customer/"+x+".png", alt="KHÁCH HÀNG KIM CÚC SPORTS")
+								figcaption
+									p.lcl.lcl-1 Lorem Ipsum
+			.swiper-button-prev
+			.swiper-button-next

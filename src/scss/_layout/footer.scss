@@ -1,0 +1,81 @@
+@import '../abstracts/variables';
+
+footer {
+	background: map-get($mau, main);
+	padding   : 25px 0;
+
+	.title-footer {
+		font-size    : 21px;
+		color        : #ffffff;
+		margin-bottom: 15px;
+	}
+
+	.list-info {
+		list-style-type: none;
+		padding-left   : 0;
+
+		.item-info {
+			display      : flex;
+			align-items  : center;
+			flex-wrap    : wrap;
+			margin-bottom: 5px;
+
+			.icon {
+				margin-right: 30px;
+			}
+
+			.text {
+				>a {
+					color: #ffffff;
+				}
+			}
+		}
+	}
+
+	.list-link-product {
+		display        : flex;
+		flex-wrap      : wrap;
+		list-style-type: none;
+		padding-left   : 0;
+		margin-right   : -10px;
+		margin-left    : -10px;
+
+		.item-link-product {
+			-ms-flex        : 0 0 100%;
+			-webkit-box-flex: 0;
+			flex            : 0 0 50%;
+			max-width       : 50%;
+			padding-right   : 10px;
+			padding-left    : 10px;
+
+			>a {
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.copy-right {
+	background: #000000;
+
+	.list-link {
+		display        : flex;
+		height         : 59px;
+		align-items    : center;
+		justify-content: flex-end;
+		padding-left   : 0;
+		list-style-type: none;
+
+		.item-link {
+			margin-right: 41px;
+
+			>a {
+				color: #717171;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

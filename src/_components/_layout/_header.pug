@@ -1,6 +1,57 @@
 header
+	// LOGO
 	.block-logo
-		.logo
-			img(src="./assets/logo.svg", alt="", srcset="")
+		.triangle
+		a(href="index.html")
+			.logo
+				img.lazyload.blur-up(src="./assets/logo.svg", alt="logo")
 		.sologan
 			p Sức khỏe của bạn là thành tựu của chúng tôi !
+	// TOP HEADER
+	.top-header
+		.container.h-100
+			.row.no-gutters.ai-c.jc-fe.h-100
+				// DANH SÁCH MẠNG XÃ HỘI
+				.social-media
+					ul
+						li
+							a(href="#")
+								img.lazyload.blur-up(src="./assets/icons/facebook-header.svg", alt="facebook")
+						li
+							a(href="#")
+								img.lazyload.blur-up(src="./assets/icons/instagram-header.svg", alt="instagram")
+				// FORM TÌM KIẾM
+				.search
+					form(action="#")
+						.form-group
+							input.form-control(type="text" placeholder="...")
+						.submit
+							button
+								img.lazyload.blur-up(src="./assets/icons/search.svg", alt="search")
+				// GIỎ HÀNG
+				.block-cart
+					img.icon.lazyload.blur-up(data-src="./assets/icons/cart-header.svg", alt="cart")
+					h5 giỏ hàng
+					.number 0
+	.bottom-header
+		.container
+			.main-nav
+				ul.nav-list
+					li.nav-item
+						a.nav-link(href="gioi-thieu.html") giới thiệu
+					li.nav-item
+						a.nav-link(href="san-pham.html") sản phẩm
+					li.nav-item
+						a.nav-link(href="tin-tuc.html") tin tức - sự kiện
+					li.nav-item
+						a.nav-link(href="chinh-sach.html") chính sách
+					li.nav-item
+						a.nav-link(href="lien hệ.html") liên hệ
+					li.nav-item
+						.language
+							.item.active
+								a(href="#")
+									img.lazyload.blur-up(data-src="./assets/icons/vn.svg", alt="")
+							.item
+								a(href="#")
+									img.lazyload.blur-up(data-src="./assets/icons/en.svg", alt="")

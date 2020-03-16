@@ -1,0 +1,44 @@
+.home-banner {
+	.slider-home-banner {
+		.swiper-slide {
+			overflow: hidden;
+
+			.swiper-inner {
+				display            : block;
+				background-size    : cover;
+				background-position: center;
+			}
+
+			figure {
+				height: 100vh;
+			}
+
+			img {
+				opacity: 0;
+			}
+		}
+
+		.swiper-pagination {
+			.swiper-pagination-bullet {
+				width           : 15px;
+				height          : 15px;
+				border          : 2px solid #ffffff;
+				opacity         : 1;
+				border-radius   : 50%;
+				background-color: map-get($mau, main-2);
+				transition      : all .2s ease-in-out;
+				margin          : 0 15px;
+
+				&.swiper-pagination-bullet-active {
+					background-color: map-get($mau, main);
+				}
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			.swiper-pagination {
+				display: none;
+			}
+		}
+	}
+}
