@@ -1,0 +1,62 @@
+aside.aside-filter
+	.block-filter
+		.title-filter(icon="filter") bộ lọc
+		.block
+			// GIÁ
+			.type-filter mức giá
+			.price
+				#value-text
+				input(type="text" id="amount" readonly hidden)
+				#slider-range(data-min=100000, data-max=120000000, data-current-min=100000, data-current-max=120000000)
+				.about-price
+					span 1.000.000
+					span 120.000.000
+			// THƯƠNG HIỆU
+			.type-filter thương hiệu
+			.brand
+				.search
+					form(action="#" method="method")
+						input(type="text" placeholder="Nhập thương hiệu")
+						.submit
+							button
+								img.lazyload.blur-up(src="./assets/icons/search.svg", alt="search")
+				.check-box
+					.form-group
+						input#yamaha(hidden checked type="checkbox")
+						label(for="addidas") Addidas
+					.form-group
+						input#BW(hidden type="checkbox")
+						label(for="wilson") Wilson&W
+					.form-group
+						input#Jamo(hidden type="checkbox")
+						label(for="nike") Nike
+					.form-group
+						input#SonusFaber(hidden type="checkbox")
+						label(for="cyber") Cyber
+					.form-group
+						input#Mcintosh(hidden type="checkbox")
+						label(for="yonex") Yonex
+					.form-group
+						input#Text(hidden type="checkbox")
+						label(for="Text") Text
+					.form-group
+						input#Text(hidden type="checkbox")
+						label(for="Text") Text
+					.form-group
+						input#Text(hidden type="checkbox")
+						label(for="Text") Text
+					.form-group
+						input#Text(hidden type="checkbox")
+						label(for="Text") Text
+	.block-filter.category
+		.title-filter(icon="category") danh mục sản phẩm
+		.block
+			ul.list-item-category
+				li.item-category
+					a(href="#") PHỤ KIỆN THỂ THAO
+				li.item-category
+					a(href="#") MÁY CHẠY BỘ ĐIỆN
+				li.item-category
+					a(href="#") XE ĐẠP TẬP THỂ DỤC
+				li.item-category
+					a(href="#") GHẾ MASSAGE

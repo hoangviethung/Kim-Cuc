@@ -1,0 +1,15 @@
+.list-product
+	.list-item
+		-for(i=1;i<17;i++)
+			.item
+				.item-product
+					// LINK VÀO SẢN PHẨM CHI TIẾT
+					a(href="san-pham-chi-tiet.html")
+						figure
+							.img.ov-h
+								img.lazyload.blur-up(data-src="./assets/images/products/list-product/"+i+".png", alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS")
+							figcaption
+								.name Ghế massage Okasa
+								.code OS-868
+								.price 58.600.000 ₫
+								.btn.btn-gift QUÀ TẶNG

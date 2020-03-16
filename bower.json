@@ -23,6 +23,7 @@
     "gsap": "^3.0.2",
     "image-map-resizer": "^1.0.10",
     "select2": "^4.0.12",
-    "wow": "wowjs#^1.1.2"
+    "wow": "wowjs#^1.1.2",
+    "jquery-ui": "^1.12.1"
   }
 }
