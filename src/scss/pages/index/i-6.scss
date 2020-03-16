@@ -54,7 +54,6 @@
 			width        : 50%;
 			padding-right: 6px;
 			padding-left : 6px;
-			margin-bottom: 12px;
 
 			figure {
 				.img {
@@ -80,7 +79,8 @@
 			}
 
 			&:first-child {
-				width: 100%;
+				width        : 100%;
+				margin-bottom: 12px;
 
 				figure {
 					.img {
@@ -98,6 +98,148 @@
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1439.98px) {
+		.block-home-news {
+			margin-left: 0;
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		margin-top   : 50px;
+		margin-bottom: 50px;
+
+		.hot-news {
+			margin-top: 40px;
+
+			figure {
+				.img {
+					height: 350px;
+				}
+
+				figcaption {
+					h3 {
+						font-size: 18px;
+					}
+
+					time {
+						font-size: 14px;
+					}
+
+					p {
+						font-size: 16px;
+					}
+
+					h3,
+					time {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+
+		.block-home-news {
+			margin-top: 50px;
+		}
+
+		.list-home-news {
+			margin-top: 40px;
+
+			.item-home-news {
+				width: 33.33333%;
+
+				figure {
+					.img {
+						height: 150px;
+					}
+
+					figcaption {
+						h3 {
+							font-size: 18px;
+						}
+
+						time {
+							font-size: 14px;
+						}
+					}
+				}
+
+				&:first-child {
+					width        : 33.33333%;
+					margin-bottom: 0;
+
+					figure {
+						.img {
+							height: 150px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		margin-top   : 25px;
+		margin-bottom: 25px;
+
+		.hot-news {
+			margin-top: 20px;
+
+			figure {
+				.img {
+					height: 250px;
+				}
+
+				figcaption {
+					h3 {
+						font-size: 16px;
+					}
+
+					time {
+						font-size: 12px;
+					}
+
+					p {
+						font-size: 14px;
+					}
+
+					h3,
+					time {
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+
+		.list-home-news {
+			margin-top: 20px;
+
+			.item-home-news {
+				width: 50%;
+
+				figure {
+					.img {
+						height: 150px;
+					}
+
+					figcaption {
+						h3 {
+							font-size: 16px;
+						}
+
+						time {
+							font-size: 12px;
+						}
+					}
+				}
+
+				&:first-child {
+					width        : 100%;
+					margin-bottom: 12px;
 				}
 			}
 		}

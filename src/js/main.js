@@ -108,8 +108,8 @@ const homeSlider = () => {
 // SLIDER NHÀ PHÂN PHỐI !!!
 const distributorSlider = () => {
 	var swiper = new Swiper('.slider-distributor .swiper-container', {
-		slidesPerView: 1,
-		spaceBetween: 0,
+		slidesPerView: 2,
+		spaceBetween: 10,
 		loop: true,
 		speed: 500,
 		simulateTouch: false,
@@ -123,10 +123,14 @@ const distributorSlider = () => {
 		},
 		breakpoints: {
 			768: {
-				slidesPerView: 2,
+				slidesPerView: 4,
 				spaceBetween: 10,
 			},
-			1440: {
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 10,
+			},
+			1200: {
 				slidesPerView: 6,
 				spaceBetween: 29,
 			}
@@ -151,8 +155,12 @@ const customerSlider = () => {
 			prevEl: '.slider-customer .swiper-button-prev',
 		},
 		breakpoints: {
-			768: {
+			575: {
 				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			900: {
+				slidesPerView: 3,
 				spaceBetween: 10,
 			},
 			1440: {
