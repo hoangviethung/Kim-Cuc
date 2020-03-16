@@ -1,0 +1,27 @@
+.demo-ckeditor {
+	&.content-about-1 {
+		h2 {
+			font-size    : 18px;
+			font-weight  : 700;
+			font-style   : italic;
+			color        : map-get($mau, main);
+			margin-bottom: 10px;
+		}
+
+		p {
+			font-size    : 18px;
+			color        : #707070;
+			margin-bottom: 5px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+}

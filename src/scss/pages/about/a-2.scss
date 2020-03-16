@@ -1,0 +1,102 @@
+.about-2 {
+	margin-top: 59px;
+
+	.block-title {
+		margin-bottom: 40px;
+	}
+
+	.block-item {
+		max-width: 1163px;
+		width    : 100%;
+		margin   : 0 auto;
+	}
+
+	.list-item {
+		margin-right: -41px;
+		margin-left : -41px;
+
+		.item {
+			cursor       : pointer;
+			padding-right: 41px;
+			padding-left : 41px;
+
+		}
+
+		figure {
+			.img {
+				position: relative;
+				height  : 272px;
+			}
+
+			figcaption {
+				margin-top: 15px;
+
+				h3 {
+					font-size  : 18px;
+					font-weight: 700;
+					color      : map-get($mau, main);
+				}
+
+				p {
+					font-size: 18px;
+					color    : #707070;
+				}
+			}
+
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		margin-top: 50px;
+
+		.block-title {
+			margin-bottom: 25px;
+		}
+
+		.block-item {
+			max-width: 100%;
+		}
+
+		.list-item {
+			margin-right: -10px;
+			margin-left : -10px;
+
+			.item {
+				padding-left : 10px;
+				padding-right: 10px;
+			}
+
+			figure {
+				.img {
+					height: 180px;
+				}
+
+				figcaption {
+					margin-top: 10px;
+
+					p {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		margin-top: 25px;
+
+		.block-title {
+			margin-bottom: 15px;
+		}
+
+		.list-item {
+			.item {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

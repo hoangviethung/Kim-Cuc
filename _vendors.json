@@ -8,10 +8,12 @@
 	"js": [
 		"bower_components/swiper/package/js/swiper.js",
 		"bower_components/jquery/dist/jquery.js",
-		"bower_components/lazysizes/lazysizes.js"
+		"bower_components/lazysizes/lazysizes.js",
+		"bower_components/wow/dist/wow.js"
 	],
 	"css": [
 		"bower_components/swiper/package/css/swiper.css",
-		"bower_components/select2/dist/css/select2.css"
+		"bower_components/select2/dist/css/select2.css",
+		"bower_components/wow/css/libs/animate.css"
 	]
 }

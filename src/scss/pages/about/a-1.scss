@@ -1,0 +1,49 @@
+.about-1 {
+	margin-top: 53px;
+
+	.block-title {
+		margin-bottom: 35px;
+	}
+
+	.image {
+		height: 467px;
+	}
+
+	@media (max-width: 1024.98px) {
+		margin-top: 50px;
+
+		.block-title {
+			margin-bottom: 25px;
+		}
+
+		.image {
+			height: 250px;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		margin-top: 25px;
+
+		.container {
+			.row {
+				.col-md-6 {
+					&:first-child {
+						order: 2;
+					}
+
+					&:last-child {
+						order: 1;
+					}
+				}
+			}
+		}
+
+		.block-title {
+			margin-bottom: 20px;
+		}
+
+		.image {
+			margin-bottom: 15px;
+		}
+	}
+}
