@@ -1,0 +1,11 @@
+aside.aside-filter
+	.nav-filter.mobile
+		.item(toggle-view="#")
+		.item(toggle-view="category") thương hiệu
+	.block-filter.category(toggle-id="category")
+		.title-filter(icon="category") tin nổi bật
+		.block
+			ul.list-item-category
+				-for(i=0;i<10;i++)
+					li.item-category
+						a(href="#") Lorem Ipsum

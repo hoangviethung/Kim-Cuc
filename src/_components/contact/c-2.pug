@@ -1,0 +1,21 @@
+section.block-form-contact
+	.container
+		.block-title
+			h2 THÔNG TIN LIÊN HỆ
+		.block-form
+			form(action="#" method="method")
+				.form-group
+					label(for="name") TÊN ĐẦY ĐỦ (*)
+					input.form-control#name(type="text" placeholder="Nhập tên đầy đủ")
+				.form-group
+					label(for="email") EMAIL (*)
+					input.form-control#email(type="text" placeholder="Nhập email")
+				.form-group
+					label(for="phone") SỐ ĐIỆN THOẠI (*)
+					input.form-control#phone(type="text" placeholder="Nhập số điện thoại")
+				.form-group
+					label(for="content") NỘI DUNG (*)
+					textarea.form-control#content(placeholder="Nhập nội dung")
+				.form-group
+					label(for="#")
+					button.btn.btn-send-mail(data-url="ajax") GỬI LIÊN HỆ

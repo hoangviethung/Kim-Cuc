@@ -24,4 +24,52 @@
 			}
 		}
 	}
+
+	&.content-news-detail {
+		p {
+			color        : #464646;
+			font-size    : 18px;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			p {
+				font-size: 16px;
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&.content-policy-detail {
+		p {
+			color        : #464646;
+			font-size    : 18px;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			p {
+				font-size: 16px;
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			p {
+				font-size: 14px;
+			}
+		}
+	}
 }

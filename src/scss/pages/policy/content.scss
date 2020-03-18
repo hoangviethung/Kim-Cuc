@@ -1,18 +1,15 @@
-.news-detail {
+.content-policy {
 	margin-left: 32px;
 
-	.title-news-detail {
-		position      : relative;
-		padding-bottom: 30px;
-
-		h1 {
+	.title-policy {
+		h3 {
 			font-size: 25px;
 			color    : map-get($mau, main);
 		}
 	}
 
 	.description {
-		margin-top: 35px;
+		margin-top: 25px;
 	}
 
 	@media (max-width: 1439.98px) {
@@ -27,7 +24,7 @@
 		}
 
 		.description {
-			margin-top: 25px;
+			margin-top: 15px;
 		}
 	}
 
@@ -36,10 +33,6 @@
 			h1 {
 				font-size: 16px;
 			}
-		}
-
-		.description {
-			margin-top: 15px;
 		}
 	}
 }

@@ -1,0 +1,30 @@
+.list-news.row
+	// TIN TỨC NỔI BẬT - TRANG DANH SÁCH TIN TỨC
+	.col-lg-7.col-md-12
+		.hot-news
+			a(href="tin-tuc-chi-tiet.html")
+				figure.hover-style-1
+					.img.ov-h
+						img.ofcv.lazyload.blur-up(data-src="./assets/images/news/home-news/1.png", alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS")
+					figcaption
+						h3.lcl.lcl-2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+						p.lcl.lcl-2 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.
+						.list-more-info-news.jc-fe
+							.item(type="time") 2 giờ trưỡc
+							.item(type="view") 2000 lượt xem
+	// TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC
+	.col-lg-5.col-md-12
+		// DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC
+		.list-item-news.row
+			-for(i=1;i<3;i++)
+				.item-news.col-lg-12.col-md-6.col-sm-12
+					a(href="tin-tuc-chi-tiet.html")
+						figure.hover-style-1
+							.img.ov-h
+								img.ofcv.lazyload.blur-up(data-src="./assets/images/news/home-news/"+i+".png", alt="TIN TỨC SỰ KIỆN KIM CÚC SPORTS")
+							figcaption
+								h3.lcl.lcl-2 Lorem Ipsum is simply dummy text of the printing
+								p.lcl.lcl-2 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.
+								.list-more-info-news.jc-fe
+									.item(type="time") 2 giờ trưỡc
+									.item(type="view") 2000 lượt xem

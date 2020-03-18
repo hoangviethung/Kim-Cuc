@@ -121,12 +121,14 @@ header {
 		}
 
 		.block-cart {
-			display    : flex;
-			align-items: center;
-			height     : 27px;
-			padding    : 0 8px;
-			background : map-get($mau, main);
-			margin-left: 16px;
+			a {
+				display    : flex;
+				align-items: center;
+				height     : 27px;
+				padding    : 0 8px;
+				background : map-get($mau, main);
+				margin-left: 16px;
+			}
 
 			h5 {
 				position      : relative;

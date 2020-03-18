@@ -5,6 +5,16 @@ block var
 	- let bodyClass = 'news-detail-page';
 
 block banner,breadcrumb
+	include _components/_share/normal-banner
+	include _components/_share/_breadcrumb
 block main
-	include _components/news/news-detail
+	section.block-news-detail
+		.container
+			.block-title
+				h2 TIN TỨC - SỰ KIỆN
+			.row
+				.col-lg-3
+					include ./_components/news/aside-filter
+				.col-lg-9
+					include _components/news/news-detail
 block scripts

@@ -5,6 +5,16 @@ block var
 	- let bodyClass = 'policy-page';
 
 block banner,breadcrumb
+	include _components/_share/normal-banner
+	include _components/_share/_breadcrumb
 block main
-	include ./_components/policy/p-1
+	section.block-policy
+		.container.tab-container
+			.block-title
+				h2 CHÍNH SÁCH
+			.row
+				.col-lg-3
+					include ./_components/policy/aside-filter
+				.col-lg-9
+					include ./_components/policy/content
 block scripts

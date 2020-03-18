@@ -1,3 +1,20 @@
 @import 'list-news';
 @import 'news-detail';
 @import 'news-others';
+
+.block-list-news,
+.block-news-detail {
+	margin: 70px 0;
+
+	.block-title {
+		margin-bottom: 27px;
+	}
+
+	@media (max-width: 1024.98px) {
+		margin: 50px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 25px 0;
+	}
+}

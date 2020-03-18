@@ -1,0 +1,101 @@
+.block-info-contact {
+	margin-top   : 52px;
+	margin-bottom: 70px;
+
+	.block-title {
+		margin-bottom: 22px;
+	}
+
+	.logo-company {
+		display      : flex;
+		align-items  : flex-end;
+		margin-bottom: 38px;
+
+		.img {
+			width       : 60px;
+			margin-right: 23px;
+		}
+
+		.name {
+			color      : #464646;
+			font-size  : 50px;
+			line-height: 1;
+		}
+	}
+
+	.list-info-contact {
+		padding-left   : 0;
+		list-style-type: none;
+
+		.item-info {
+			margin-bottom: 18px;
+			display      : flex;
+			align-items  : center;
+
+			.text {
+				margin-left: 15px;
+				font-size  : 18px;
+				color      : #464646;
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		margin-top   : 50px;
+		margin-bottom: 50px;
+
+		.logo-company {
+			margin-bottom: 25px;
+
+			.img {
+				width: 30px;
+			}
+
+			.name {
+				font-size: 24px;
+			}
+		}
+
+		.list-info-contact {
+			.item-info {
+				margin-bottom: 15px;
+
+				.text {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		margin-top   : 25px;
+		margin-bottom: 25px;
+
+		.logo-company {
+			margin-bottom: 25px;
+
+			.img {
+				width: 30px;
+			}
+
+			.name {
+				font-size: 18px;
+			}
+		}
+
+		.list-info-contact {
+			.item-info {
+				.icon {
+					img {
+						width: 50%;
+					}
+				}
+
+				.text {
+					margin-left: 10px;
+					font-size  : 14px;
+				}
+			}
+		}
+	}
+}

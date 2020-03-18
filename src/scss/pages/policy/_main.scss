@@ -1,1 +1,27 @@
-@import 'p-1';
+@import 'content';
+
+.block-policy {
+	margin: 70px 0;
+
+	.block-title {
+		margin-bottom: 27px;
+	}
+
+	.tab-container {
+		.list-tab {
+			.item {
+				&.active {
+					color: map-get($mau, main) !important;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		margin: 50px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 25px 0;
+	}
+}

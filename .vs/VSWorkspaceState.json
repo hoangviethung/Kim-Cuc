@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\scss",
+    "\\src\\scss\\pages",
+    "\\src\\scss\\pages\\products",
+    "\\src\\scss\\pages\\products\\list-product",
+    "\\src\\_components",
+    "\\src\\_components\\products"
+  ],
+  "SelectedNode": "\\src\\scss\\pages\\products\\list-product\\list-product.scss",
+  "PreviewInSolutionExplorer": false
+}

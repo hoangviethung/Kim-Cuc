@@ -5,7 +5,20 @@ block var
 	- let bodyClass = 'contact-page';
 
 block banner,breadcrumb
+	include _components/_share/normal-banner
+	include _components/_share/_breadcrumb
 block main
 	include _components/contact/c-1
 	include _components/contact/c-2
 block scripts
+	script.
+		var locationsInput = [
+			{
+				lat:15.2160001,
+				lng: 108.803968,
+				title: 'KIM CÚC SPORT',
+				address: '133 - 143 Hùng Vương, t.p Quảng Ngãi',
+				phone: '0906.523.876'
+			}
+		]
+	script(type="text/javascript", src="./js/map.min.js")

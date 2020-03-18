@@ -1,11 +1,14 @@
 aside.aside-filter
-	.block-filter
+	.nav-filter.mobile
+		.item(toggle-view="filter") bộ lọc
+		.item(toggle-view="category") thương hiệu
+	.block-filter(toggle-id="filter")
 		.title-filter(icon="filter") bộ lọc
 		.block
 			// GIÁ
 			.type-filter mức giá
 			.price
-				#value-text
+				#value-text(data-min-html data-max-html)
 				input(type="text" id="amount" readonly hidden)
 				#slider-range(data-min=100000, data-max=120000000, data-current-min=100000, data-current-max=120000000)
 				.about-price
@@ -22,33 +25,36 @@ aside.aside-filter
 								img.lazyload.blur-up(src="./assets/icons/search.svg", alt="search")
 				.check-box
 					.form-group
-						input#yamaha(hidden checked type="checkbox")
+						input#all(hidden name="brand" type="radio" value="" checked)
+						label(for="all") Tất cả
+					.form-group
+						input#addidas(hidden name="brand" type="radio" value="Addidas")
 						label(for="addidas") Addidas
 					.form-group
-						input#BW(hidden type="checkbox")
+						input#wilson(hidden name="brand" type="radio" value="Wilson&W")
 						label(for="wilson") Wilson&W
 					.form-group
-						input#Jamo(hidden type="checkbox")
+						input#nike(hidden name="brand" type="radio" value="Nike")
 						label(for="nike") Nike
 					.form-group
-						input#SonusFaber(hidden type="checkbox")
-						label(for="cyber") Cyber
+						input#cyber(hidden name="brand" type="radio" value="Cyber")
+						label(for="cyber" ) Cyber
 					.form-group
-						input#Mcintosh(hidden type="checkbox")
+						input#yonex(hidden name="brand" type="radio" value="Yonex")
 						label(for="yonex") Yonex
 					.form-group
-						input#Text(hidden type="checkbox")
+						input#Text(hidden name="brand" type="radio" value="Text")
 						label(for="Text") Text
 					.form-group
-						input#Text(hidden type="checkbox")
+						input#Text(hidden name="brand" type="radio" value="Text")
 						label(for="Text") Text
 					.form-group
-						input#Text(hidden type="checkbox")
+						input#Text(hidden name="brand" type="radio" value="Text")
 						label(for="Text") Text
 					.form-group
-						input#Text(hidden type="checkbox")
+						input#Text(hidden name="brand" type="radio" value="Text")
 						label(for="Text") Text
-	.block-filter.category
+	.block-filter.mt-20px(toggle-id="category")
 		.title-filter(icon="category") danh mục sản phẩm
 		.block
 			ul.list-item-category

@@ -1,61 +1,58 @@
 import Cookie from "./lib/Cookie";
 import Loading from "./lib/Loading";
-import Mapping from "./lib/MoveElement";
+import Tab from "./lib/Tab";
+
+// HÀM SET CHIỀU CAO CỦA BORDER !!!
+const transitionTime = 300;
+const header = document.querySelector('header');
+const transitionEffect = `${transitionTime/1000}s all ease-in-out`;
+header.style.transition = transitionEffect;
+$('.block-logo .triangle').css('transition', transitionEffect);
+
+const setBorder = () => {
+	setTimeout(() => {
+		const width = $('header .block-logo').width();
+		const height = $('header .block-logo').height();
+		if ($('header').hasClass('scrolled')) {
+			$('.triangle').css({
+				'left': '-100%',
+			})
+		} else {
+			$('.triangle').css({
+				'left': '0',
+				'border-right': width + "px solid transparent",
+				'border-top': height + "px solid #ffffff",
+			})
+		}
+	}, transitionTime);
+}
+
+// HÀM SET PADDING CHO NAV LIST ĐỂ BLOCK CART RỚT XUỐNG !!!
+const paddingRightNavList = () => {
+	const widthBlockCart = $('.block-cart').outerWidth();
+	const navList = $('header .bottom-header .nav-list');
+	if ($('header').hasClass('scrolled')) {
+		navList.css('padding-right', widthBlockCart + 59)
+	} else {
+		navList.css('padding-right', 'unset')
+	}
+}
+
+// HÀM ADD CLASS
+const addClassScroll = () => {
+	const heightHeader = header.offsetHeight;
+	if (window.pageYOffset >= heightHeader) {
+		document.querySelector('header').classList.add('scrolled');
+	} else {
+		document.querySelector('header').classList.remove('scrolled');
+	}
+}
 
 // HEADER HERE !!!
 const activeHeaderWhenScroll = () => {
-	const header = document.querySelector('header');
-	const heightHeader = header.offsetHeight;
-	const transitionTime = 300;
-	const widthBlockCart = $('.block-cart').outerWidth();
-	const navList = $('header .bottom-header .nav-list');
-	const transitionEffect = `${transitionTime/1000}s all ease-in-out`;
-	header.style.transition = transitionEffect;
-	$('.block-logo .triangle').css('transition', transitionEffect);
-
-	// HÀM SET CHIỀU CAO CỦA BORDER !!!
-	const setBorder = () => {
-		setTimeout(() => {
-			const width = $('header .block-logo').width();
-			const height = $('header .block-logo').height();
-			if ($('header').hasClass('scrolled')) {
-				$('.triangle').css({
-					'left': '-100%',
-				})
-			} else {
-				$('.triangle').css({
-					'left': '0',
-					'border-right': width + "px solid transparent",
-					'border-top': height + "px solid #ffffff",
-				})
-			}
-		}, transitionTime);
-	}
 	setBorder();
-
-	// HÀM SET PADDING CHO NAV LIST ĐỂ BLOCK CART RỚT XUỐNG !!!
-	const paddingRightNavList = () => {
-		if ($('header').hasClass('scrolled')) {
-			navList.css('padding-right', widthBlockCart)
-		} else {
-			navList.css('padding-right', 'unset')
-		}
-	}
-
-	// HÀM ADD CLASS
-	const addClassScroll = () => {
-		if (window.pageYOffset >= heightHeader) {
-			document.querySelector('header').classList.add('scrolled');
-		} else {
-			document.querySelector('header').classList.remove('scrolled');
-		}
-	}
-
-	window.addEventListener('scroll', function() {
-		setBorder();
-		addClassScroll();
-		paddingRightNavList();
-	})
+	paddingRightNavList();
+	addClassScroll();
 }
 
 // SLIDER HERE !!!
@@ -151,6 +148,46 @@ const normalSlider = () => {
 	})
 }
 
+const produdctDetailSlider = () => {
+	var thumbnail = new Swiper('.slider-product-detail .thumbnail-image .swiper-container', {
+		spaceBetween: 35,
+		slidesPerView: 5,
+		loop: true,
+		observer: true,
+		observeParents: true,
+		slideToClickedSlide: true,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: '.thumbnail-image .swiper-button-next',
+			prevEl: '.thumbnail-image .swiper-button-prev',
+		},
+	});
+
+	var review = new Swiper('.slider-product-detail .review-image .swiper-container', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		loop: true,
+		simulateTouch: false,
+		loopedSlides: 3,
+		thumbs: {
+			swiper: thumbnail,
+		},
+		navigation: {
+			nextEl: '.thumbnail-image.swiper-button-next',
+			prevEl: '.thumbnail-image.swiper-button-prev',
+		}
+	});
+}
+
 // SLIDER NHÀ PHÂN PHỐI !!!
 const distributorSlider = () => {
 	var swiper = new Swiper('.slider-distributor .swiper-container', {
@@ -228,12 +265,71 @@ const setHeightOverFolowBySomeElement = (selector) => {
 	})
 }
 
-function rangeSliderPrice() {
+const rangeSliderPrice = () => {
 	let min_price = Number($("#slider-range").attr('data-min'));
 	let max_price = Number($("#slider-range").attr('data-max'));
+	const pathname = window.location.pathname;
+	const origin = window.location.origin;
+	const url = origin + pathname;
+	const getBrand = e => {
+		let brand;
+		$('.brand .check-box [name="brand"]').each(function() {
+			if ($(this)[0].checked) {
+				brand = $(this)[0].value;
+			}
+		})
+		return brand;
+	}
+
+	const getUrl = (min, max) => {
+		let fromParam = `fromPrice=${min}`;
+		let toParam = `toPrice=${max}`;
+		let brandParam;
+		if (getBrand().length > 0) {
+			brandParam = `brands=${getBrand()}`
+			return `${url}?${fromParam}&${toParam}&${brandParam}`
+		} else {
+			brandParam = null;
+			return `${url}?${fromParam}&${toParam}`
+		}
+	}
+
+	const ajaxFilterProduct = (url) => {
+		$.ajax({
+			type: "GET",
+			url: url,
+			beforeSend: function() {
+				$('.list-product .list-item').css({
+					'opacity': '.2',
+					'pointer-events': 'none'
+				})
+			},
+			success: function(res) {
+				const listProduct = $(res).find('.list-product .list-item');
+				$('.list-product .list-item').html(listProduct.html());
+			},
+			complete: function() {
+				$('.list-product .list-item').css({
+					'opacity': '1',
+					'pointer-events': 'initial'
+				})
+				window.history.pushState({}, '', url);
+			}
+		});
+	}
+
+	$('.brand .check-box [name="brand"]').on('change', () => {
+		let minFinal = Number($("#value-text").attr('data-min-html'))
+		let maxFinal = Number($("#value-text").attr('data-max-html'))
+		const urlRequest = getUrl(minFinal, maxFinal);
+		ajaxFilterProduct(urlRequest);
+	})
+
 	if (min_price !== max_price) {
 		let curMinPrice = Number($("#slider-range").attr('data-current-min'))
 		let curMaxPrice = Number($("#slider-range").attr('data-current-max'))
+		$("#value-text").attr('data-min-html', curMinPrice);
+		$("#value-text").attr('data-max-html', curMaxPrice);
 		$("#slider-range").slider({
 			range: true,
 			min: min_price,
@@ -242,9 +338,14 @@ function rangeSliderPrice() {
 			slide: function(event, ui) {
 				$("#amount").val(ui.values[0] + " - " + ui.values[1]);
 				$("#value-text").html(ui.values[0] + " đ - " + ui.values[1] + " đ");
+				$("#value-text").attr('data-min-html', ui.values[0]);
+				$("#value-text").attr('data-max-html', ui.values[1]);
 			},
 			stop: function(event, ui) {
-				Redirect();
+				const minFinal = $("#amount").val(ui.values[0]).val();
+				const maxFinal = $("#amount").val(ui.values[1]).val();
+				const urlRequest = getUrl(minFinal, maxFinal);
+				ajaxFilterProduct(urlRequest);
 			},
 			create: function(event, ui) {
 
@@ -257,6 +358,56 @@ function rangeSliderPrice() {
 	}
 }
 
+const filterMobile = () => {
+	$('.nav-filter .item').on('click', function() {
+		const toggleView = $(this).attr('toggle-view');
+		$('.aside-filter .block-filter').each(function() {
+			const toggleId = $(this).attr('toggle-id');
+			if (toggleView == toggleId) {
+				$(this).slideToggle();
+				$('.aside-filter .block-filter').not(this).slideUp();
+				// $('#overlay').toggleClass('active');
+				// $('body').toggleClass('disabled');
+			} else {
+				console.log('Không tồn tại toggleView');
+			}
+		})
+	});
+
+	$('#overlay').on('click', function() {
+		$(this).removeClass('active');
+		$('body').removeClass('disabled');
+		$('.aside-filter .block-filter').slideUp();
+	});
+}
+
+const ajaxFormContact = () => {
+	$('.block-form-contact .block-form button').on('click', function(e) {
+		e.preventDefault();
+		const url = $(this).attr('data-url');
+		const name = $('#name').val();
+		const phone = $('#phone').val();
+		const email = $('#email').val();
+		const content = $('#content').val();
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {
+				name: name,
+				phone: phone,
+				email: email,
+				content: content
+			},
+			success: function(res) {
+				if (res.Code === 200) {
+					alert(res.Message);
+				} else {
+					alert(res.Message);
+				}
+			}
+		});
+	});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING !!!
@@ -264,20 +415,28 @@ document.addEventListener('DOMContentLoaded', () => {
 		new WOW().init();
 		// GET HEIGHT SOMWE ELEMENT
 		setHeightOverFolowBySomeElement('.about-1,.about-3');
+		activeHeaderWhenScroll();
 	});
-	// HEADER !!!
-	activeHeaderWhenScroll();
 	// SLIDER HOME !!!
 	homeSlider();
-	normalSlider()
+	normalSlider();
+	produdctDetailSlider();
 	// SLIDER NHÀ PHÂN PHỐI !!!
 	distributorSlider();
 	// SLIDER KHÁCH HÀNG !!!
 	customerSlider();
 	// FILTER GIÁ
 	rangeSliderPrice();
+	filterMobile();
+	//AJAX
+	ajaxFormContact();
+	// TAB
+	const tabPolicy = new Tab('.block-policy');
 });
 
+window.addEventListener('scroll', () => {
+	activeHeaderWhenScroll();
+})
 
 document.addEventListener('resize', () => {
 	// TAM GIÁC LOGO HEADER !!!

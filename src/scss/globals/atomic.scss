@@ -12,7 +12,7 @@
 
 .mobile {
 	@media (min-width: 1025px) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -151,4 +151,8 @@
 	content: "";
 	clear  : both;
 	display: table;
+}
+
+.mt-20px {
+	margin-top: 20px;
 }
