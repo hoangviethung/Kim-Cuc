@@ -50,9 +50,27 @@ const addClassScroll = () => {
 
 // HEADER HERE !!!
 const activeHeaderWhenScroll = () => {
-	setBorder();
-	paddingRightNavList();
-	addClassScroll();
+	if ($(window).width() >= 1025) {
+		setBorder();
+		paddingRightNavList();
+		addClassScroll();
+	}
+}
+
+const toggleMenuMobile = () => {
+	$('.toggle-menu.mobile').on('click', function() {
+		$(this).toggleClass('active');
+		$('.bottom-header').toggleClass('active');
+		$('body').toggleClass('disabled')
+		$('#overlay').toggleClass('active');
+	});
+
+	$('#overlay').on('click', function() {
+		$(this).removeClass('active');
+		$('body').removeClass('disabled')
+		$('.bottom-header').removeClass('active');
+		$('.toggle-menu').removeClass('active');
+	})
 }
 
 // SLIDER HERE !!!
@@ -459,6 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 		activeHeaderWhenScroll();
 	});
+	toggleMenuMobile();
 	// SLIDER HOME !!!
 	homeSlider();
 	normalSlider();
