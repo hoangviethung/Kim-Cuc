@@ -148,10 +148,10 @@ const normalSlider = () => {
 	})
 }
 
-const produdctDetailSlider = () => {
+const productDetailSlider = () => {
 	var thumbnail = new Swiper('.slider-product-detail .thumbnail-image .swiper-container', {
 		spaceBetween: 35,
-		slidesPerView: 5,
+		slidesPerView: 2,
 		loop: true,
 		observer: true,
 		observeParents: true,
@@ -163,6 +163,16 @@ const produdctDetailSlider = () => {
 		navigation: {
 			nextEl: '.thumbnail-image .swiper-button-next',
 			prevEl: '.thumbnail-image .swiper-button-prev',
+		},
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+			},
+			1200: {
+				slidesPerView: 5,
+				spaceBetween: 16,
+			}
 		},
 	});
 
@@ -186,6 +196,38 @@ const produdctDetailSlider = () => {
 			prevEl: '.thumbnail-image.swiper-button-prev',
 		}
 	});
+}
+
+const productOtherSlider = () => {
+	var swiper = new Swiper('.slider-products-other .swiper-container', {
+		slidesPerView: 2,
+		spaceBetween: 10,
+		loop: true,
+		speed: 500,
+		simulateTouch: false,
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: '.slider-products-other .swiper-button-next',
+			prevEl: '.slider-products-other .swiper-button-prev',
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 10,
+			},
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 10,
+			},
+			1200: {
+				slidesPerView: 5,
+				spaceBetween: 16,
+			}
+		},
+	})
 }
 
 // SLIDER NHÀ PHÂN PHỐI !!!
@@ -414,13 +456,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	Loading().then(() => {
 		new WOW().init();
 		// GET HEIGHT SOMWE ELEMENT
-		setHeightOverFolowBySomeElement('.about-1,.about-3');
+		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 		activeHeaderWhenScroll();
 	});
 	// SLIDER HOME !!!
 	homeSlider();
 	normalSlider();
-	produdctDetailSlider();
+	productDetailSlider();
+	productOtherSlider();
 	// SLIDER NHÀ PHÂN PHỐI !!!
 	distributorSlider();
 	// SLIDER KHÁCH HÀNG !!!
@@ -432,6 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxFormContact();
 	// TAB
 	const tabPolicy = new Tab('.block-policy');
+	const tabProductDetail = new Tab('.product-detail-2');
 });
 
 window.addEventListener('scroll', () => {
@@ -441,5 +485,5 @@ window.addEventListener('scroll', () => {
 document.addEventListener('resize', () => {
 	// TAM GIÁC LOGO HEADER !!!
 	activeHeaderWhenScroll();
-	setHeightOverFolowBySomeElement('.about-1,.about-3');
+	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 })

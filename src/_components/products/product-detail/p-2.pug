@@ -1,0 +1,32 @@
+section.product-detail-2
+	.container.tab-container
+		// MENU TAB ĐÚNG ID TOGGLE FOR SẼ HIỆN NỘI DUNG TAB
+		ul.list-tab-product-detail.list-tab
+			li.item-tab-product-detail
+				.item(toggle-for="tab-info-product") thông tin sản phẩm
+			li.item-tab-product-detail
+				.item(toggle-for="tab-specifications-product") THÔNG SỐ CHI TIẾT
+		// NỘI DUNG TAB TABID === TOGGLE-FOR
+		.tab-content.content-product-detail
+			.content(tab-id="tab-info-product")
+				.description
+					.demo-ckeditor.content-tab-info-product
+						h3 GIÀY TENNIS NAM NIKECOUR
+						.d-f
+							.code Mã hàng:
+								span AGS - 262
+							.brand Thương hiệu:
+								span Lorem impsump
+						img(src="./assets/images/products/product-detail/info-detail-video.png", alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT")
+						-for(i=1;i<4;i++)
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			.content(tab-id="tab-specifications-product")
+				.demo-ckeditor.content-tab-specifications-product
+					ul
+						-for(j=1;j<10;j++)
+							li
+								.left
+									p Lorem ipsum dolor sit amet
+								.right
+									p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

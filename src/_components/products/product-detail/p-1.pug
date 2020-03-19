@@ -1,10 +1,10 @@
 section.product-detail-1
 	.container
 		.row
-			.col-lg-6
+			.col-md-6
 				.slider-product-detail
 					// - ## SLIDER HÌNH LỚNN -## //
-					.review-image.ov-h
+					.review-image.ov-h(data-getHeight)
 						.swiper-container
 							.swiper-wrapper
 								-for(i=1;i<10;i++)
@@ -23,3 +23,25 @@ section.product-detail-1
 											img.ofcv(src="./assets/images/products/product-detail/1.png", alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT")
 						.swiper-button-prev
 						.swiper-button-next
+			.col-md-6
+				.general-information(data-setHeight="767.98")
+					h1 GIÀY TENNIS NAM IKECOUR
+					.product-code Mã hàng:
+						span AGS - 262
+					.product-brand Thương hiệu:
+						span Lorem impsump
+					.description-general-information.lcl.lcl-6 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.block-amount-price
+						.price GIÁ:
+							span 14.500.000 VNĐ
+						.block-buttons
+							.amount
+								.text số lượng
+								input.quantity(type="text" value="1" readonly)
+								.block-up-down
+									.up
+										img.lazyload.blur-up(data-src="./assets/icons/up.svg", alt="")
+									.down
+										img.lazyload.blur-up(data-src="./assets/icons/down.svg", alt="")
+							.submit-cart
+								.add-cart.btn.btn-submit mua online ngay
