@@ -474,13 +474,11 @@ const checkLayoutBanner = () => {
 	const mainSlider = $('.home-banner');
 	const normalSLider = $('.normal-banner');
 	const heightHeader = $('header').outerHeight();
-	if (mainSlider.length >= 1 && mainSlider.css('display') == 'block') {
+	if ($(window).width() < 1025 && mainSlider.length >= 1 && mainSlider.css('display') == 'block') {
 		mainSlider.css('padding-top', heightHeader);
-	} else if (normalSLider.length >= 1 && normalSLider.css('display') == 'block') {
+	} else if ($(window).width() < 1025 && normalSLider.length >= 1 && normalSLider.css('display') == 'block') {
 		normalSLider.css('padding-top', heightHeader);
-	} else {
-		$('main').css('padding-top', heightHeader);
-	}
+	} else {}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
