@@ -469,6 +469,20 @@ const ajaxFormContact = () => {
 	});
 }
 
+// CHECK LAYOUT CÓ BANNER KHÔNG
+const checkLayoutBanner = () => {
+	const mainSlider = $('.home-banner');
+	const normalSLider = $('.normal-banner');
+	const heightHeader = $('header').outerHeight();
+	if (mainSlider.length >= 1 && mainSlider.css('display') == 'block') {
+		mainSlider.css('padding-top', heightHeader);
+	} else if (normalSLider.length >= 1 && normalSLider.css('display') == 'block') {
+		normalSLider.css('padding-top', heightHeader);
+	} else {
+		$('main').css('padding-top', heightHeader);
+	}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING !!!
 	Loading().then(() => {
@@ -477,6 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 		activeHeaderWhenScroll();
 	});
+	checkLayoutBanner();
 	toggleMenuMobile();
 	// SLIDER HOME !!!
 	homeSlider();
