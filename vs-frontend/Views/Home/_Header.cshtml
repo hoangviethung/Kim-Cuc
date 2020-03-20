@@ -1,0 +1,6 @@
+﻿@model MainProject.SBussiness.LandingPage.Models.Home.HeaderViewModel
+
+@foreach (var item in Model.Banners)
+{
+    <img src="@item.ResourcePath" alt="@item.Alt"/>
+}
