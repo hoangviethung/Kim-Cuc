@@ -48,10 +48,10 @@ section.cart-list-page
 							strong.price 515.000.000đ
 						p.vat (Đã bao gồm VAT)
 				.cart-checkout
-					.btn.btn-submit.w-100(data-fancybox="cart-checkout" data-src="#cart-checkout") Đặt hàng
+					.btn.btn-submit.w-100(data-fancybox="popup-checkout" data-src="#popup-checkout") Đặt hàng
 
 .d-n
-	#cart-checkout.cart-popup
+	#popup-checkout.popup-checkout
 		h2 Thông tin liên hệ
 		form
 			.form-group
@@ -61,30 +61,40 @@ section.cart-list-page
 			br
 			h3 Thông tin địa chỉ
 			.form-group
-				select
+				select#province
 					option Chọn Tỉnh/Thành phố
-					option option 1
-					option option 1
-					option option 1
-					option option 1
+					option province 1
+					option province 1
+					option province 1
+					option province 1
 			.form-group
-				select
+				select#district
 					option Chọn Quận/Huyện
-					option option 1
-					option option 1
-					option option 1
-					option option 1
+					option district 1
+					option district 1
+					option district 1
+					option district 1
 			.form-group
-				select
+				select#ward
 					option Chọn Phường/Xã
-					option option 1
-					option option 1
-					option option 1
-					option option 1
+					option ward 1
+					option ward 1
+					option ward 1
+					option ward 1
 			.form-group
-				textarea#address(name='', placeholder='151, Quang Trung, Gò Vấp')
+				textarea#address(name='', placeholder='Địa chỉ chi tiết: ví dụ 151, Quang Trung, Gò Vấp')
 			.form-check
 				input#default-address(type='checkbox')
 				label(for='default-address') Địa chỉ mặc định
 			.form-button
-				button.btn.btn-apply Xác nhận đơn hàng
+				button.btn.btn-apply(data-url="ajax") Xác nhận đơn hàng
+.d-n
+	#popup-checkout-complete.popup-checkout-complete
+		img(src="./assets/icons/cam-on.svg", alt="")
+		h1 Đặt hàng thành công
+		p Cảm ơn bạn đã mua hàng tại Hana
+		p Quản trị viên sẽ liên hệ để lại để xác nhận.
+		br
+		br
+		p Bạn có thể xem lại đơn hàng tại 
+			a(href="#") đây

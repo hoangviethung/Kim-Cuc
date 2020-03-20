@@ -475,6 +475,47 @@ const ajaxFormContact = () => {
 	});
 }
 
+const ajaxOrderProduct = () => {
+	$('.popup-checkout .form-button button').on('click', function(e) {
+		e.preventDefault();
+		const fullname = $('#fullname').val();
+		const phone = $('#phone').val();
+		const province = $('#province').val();
+		const district = $('#district').val();
+		const ward = $('#ward').val();
+		const address = $('#address').val();
+		const defaultAddress = $('#default-address').val();
+		const url = $(this).attr('data-url')
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {
+				fullname: fullname,
+				phone: phone,
+				province: province,
+				district: district,
+				ward: ward,
+				address: address,
+				defaultAddress: defaultAddress
+			},
+			success: function(res) {
+				if (res.Code === 200) {
+					$.fancybox.open({
+						src: '#popup-checkout-complete',
+						type: 'inline',
+						opts: {
+							hash: false,
+							closeExisting: true,
+						}
+					});
+				} else {
+					alert(res.Message)
+				}
+			}
+		});
+	});
+}
+
 // CHECK LAYOUT CÓ BANNER KHÔNG
 const checkLayoutBanner = () => {
 	const mainSlider = $('.home-banner');
@@ -512,6 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	filterMobile();
 	//AJAX
 	ajaxFormContact();
+	ajaxOrderProduct();
 	// TAB
 	const tabPolicy = new Tab('.block-policy');
 	const tabProductDetail = new Tab('.product-detail-2');
