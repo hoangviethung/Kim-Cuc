@@ -73,6 +73,12 @@ const toggleMenuMobile = () => {
 	})
 }
 
+const toggleCartMenu = () => {
+	$('header .block-cart .block-text-icon').on('click', function() {
+		$(this).siblings('.cart-panel').toggleClass('open');
+	});
+}
+
 // SLIDER HERE !!!
 const homeSlider = () => {
 	var swiper = new Swiper('.slider-home-banner .swiper-container', {
@@ -491,6 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	checkLayoutBanner();
 	toggleMenuMobile();
+	toggleCartMenu();
 	// SLIDER HOME !!!
 	homeSlider();
 	normalSlider();
