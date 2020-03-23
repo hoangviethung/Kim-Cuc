@@ -1,6 +1,7 @@
 import Cookie from "./lib/Cookie";
 import Loading from "./lib/Loading";
 import Tab from "./lib/Tab";
+import CartController from "./lib/CartController";
 
 // HÀM SET CHIỀU CAO CỦA BORDER !!!
 const transitionTime = 300;
@@ -337,6 +338,7 @@ const rangeSliderPrice = () => {
 	const pathname = window.location.pathname;
 	const origin = window.location.origin;
 	const url = origin + pathname;
+
 	const getBrand = e => {
 		let brand;
 		$('.brand .check-box [name="brand"]').each(function() {
@@ -372,7 +374,9 @@ const rangeSliderPrice = () => {
 			},
 			success: function(res) {
 				const listProduct = $(res).find('.list-product .list-item');
+				const pagination = $(res).find('.block-list-product .pagination')
 				$('.list-product .list-item').html(listProduct.html());
+				$('.block-list-product .pagination').html(pagination.html());
 			},
 			complete: function() {
 				$('.list-product .list-item').css({
@@ -455,23 +459,27 @@ const ajaxFormContact = () => {
 		const phone = $('#phone').val();
 		const email = $('#email').val();
 		const content = $('#content').val();
-		$.ajax({
-			type: "POST",
-			url: url,
-			data: {
-				name: name,
-				phone: phone,
-				email: email,
-				content: content
-			},
-			success: function(res) {
-				if (res.Code === 200) {
-					alert(res.Message);
-				} else {
-					alert(res.Message);
+		if ($(".block-send-mail form").valid() == true) {
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: {
+					name: name,
+					phone: phone,
+					email: email,
+					content: content
+				},
+				success: function(res) {
+					if (res.Code === 200) {
+						alert(res.Message);
+					} else {
+						alert(res.Message);
+					}
 				}
-			}
-		});
+			});
+		} else {
+			console.log('Không được request lên url vì valid');
+		}
 	});
 }
 
@@ -485,34 +493,38 @@ const ajaxOrderProduct = () => {
 		const ward = $('#ward').val();
 		const address = $('#address').val();
 		const defaultAddress = $('#default-address').val();
-		const url = $(this).attr('data-url')
-		$.ajax({
-			type: "POST",
-			url: url,
-			data: {
-				fullname: fullname,
-				phone: phone,
-				province: province,
-				district: district,
-				ward: ward,
-				address: address,
-				defaultAddress: defaultAddress
-			},
-			success: function(res) {
-				if (res.Code === 200) {
-					$.fancybox.open({
-						src: '#popup-checkout-complete',
-						type: 'inline',
-						opts: {
-							hash: false,
-							closeExisting: true,
-						}
-					});
-				} else {
-					alert(res.Message)
+		const url = $(this).attr('data-url');
+		if ($(".popup-checkout form").valid() === true) {
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: {
+					fullname: fullname,
+					phone: phone,
+					province: province,
+					district: district,
+					ward: ward,
+					address: address,
+					defaultAddress: defaultAddress
+				},
+				success: function(res) {
+					if (res.Code === 200) {
+						$.fancybox.open({
+							src: '#popup-checkout-complete',
+							type: 'inline',
+							opts: {
+								hash: false,
+								closeExisting: true,
+							}
+						});
+					} else {
+						alert(res.Message)
+					}
 				}
-			}
-		});
+			});
+		} else {
+			console.log('Không được request lên url vì valid');
+		}
 	});
 }
 
@@ -557,6 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// TAB
 	const tabPolicy = new Tab('.block-policy');
 	const tabProductDetail = new Tab('.product-detail-2');
+	CartController();
 });
 
 window.addEventListener('scroll', () => {

@@ -25,6 +25,7 @@
     "select2": "^4.0.12",
     "wow": "wowjs#^1.1.2",
     "jquery-ui": "^1.12.1",
-    "linearicons": "^1.0.2"
+    "linearicons": "^1.0.2",
+    "jquery-validation": "^1.19.1"
   }
 }

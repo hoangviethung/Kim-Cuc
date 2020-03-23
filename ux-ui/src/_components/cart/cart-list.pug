@@ -4,7 +4,7 @@ section.cart-list-page
 			.col-xl-8
 				.cart-table-title
 					.info-title
-						p GIỎ HÀNG (6 sản phẩm)
+						p#quantity-product GIỎ HÀNG (6 sản phẩm)
 					.quantity-title
 						p Số lượng
 					.price-title
@@ -17,13 +17,13 @@ section.cart-list-page
 									img(src="./assets/images/products/list-product/"+i+".png", alt="")
 								a.name(href="san-pham-chi-tiet.html")
 									h3 Save me 3ce – san hô neon
-								input.item-remove(type='button' value='Xóa')
+								input.remove-cart(type='button' value='Xóa' data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang")
 							.item-quantity
 								.mobile.item-label Số lượng
 								.quantity-input
-									input(type='button' value='-')
-									input(type='text' value='0' placeholder="0")
-									input(type='button' value='+')
+									.downQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang") -
+									input.quantity-cart(name="quantity" type='text' value='499' data-pid="11223344" data-propertyid="11223344")
+									.upQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang") +
 							.item-price
 								.mobile.item-label Giá
 								.item-price-wrapper
@@ -38,18 +38,17 @@ section.cart-list-page
 					.cart-summary-block
 						p
 							span Tạm tính:
-							span 515.000.000đ
+							span#temp_price 515.000.000đ
 						p
 							span Giảm giá:
-							span -15.000.000đ
+							span#discount_amount -15.000.000đ
 					.cart-summary-block
 						p
 							span Thành tiền:
-							strong.price 515.000.000đ
+							strong.price#actual_amount_total 515.000.000đ
 						p.vat (Đã bao gồm VAT)
 				.cart-checkout
 					.btn.btn-submit.w-100(data-fancybox="popup-checkout" data-src="#popup-checkout") Đặt hàng
-
 .d-n
 	#popup-checkout.popup-checkout
 		h2 Thông tin liên hệ
@@ -61,31 +60,7 @@ section.cart-list-page
 			br
 			h3 Thông tin địa chỉ
 			.form-group
-				select#province
-					option Chọn Tỉnh/Thành phố
-					option province 1
-					option province 1
-					option province 1
-					option province 1
-			.form-group
-				select#district
-					option Chọn Quận/Huyện
-					option district 1
-					option district 1
-					option district 1
-					option district 1
-			.form-group
-				select#ward
-					option Chọn Phường/Xã
-					option ward 1
-					option ward 1
-					option ward 1
-					option ward 1
-			.form-group
 				textarea#address(name='', placeholder='Địa chỉ chi tiết: ví dụ 151, Quang Trung, Gò Vấp')
-			.form-check
-				input#default-address(type='checkbox')
-				label(for='default-address') Địa chỉ mặc định
 			.form-button
 				button.btn.btn-apply(data-url="ajax") Xác nhận đơn hàng
 .d-n

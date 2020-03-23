@@ -132,7 +132,7 @@
 				}
 			}
 
-			.item-remove {
+			.remove-cart {
 				@media (min-width: 768px) {
 					position   : absolute;
 					width      : 40px;
@@ -153,15 +153,18 @@
 				justify-content: center;
 			}
 
-			input[type='button'],
+			.downQuantity,
+			.upQuantity,
 			input[type='text'] {
-				border    : 0;
-				background: none;
-				flex      : 0 0 30px;
-				height    : 30px;
-				text-align: center;
-				max-width : 30px;
-				color     : #888888
+				cursor     : pointer;
+				user-select: none;
+				border     : 0;
+				background : none;
+				flex       : 0 0 30px;
+				height     : 30px;
+				text-align : center;
+				max-width  : 30px;
+				color      : #888888
 			}
 		}
 
@@ -233,7 +236,7 @@
 					}
 				}
 
-				.item-remove {
+				.remove-cart {
 					border       : 0;
 					height       : 20px;
 					flex         : 0 0 35px;

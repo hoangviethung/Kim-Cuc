@@ -35,13 +35,13 @@ section.product-detail-1
 						.price GIÁ:
 							span 14.500.000 VNĐ
 						.block-buttons
-							.amount
+							.amount.quantity-input
 								.text số lượng
-								input.quantity(type="text" value="1" readonly)
+								input.quantity-cart(name="quantity" type="text" value="1" readonly)
 								.block-up-down
-									.up
+									.upQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang")
 										img.lazyload.blur-up(data-src="./assets/icons/up.svg", alt="")
-									.down
+									.downQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang")
 										img.lazyload.blur-up(data-src="./assets/icons/down.svg", alt="")
 							.submit-cart
-								.add-cart.btn.btn-submit mua online ngay
+								.add-cart.btn.btn-submit(data-pid="11223344" data-propertyid="11223344" data-url="/them-vao-gio-hang") mua online ngay

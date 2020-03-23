@@ -15,7 +15,8 @@
 		"bower_components/jquery-ui/ui/widget.js",
 		"bower_components/jquery-ui/ui/keycode.js",
 		"bower_components/jquery-ui/ui/widgets/mouse.js",
-		"bower_components/jquery-ui/ui/widgets/slider.js"
+		"bower_components/jquery-ui/ui/widgets/slider.js",
+		"bower_components/jquery-validation/dist/jquery.validate.js"
 	],
 	"css": [
 		"vendors/linearicons.css",
