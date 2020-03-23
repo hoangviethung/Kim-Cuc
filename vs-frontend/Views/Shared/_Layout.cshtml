@@ -19,25 +19,32 @@
     <meta property="og:description" content="@Html.Raw(ViewBag.MetaDescription)">
     <meta property="og:url" content="">
     <meta property="og:image" content="@Html.Raw(ViewBag.MetaImage)">
-
     @*@Styles.Render("~/bundles/css")*@
 
+    @*FONT*@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap&amp;subset=vietnamese">
+    @*CSS*@
+    <link rel="stylesheet" href="/content/resources/css/core.min.css">
+    <link rel="stylesheet" href="/content/resources/css/main.min.css">
     @RenderSection("styles", required: false)
-    <!-- Put jquery here! -->
 </head>
 <body>
-    @Html.Action("ShowHeader", "Home")
-
+   @Html.Action("ShowHeader", "Home")
+    @*BREADCRUMP*@
     @Html.Partial("_Breadcrumb")
-
-    @RenderBody()
-
+    @*MAIN*@
+    <main>
+        @RenderBody()
+    </main>
+    @*FOOTER*@
     @Html.Action("ShowFooter", "Home")
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/js")
-
     @RenderSection("scripts", required: false)
+
+    @*GOOGLE MAP API*@
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyAq6ag0zUMblc-Wk5Z5S8KWkHpT3ak1LzI"></script>
+    @*JS*@
+    <script type="text/javascript" src="/Content/resources/js/core.min.js"></script>
+    <script type="text/javascript" src="/Content/resources/js/main.min.js"></script>
 </body>
 </html>

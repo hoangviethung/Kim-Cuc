@@ -1,3 +1,156 @@
 ﻿@model MainProject.SBussiness.LandingPage.Models.Home.HomeViewModel
-
-@Model.Category.Title
+<!-- BLOCK 1 TRANG CHỦ-->
+<div class="index-1">
+    <!-- DANH SÁCH NHÀ PHÂN PHỐI-->
+    <!-- NHÀ PHÂN PHỐI-->
+    <section class="distributor">
+        <div class="container">
+            <h2>NHÀ PHÂN PHỐI CHÍNH HÃNG CÁC THƯƠNG HIỆU</h2>
+            <div class="slider-distributor">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.Distributor)
+                        {
+                            <div class="swiper-slide">
+                                <div class="img ov-h"><a href="#"><img class="ofcv" src="@item.ResourcePath" alt="@item.Alt"></a></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- BLOCK 2 TRANG CHỦ-->
+<div class="index-2">
+    <div class="container">
+        <div class="block-title">
+            <h2>SẢN PHẨM BÁN CHẠY</h2>
+        </div>
+        <!-- DANH SÁCH SẢN PHẨM BÁN CHẠY-->
+        <div class="row list-item">
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/1.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/2.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/3.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/4.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/5.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/6.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/7.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/8.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/9.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="item-product">
+                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
+                    <figure>
+                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/10.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
+                        <figcaption>
+                            <div class="name">Ghế massage Okasa</div>
+                            <div class="code">OS-868</div>
+                            <div class="price">58.600.000 ₫</div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
