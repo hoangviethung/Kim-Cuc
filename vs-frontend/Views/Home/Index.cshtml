@@ -31,126 +31,145 @@
         </div>
         <!-- DANH SÁCH SẢN PHẨM BÁN CHẠY-->
         <div class="row list-item">
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/1.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
+            @foreach (var item in Model.HotProduct)
+            {
+                <div class="item-product">
+                    <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
+                    <a href="san-pham-chi-tiet.html">
+                        <figure>
+                            <div class="img ov-h">
+                                <img class="lazyload blur-up" data-src="@item.Images" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
+                            </div>
+                            <figcaption>
+                                <div class="name">@item.Name</div>
+                                <div class="code">@item.ProductCode</div>
+                                <div class="price">@item.Price ₫</div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- BLOCK 3 TRANG CHỦ-->
+<div class="index-3">
+    <div class="container">
+        <div class="block-title">
+            <h2>sản phẩm tập thể thao</h2>
+        </div>
+        <!-- DANH SÁCH SẢN PHẨM THỂ THAO-->
+        <div class="row list-item">
+
+            @foreach (var item in Model.SportsProduct)
+            {
+                <div class="item-product">
+                    <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
+                    <a href="san-pham-chi-tiet.html">
+                        <figure>
+                            <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.Images" alt="SẢN PHẨM THỂ THAO KIM CÚC SPORTS"></div>
+                            <figcaption>
+                                <div class="name">@item.Name</div>
+                                <div class="code">@item.ProductCode</div>
+                                <div class="price">@item.Price ₫</div>
+                                <div class="btn btn-gift">QUÀ TẶNG</div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- BLOCK 4 TRANG CHỦ-->
+<div class="index-4">
+    <figure class="ov-h">
+        <img class="ofcv lazyload blur-up" data-src="/Content/resources/assets/images/banner/index-4.png" alt="BANNER QUẢNG CÁO KIM CÚC SPORTS">
+    </figure>
+</div>
+<!-- BLOCK 5 TRANG CHỦ-->
+<div class="index-5">
+    <div class="container">
+        <div class="block-title">
+            <h2>KHÁCH HÀNG CỦA CHÚNG TÔI</h2>
+        </div>
+        <!-- SLIDER KHÁCH HÀNG CỦA KIM CÚC SPORTS-->
+        <div class="slider-customer">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model.Customer)
+                    {
+                        <div class="swiper-slide">
+                            <figure>
+                                <div class="img ov-h">
+                                    <img class="ofcv" src="@item.ResourcePath" alt="@item.Alt">
+                                </div>
+                                <figcaption>
+                                    <p class="lcl lcl-1">@item.Name</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    }
+
+                </div>
             </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/2.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
+<!-- BLOCK 6 TRANG CHỦ-->
+<div class="index-6">
+    <div class="container">
+        <div class="row">
+            <!-- TIN TỨC NỔI BẬT - TRANG CHỦ-->
+            <div class="col-lg-7">
+                <div class="block-title">
+                    <h2>TIN TIÊU ĐIỂM</h2>
+                </div>
+                @if (Model.HomeNews.Count > 0)
+                {
+                    <div class="hot-news">
+                        <figure class="hover-style-1">
+                            <a href="@Model.HomeNews[0].GetUrl()">
+                                <div class="img ov-h"><img class="ofcv lazyload blur-up" data-src="@Model.HomeNews[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS"></div>
+                                <figcaption>
+                                    <h3 class="lcl lcl-2">@Model.HomeNews[0].Title</h3>
+                                    <time>@Model.HomeNews[0].CreateDate.ToString("dd/MM/yyyy")</time>
+                                    <p class="lcl lcl-4">@Model.HomeNews[0].Description</p>
+                                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">xem thêm</a>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </div>
+                }
             </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/3.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/4.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/5.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/6.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/7.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/8.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/9.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="item-product">
-                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="san-pham-chi-tiet.html">
-                    <figure>
-                        <div class="img ov-h"><img class="lazyload blur-up" data-src="./assets/images/products/hot-sale/10.png" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS"></div>
-                        <figcaption>
-                            <div class="name">Ghế massage Okasa</div>
-                            <div class="code">OS-868</div>
-                            <div class="price">58.600.000 ₫</div>
-                        </figcaption>
-                    </figure>
-                </a>
+            <!-- TIN TỨC - SỰ KIỆN - TRANG CHỦ-->
+            <div class="col-lg-5">
+                <div class="block-home-news">
+                    <div class="block-title">
+                        <h2>TIN TỨC - SỰ KIỆN</h2>
+                    </div>
+                    <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG CHỦ-->
+                    <div class="list-home-news clearfix">
+                        @foreach (var item in Model.HomeNews.Skip(1))
+                        {
+                            <div class="item-home-news">
+                                <a href="@item.GetUrl()">
+                                    <figure class="hover-style-1">
+                                        <div class="img ov-h"><img class="ofcv lazyload blur-up" data-src="@item.ImageDefault" alt="TIN TỨC SỰ KIỆN KIM CÚC SPORTS"></div>
+                                        <figcaption>
+                                            <h3 class="lcl lcl-2">@item.Title</h3>
+                                            <time>@item.CreateDate.ToString("dd/MM/yyyy")</time>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<div class="index-page" id="js-page-verify" hidden></div>

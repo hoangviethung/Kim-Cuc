@@ -1,5 +1,5 @@
-.normal-banner {
-	.slider-normal-banner {
+.main-banner {
+	.slider-main-banner {
 		.swiper-slide {
 			overflow: hidden;
 
@@ -11,7 +11,7 @@
 
 			figure {
 				position: relative;
-				height  : 400px;
+				height  : 100vh;
 
 				&:after {
 					content   : '';
@@ -20,7 +20,7 @@
 					height    : 100%;
 					top       : 0;
 					left      : 0;
-					background: rgba($color: #464646, $alpha: .5);
+					background: rgba($color: #464646, $alpha: .3);
 				}
 			}
 
@@ -53,8 +53,18 @@
 		}
 	}
 
+	&.small-banner {
+		.slider-main-banner {
+			.swiper-slide {
+				figure {
+					height: 400px;
+				}
+			}
+		}
+	}
+
 	@media (max-width: 1024.98px) {
-		.slider-normal-banner {
+		.slider-main-banner {
 			.swiper-slide {
 				figure {
 					height: unset;

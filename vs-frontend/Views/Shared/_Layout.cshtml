@@ -29,13 +29,15 @@
     @RenderSection("styles", required: false)
 </head>
 <body>
-   @Html.Action("ShowHeader", "Home")
+    @Html.Action("ShowHeader", "Home")
     @*BREADCRUMP*@
     @Html.Partial("_Breadcrumb")
     @*MAIN*@
     <main>
         @RenderBody()
     </main>
+    <div id="overlay"></div>
+    <div id="back-to-top"><img src="~/Content/resources/assets/icons/back-to-top.svg" alt="NÚT TRỞ VỀ ĐẦU TRANG KIM CÚC SPORTS"></div>
     @*FOOTER*@
     @Html.Action("ShowFooter", "Home")
 
@@ -43,6 +45,8 @@
 
     @*GOOGLE MAP API*@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyAq6ag0zUMblc-Wk5Z5S8KWkHpT3ak1LzI"></script>
+    @*FACEBOOK API*@
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=774359209430335&autoLogAppEvents=1"></script>
     @*JS*@
     <script type="text/javascript" src="/Content/resources/js/core.min.js"></script>
     <script type="text/javascript" src="/Content/resources/js/main.min.js"></script>

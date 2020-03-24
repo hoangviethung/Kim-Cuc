@@ -80,55 +80,15 @@ const toggleCartMenu = () => {
 	});
 }
 
-// SLIDER HERE !!!
-const homeSlider = () => {
-	var swiper = new Swiper('.slider-home-banner .swiper-container', {
-		loop: true,
-		speed: 1000,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
-		grabCursor: true,
-		watchSlidesProgress: true,
-		mousewheelControl: true,
-		keyboardControl: true,
-		pagination: {
-			el: '.slider-home-banner .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-		},
-		on: {
-			progress: function() {
-				var swiper = this;
-				for (var i = 0; i < swiper.slides.length; i++) {
-					var slideProgress = swiper.slides[i].progress;
-					var innerOffset = swiper.width * 0.5;
-					var innerTranslate = slideProgress * innerOffset;
-					swiper.slides[i].querySelector(".swiper-inner").style.transform =
-						"translate3d(" + innerTranslate + "px, 0, 0)";
-				}
-			},
-			touchStart: function() {
-				var swiper = this;
-				for (var i = 0; i < swiper.slides.length; i++) {
-					swiper.slides[i].style.transition = "";
-				}
-			},
-			setTransition: function(speed) {
-				var swiper = this;
-				for (var i = 0; i < swiper.slides.length; i++) {
-					swiper.slides[i].style.transition = speed + "ms";
-					swiper.slides[i].querySelector(".swiper-inner").style.transition =
-						speed + "ms";
-				}
-			}
-		}
-	})
+const checkPageToAddClassMainSlider = () => {
+	if (!$('main').find('#js-page-verify').hasClass('index-page')) {
+		$('.main-banner').addClass('small-banner');
+	}
 }
 
-const normalSlider = () => {
-	var swiper = new Swiper('.slider-normal-banner .swiper-container', {
+// SLIDER HERE !!!
+const mainSlider = () => {
+	var swiper = new Swiper('.slider-main-banner .swiper-container', {
 		loop: true,
 		speed: 1000,
 		autoplay: {
@@ -140,7 +100,7 @@ const normalSlider = () => {
 		mousewheelControl: true,
 		keyboardControl: true,
 		pagination: {
-			el: '.slider-normal-banner .swiper-pagination',
+			el: '.slider-main-banner .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 		},
@@ -531,7 +491,7 @@ const ajaxOrderProduct = () => {
 // CHECK LAYOUT CÓ BANNER KHÔNG
 const checkLayoutBanner = () => {
 	const mainSlider = $('.home-banner');
-	const normalSLider = $('.normal-banner');
+	const normalSLider = $('.main-banner');
 	const heightHeader = $('header').outerHeight();
 	if ($(window).width() < 1025 && mainSlider.length >= 1 && mainSlider.css('display') == 'block') {
 		mainSlider.css('padding-top', heightHeader);
@@ -551,9 +511,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
-	// SLIDER HOME !!!
-	homeSlider();
-	normalSlider();
+	// SLIDER HERE !!!
+	mainSlider();
 	productDetailSlider();
 	productOtherSlider();
 	// SLIDER NHÀ PHÂN PHỐI !!!
@@ -570,6 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const tabPolicy = new Tab('.block-policy');
 	const tabProductDetail = new Tab('.product-detail-2');
 	CartController();
+	checkPageToAddClassMainSlider();
 });
 
 window.addEventListener('scroll', () => {

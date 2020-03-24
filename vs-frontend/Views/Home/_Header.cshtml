@@ -9,7 +9,7 @@
 <header>
     <!-- LOGO-->
     <div class="block-logo">
-        <div class="triangle"></div><a href="index.html">
+        <div class="triangle"></div><a href="/home/index">
             <div class="logo"><img class="lazyload blur-up" data-src="/Content/resources/assets/logo.svg" alt="logo"></div>
         </a>
         <div class="toggle-menu mobile"></div>
@@ -109,11 +109,12 @@
             </div>
         </div>
     </div>
+    @*BOTTOM HEADER*@
     <div class="bottom-header">
         <div class="container">
             <div class="main-nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about/about">giới thiệu</a></li>
                     <li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">sản phẩm</a></li>
                     <li class="nav-item"><a class="nav-link" href="danh-sach-tin-tuc.html">tin tức - sự kiện</a></li>
                     <li class="nav-item"><a class="nav-link" href="chinh-sach.html">chính sách</a></li>
@@ -129,8 +130,8 @@
         </div>
     </div>
 </header>
-<section class="home-banner">
-    <div class="slider-home-banner">
+<section class="main-banner">
+    <div class="slider-main-banner">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 @foreach (var item in Model.Banners)

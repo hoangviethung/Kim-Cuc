@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Core\Enums\TempResourceKeyCollection.cs" />
     <Compile Include="Core\Product\Product.cs" />
     <Compile Include="Framework\Helpers\JsonHelper.cs" />
@@ -129,7 +130,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SBussiness\LandingPage\Models\About\AboutViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\Home\HomeViewModel.cs" />
+    <Compile Include="SBussiness\LandingPage\Models\News\NewsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MainProject.Core.dll" />
@@ -319,6 +322,7 @@
     <Content Include="ViewsReadMe\Home\_Header.cshtml" />
     <Content Include="ViewsReadMe\Home\_Subscribe.cshtml" />
     <Content Include="Views\Home\_Subscribe.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
