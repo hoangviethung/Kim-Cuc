@@ -9,9 +9,19 @@ namespace MainProject.Controllers
 {
     public class NewsController : Controller
     {
-        public ActionResult News()
+        public ActionResult Index()
         {
             return View(new NewsViewModel());
+        }
+
+        public ActionResult About()
+        {
+            return View(new AboutViewModel());
+        }
+
+        public ActionResult Policy()
+        {
+            return View(new PolicyViewModel());
         }
     }
 }

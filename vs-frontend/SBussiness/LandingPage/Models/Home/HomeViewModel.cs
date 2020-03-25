@@ -37,7 +37,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             }
         };
         //DANH SÁCH ẢNH NHÀ TÀI TRỢ
-        public List<Banner> Distributor { get; set; } = new List<Banner>
+        public List<Banner> Brands { get; set; } = new List<Banner>
         {
              new Banner
             {
@@ -66,7 +66,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             }
         };
         //DANH SÁCH SẢN PHẨM HOT
-        public List<Product> HotProduct { get; set; } = new List<Product>
+        public List<Product> HotProducts { get; set; } = new List<Product>
         {
             new Product
             {
@@ -264,6 +264,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     //MODEL CỦA HEADER
     public class HeaderViewModel
     {
+        public string Menu { get; set; }
         //DANH SÁCH ẢNH BANNER
         public List<Banner> Banners { get; set; } = new List<Banner>
         {
@@ -298,6 +299,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     //MODEL CỦA FOOTER
     public class FooterViewModel
     {
+        public string Menu { get; set; } = "<ul class='list-link-product'></ul>";
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
         public List<Branch> Branch { get; set; } = new List<Branch>
         {

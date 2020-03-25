@@ -10,7 +10,7 @@
             <div class="slider-distributor">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        @foreach (var item in Model.Distributor)
+                        @foreach (var item in Model.Brands)
                         {
                             <div class="swiper-slide">
                                 <div class="img ov-h"><a href="#"><img class="ofcv" src="@item.ResourcePath" alt="@item.Alt"></a></div>
@@ -32,7 +32,7 @@
         </div>
         <!-- DANH SÁCH SẢN PHẨM BÁN CHẠY-->
         <div class="row list-item">
-            @foreach (var item in Model.HotProduct)
+            @foreach (var item in Model.HotProducts)
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
@@ -67,7 +67,7 @@
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
                     <a href="/ProductDetail/ProductDetail">
                         <figure>
-                            <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM THỂ THAO KIM CÚC SPORTS"></div>
+                            <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Name"></div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
                                 <div class="code">@item.ProductCode</div>

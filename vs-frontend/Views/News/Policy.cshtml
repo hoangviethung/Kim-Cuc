@@ -1,4 +1,4 @@
-﻿@model MainProject.SBussiness.LandingPage.Models.Policy.PolicyViewModel
+﻿@model MainProject.SBussiness.LandingPage.Models.News.PolicyViewModel
 @using MainProject.Core.Enums
 
 <section class="block-policy">
@@ -17,7 +17,7 @@
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
                         <div class="block">
                             <ul class="list-item-category list-tab">
-                                @foreach (var item in Model.Menu)
+                                @foreach (var item in Model.Content)
                                 {
                                     <li class="item-category"><a class="item active" toggle-for="@item.SeName">@item.Title</a></li>
                                 }

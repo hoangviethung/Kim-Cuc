@@ -9,7 +9,7 @@
 <header>
     <!-- LOGO-->
     <div class="block-logo">
-        <div class="triangle"></div><a href="/home/index">
+        <div class="triangle"></div><a href="/">
             <div class="logo"><img class="lazyload blur-up" data-src="/Content/resources/assets/logo.svg" alt="logo"></div>
         </a>
         <div class="toggle-menu mobile"></div>
@@ -30,9 +30,9 @@
                 </div>
                 <!-- FORM TÌM KIẾM-->
                 <div class="search">
-                    <form action="#">
+                    <form action="/search">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="...">
+                            <input class="form-control" name="text" type="text" placeholder="...">
                         </div>
                         <div class="submit">
                             <button><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/search-header.svg" alt="search"></button>
@@ -90,11 +90,7 @@
         <div class="container">
             <div class="main-nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="/about/about">giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/productsite/productsite">sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/news/news">tin tức - sự kiện</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/policy/policy">chính sách</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact/contact">liên hệ</a></li>
+                    @Html.Raw(Model.Menu)
                     <li class="nav-item">
                         <div class="language">
                             <div class="item active"><a href="#"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/vn.svg" alt=""></a></div>
@@ -113,7 +109,6 @@
                 @foreach (var item in Model.Banners)
                 {
                     <div class="swiper-slide">
-
                         <a class="swiper-inner" href="#" style="background-image: url(@item.ResourcePath">
                             <figure class="ov-h"><img class="ofcv" src="@item.ResourcePath" alt="@item.Alt"></figure>
                         </a>

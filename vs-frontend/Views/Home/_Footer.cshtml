@@ -30,13 +30,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="title-footer">Sản Phẩm</div>
-                <ul class="list-link-product">
-                    @*LIST LINK FOOTER THEO DANH MỤC*@
-                    @foreach (var item in Model.ListLinkCategoryFooter)
-                    {
-                        <li class="item-link-product"><a href="@item.GetPrefixUrl()">@item.Title</a></li>
-                    }
-                </ul>
+                @Html.Raw(Model.Menu)
             </div>
             <div class="col-lg-4 col-md-12 ta-r">
                 <div class="fb-page" data-href="https://www.facebook.com/kimcucsports/" data-tabs="" data-width="" data-height="120" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false">

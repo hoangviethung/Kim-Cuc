@@ -9,10 +9,10 @@ namespace MainProject.Core.Enums
         Title,
         Error_Title,
         Error_Content,
-        Read_More,
+        
         Category,
         Filter,
-        Price,
+        
         Brand,
         Enter_Brand,
         All,
@@ -23,5 +23,13 @@ namespace MainProject.Core.Enums
         Amount,
         View_Cart,
         Category_Policy,
+
+        // Common
+        Price,
+        Read_More,
+
+        // Home
+        Home_Distributer,
+
     }
 }

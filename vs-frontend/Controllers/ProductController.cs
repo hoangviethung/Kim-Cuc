@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MainProject.Controllers
 {
-    public class ProductSiteController : Controller
+    public class ProductController : Controller
     {
         // GET: ProductSite
         public ActionResult ProductSite()

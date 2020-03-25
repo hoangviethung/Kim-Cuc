@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MainProject.SBussiness.LandingPage.Models.Policy
+namespace MainProject.SBussiness.LandingPage.Models.News
 {
     public class PolicyViewModel
     {
