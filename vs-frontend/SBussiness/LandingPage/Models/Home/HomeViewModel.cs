@@ -1,16 +1,41 @@
 ﻿using MainProject.Core;
 using MainProject.Core.Commerce;
-using MainProject.SBussiness.LandingPage.Models.News;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using MainProject.Core.Enums;
-
 
 namespace MainProject.SBussiness.LandingPage.Models.Home
 {
     //MODEL CỦA TRANG CHỦ
     public class HomeViewModel
     {
+        //DANH SÁCH TITLE TRANG CHỦ
+        public List<Category> TitleHome = new List<Category>
+        {
+            new Category
+            {
+                Title = "NHÀ PHÂN PHỐI CHÍNH HÃNG CÁC THƯƠNG HIỆU"
+            },
+            new Category
+            {
+                Title = "SẢN PHẨM BÁN CHẠY"
+            },
+            new Category
+            {
+                Title = "SẢN PHẨM TẬP THỂ THAO"
+            },
+            new Category
+            {
+                Title = "KHÁCH HÀNG CỦA CHÚNG TÔI"
+            },
+            new Category
+            {
+                Title = "TIN TIÊU ĐIỂM"
+            },
+            new Category
+            {
+                Title = "TIN TỨC - SỰ KIỆN"
+            }
+        };
         //DANH SÁCH ẢNH NHÀ TÀI TRỢ
         public List<Banner> Distributor { get; set; } = new List<Banner>
         {
@@ -320,10 +345,5 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Title = "Chính sách bảo mật"
             }
         };
-        public class SubscribeModel
-        {
-            [Required]
-            public string Email { get; set; }
-        }
     }
 }

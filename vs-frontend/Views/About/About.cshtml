@@ -4,7 +4,7 @@
 @*SECTION 1 ABOUT*@
 <section class="about-1">
     <div class="container">
-        <div class="block-title"><h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2></div>
+        <div class="block-title"><h2>@Model.TitleAbout[0].Title</h2></div>
         <div class="row">
             <div class="col-md-6">
                 <div class="description ov-h" data-setHeight="767.98">
@@ -22,7 +22,7 @@
 @*SECTION 2*@
 <section class="about-2">
     <div class="container">
-        <div class="block-title"><h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2></div>
+        <div class="block-title"><h2>@Model.TitleAbout[1].Title</h2></div>
         <div class="block-item">
             <div class="row list-item">
                 @foreach (var item in Model.Block_2)
@@ -45,7 +45,7 @@
 <section class="about-3">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
+            <h2>@Model.TitleAbout[2].Title</h2>
         </div>
         <div class="row">
             <div class="col-md-6">

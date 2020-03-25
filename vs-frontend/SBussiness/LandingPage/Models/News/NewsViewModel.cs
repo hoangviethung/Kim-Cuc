@@ -8,6 +8,14 @@ namespace MainProject.SBussiness.LandingPage.Models.News
 {
     public class NewsViewModel
     {
+        //DANH DÁCH TITLE TRANG TIN TỨC
+        public List<Category> ListTitle = new List<Category>
+        {
+             new Category
+            {
+                Title = "TIN TỨC - SỰ KIỆN"
+            },
+        };
         //DANH SÁCH TIN TỨC NỔI BẬT ASIDE MENU
         public List<Article> ListHotNews { get; set; } = new List<Article>
         {

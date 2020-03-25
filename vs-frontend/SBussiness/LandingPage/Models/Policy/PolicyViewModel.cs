@@ -8,6 +8,14 @@ namespace MainProject.SBussiness.LandingPage.Models.Policy
 {
     public class PolicyViewModel
     {
+        //DANH DÁCH TITLE TRANG CHÍNH SÁCH
+        public List<Category> ListTitle = new List<Category>
+        {
+             new Category
+            {
+                Title = "CHÍNH SÁCH"
+            },
+        };
         //MENU
         public List<Article> Menu = new List<Article>
         {

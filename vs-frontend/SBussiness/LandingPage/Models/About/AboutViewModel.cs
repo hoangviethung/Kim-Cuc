@@ -8,6 +8,22 @@ namespace MainProject.SBussiness.LandingPage.Models.About
 {
     public class AboutViewModel
     {
+        //DANH SÁCH TITLE TRANG CHỦ
+        public List<Category> TitleAbout = new List<Category>
+        {
+            new Category
+            {
+                Title = "GIỚI THIỆU VỀ KIM CÚC SPORT"
+            },
+            new Category
+            {
+                Title = "MỤC TIÊU PHÁT TRIỂN KIM CÚC SPORT"
+            },
+            new Category
+            {
+                Title = "PHƯƠNG CHÂM HOẠT ĐỘNG"
+            }
+        };
         public List<Article> Block_1 { set; get; } = new List<Article>
         {
             new Article

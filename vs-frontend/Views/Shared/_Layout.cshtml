@@ -37,7 +37,7 @@
         @RenderBody()
     </main>
     <div id="overlay"></div>
-    <div id="back-to-top"><img src="~/Content/resources/assets/icons/back-to-top.svg" alt="NÚT TRỞ VỀ ĐẦU TRANG KIM CÚC SPORTS"></div>
+    <div id="back-to-top"><img src="/Content/resources/assets/icons/back-to-top.svg" alt="NÚT TRỞ VỀ ĐẦU TRANG KIM CÚC SPORTS"></div>
     @*FOOTER*@
     @Html.Action("ShowFooter", "Home")
 
@@ -50,5 +50,18 @@
     @*JS*@
     <script type="text/javascript" src="/Content/resources/js/core.min.js"></script>
     <script type="text/javascript" src="/Content/resources/js/main.min.js"></script>
+    @*CALL GOOGLE MAP*@
+    <script type="text/javascript" src="/Content/resources/js/map.min.js"></script>
+    <script>
+        var locationsInput = [
+            {
+                lat: 15.2160001,
+                lng: 108.803968,
+                title: 'KIM CÚC SPORT',
+                address: '133 - 143 Hùng Vương, t.p Quảng Ngãi',
+                phone: '0906.523.876'
+            }
+        ]
+    </script>
 </body>
 </html>
