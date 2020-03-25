@@ -1,0 +1,100 @@
+﻿@model MainProject.SBussiness.LandingPage.Models.ProductSite.ProductSiteViewModel
+@using MainProject.Core.Enums
+
+<section class="block-list-product">
+    <div class="container">
+        @*THANH PHÂN TRANG NẾU KẾT QUẢ LAYOUT TRẢ TRUE THÌ XUẤT HIỆN*@
+        @Html.Partial("_Pagination")
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="aside-filter">
+                    <div class="nav-filter mobile">
+                        <div class="item" toggle-view="filter">@Html.GetResource(TempResourceKeyCollection.Filter)</div>
+                        <div class="item" toggle-view="category">thương hiệu</div>
+                    </div>
+                    @*BỘ LỌC*@
+                    <div class="block-filter" toggle-id="filter">
+                        <div class="title-filter" icon="filter">@Html.GetResource(TempResourceKeyCollection.Filter)</div>
+                        <div class="block">
+                            <!-- GIÁ-->
+                            <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Price)</div>
+                            <div class="price">
+                                <div id="value-text" data-min-html data-max-html></div>
+                                <input type="text" id="amount" readonly hidden>
+                                <div id="slider-range" data-min="100000" data-max="120000000" data-current-min="100000" data-current-max="120000000"></div>
+                                <div class="about-price"><span>1.000.000</span><span>120.000.000</span></div>
+                            </div>
+                            <!-- THƯƠNG HIỆU-->
+                            <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
+                            <div class="brand">
+                                <div class="search">
+                                    <form action="#" method="POST">
+                                        <input type="text" placeholder="@Html.GetResource(TempResourceKeyCollection.Enter_Brand)">
+                                        <div class="submit">
+                                            <button><img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search"></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="check-box">
+                                    <div class="form-group">
+                                        <input id="all" hidden name="brand" type="radio" checked>
+                                        <label for="all">@Html.GetResource(TempResourceKeyCollection.All)</label>
+                                    </div>
+                                    @*DANH SÁCH CÁC THƯƠNG HIỆU*@
+                                    @foreach (var item in Model.ListBrand)
+                                    {
+                                        <div class="form-group">
+                                            <input id="addidas" hidden name="brand" type="radio" value="@item.Name">
+                                            <label for="addidas">@item.Name</label>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-filter mt-20px" toggle-id="category">
+                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category)</div>
+                        <div class="block">
+                            <ul class="list-item-category">
+                                @foreach (var item in Model.ListCategory)
+                                {
+                                    <li class="item-category"><a href="@item.GetPrefixUrl()">@item.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-9">
+                <div class="list-product">
+                    <div class="list-item">
+                        @foreach (var item in Model.ListProduct)
+                        {
+                            <div class="item">
+                                <div class="item-product">
+                                    <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
+                                    <a href="/ProductDetail/ProductDetail">
+                                        <figure>
+                                            <div class="img ov-h">
+                                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
+                                            </div>
+                                            <figcaption>
+                                                <div class="name">@item.Name</div>
+                                                <div class="code">@item.ProductCode</div>
+                                                <div class="price">@item.Price ₫</div>
+                                                <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*THANH PHÂN TRANG NẾU KẾT QUẢ LAYOUT TRẢ TRUE THÌ XUẤT HIỆN*@
+        @Html.Partial("_Pagination")
+    </div>
+</section>
+<div class="list-product-page" id="js-page-verify" hidden></div>

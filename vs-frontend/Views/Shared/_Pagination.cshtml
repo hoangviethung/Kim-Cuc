@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+    bool isShow = ViewBag.ShowPagination ?? true;
+}
+
+@if (isShow)
+{
+    <ul class="pagination">
+        <li class="pagination-prev"><a href="#"><span></span><</a></li>
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li class="pagination-dot"><a href="#">...</a></li>
+        <li><a href="#">100</a></li>
+        <li class="pagination-next"><a href="#">><span></span></a></li>
+    </ul>
+}

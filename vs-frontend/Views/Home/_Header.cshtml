@@ -43,7 +43,7 @@
                 <div class="block-cart">
                     <div class="block-text-icon">
                         <img class="icon lazyload blur-up" data-src="/Content/resources/assets/icons/cart-header.svg" alt="cart">
-                        <h5>giỏ hàng</h5>
+                        <h5>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart)</h5>
                         <div class="cart-number" id="header-cart-number">0</div>
                     </div>
                     <div class="cart-panel">
@@ -67,43 +67,19 @@
                                 <g transform="translate(5.962 7.258)">
                                     <path class="b2" d="M2.246,0,0,2.487,3.9,6.477" transform="translate(0 3.896) rotate(-90)"></path>
                                 </g>
-                            </svg><span>Thêm vào giỏ hàng thành công</span>
+                            </svg><span>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Add_Cart_Contact_Success)</span>
                         </div>
                         <div class="cart-list">
                             <div class="cart-item">
                                 <div class="info">
                                     <h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
-                                    <p class="brand">Thương hiệu: <b>Tannoy</b></p>
-                                    <p class="quantity">Số lượng: <b>1</b></p>
-                                    <p class="price"><b>99.490.000 đ</b></p>
-                                </div>
-                            </div>
-                            <div class="cart-item">
-                                <div class="info">
-                                    <h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
-                                    <p class="brand">Thương hiệu: <b>Tannoy</b></p>
-                                    <p class="quantity">Số lượng: <b id="header-quantity-product">1</b></p>
-                                    <p class="price"><b id="header-actual_amount_total">99.490.000 đ</b></p>
-                                </div>
-                            </div>
-                            <div class="cart-item">
-                                <div class="info">
-                                    <h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
-                                    <p class="brand">Thương hiệu: <b>Tannoy</b></p>
-                                    <p class="quantity">Số lượng: <b>1</b></p>
-                                    <p class="price"><b>99.490.000 đ</b></p>
-                                </div>
-                            </div>
-                            <div class="cart-item">
-                                <div class="info">
-                                    <h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
-                                    <p class="brand">Thương hiệu: <b>Tannoy</b></p>
-                                    <p class="quantity">Số lượng: <b>1</b></p>
+                                    <p class="brand">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Brand): <b>Tannoy</b></p>
+                                    <p class="quantity">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Amount): <b>1</b></p>
                                     <p class="price"><b>99.490.000 đ</b></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="cart-button"><a class="btn btn-view-more" href="gio-hang.html">Xem giỏ hàng và thanh toán</a></div>
+                        <div class="cart-button"><a class="btn btn-view-more" href="gio-hang.html">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.View_Cart)</a></div>
                     </div>
                 </div>
             </div>
@@ -115,10 +91,10 @@
             <div class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="/about/about">giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="danh-sach-tin-tuc.html">tin tức - sự kiện</a></li>
-                    <li class="nav-item"><a class="nav-link" href="chinh-sach.html">chính sách</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lien-he.html">liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/productsite/productsite">sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/news/news">tin tức - sự kiện</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/policy/policy">chính sách</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact/contact">liên hệ</a></li>
                     <li class="nav-item">
                         <div class="language">
                             <div class="item active"><a href="#"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/vn.svg" alt=""></a></div>

@@ -1,0 +1,51 @@
+﻿@model MainProject.SBussiness.LandingPage.Models.Policy.PolicyViewModel
+@using MainProject.Core.Enums
+
+<section class="block-policy">
+    <div class="container tab-container">
+        <div class="block-title">
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="aside-filter">
+                    <div class="nav-filter mobile">
+                        <div class="item" toggle-view="#"></div>
+                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
+                    </div>
+                    <div class="block-filter category" toggle-id="category">
+                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
+                        <div class="block">
+                            <ul class="list-item-category list-tab">
+                                @foreach (var item in Model.Menu)
+                                {
+                                    <li class="item-category"><a class="item active" toggle-for="@item.SeName">@item.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-9">
+                <div class="tab-content">
+                    <div class="content-policy">
+                        @foreach (var item in Model.Content)
+                        {
+                            <div class="content" tab-id="@item.SeName">
+                                <div class="title-policy">
+                                    <h3>@item.Title</h3>
+                                </div>
+                                <div class="description">
+                                    @*class demo ckeditor*@
+                                    <div class="demo-ckeditor content-policy-detail"></div>
+                                    @Html.Raw(item.Description)
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="policy-page" id="js-page-verify" hidden></div>

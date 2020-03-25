@@ -1,0 +1,108 @@
+﻿@model MainProject.SBussiness.LandingPage.Models.News.NewsViewModel
+@using MainProject.Core.Enums
+@*DANH SÁCH TIN TỨC*@
+<section class="block-list-news">
+    <div class="container">
+        <div class="block-title">
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
+        </div>
+        <div class="row">
+            @*MENU CÁC TIN TỨC NỔI BẬT NẰM BÊN TAY TRÁI*@
+            <div class="col-lg-3">
+                <aside class="aside-filter">
+                    <div class="nav-filter mobile">
+                        <div class="item" toggle-view="#"></div>
+                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Hot_News)</div>
+                    </div>
+                    <div class="block-filter category" toggle-id="category">
+                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Hot_News)</div>
+                        <div class="block">
+                            <ul class="list-item-category">
+                                @foreach (var item in Model.ListHotNews)
+                                {
+                                    <li class="item-category"><a href="@item.GetUrl()">@item.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            @*TẤT CẢ CÁC ITEM NEWS SẼ NẰM BÊN TAY PHẢI*@
+            <div class="col-lg-9">
+                <div class="list-news row">
+                    <!-- TIN TỨC NỔI BẬT - TRANG DANH SÁCH TIN TỨC-->
+                    <div class="col-lg-7 col-md-12">
+                        @if (Model.ListNews.Count > 0)
+                        {
+                            <div class="hot-news">
+                                <a href="@Model.ListNews[0].GetUrl()">
+                                    <figure class="hover-style-1">
+                                        <div class="img ov-h">
+                                            <img class="ofcv lazyload blur-up" data-src="@Model.ListNews[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS">
+                                        </div>
+                                        <figcaption>
+                                            <h3 class="lcl lcl-2">@Model.ListNews[0].Title</h3>
+                                            <p class="lcl lcl-2">@Model.ListNews[0].Description</p>
+                                            <div class="list-more-info-news jc-fe">
+                                                <div class="item" type="time">@Model.ListNews[0].CreateDate.ToString("dd/MM/yyyy")</div>
+                                                <div class="item" type="view">@Model.ListNews[0].ViewCount</div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>}
+                    </div>
+                    <!-- TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC-->
+                    <div class="col-lg-5 col-md-12">
+                        <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC-->
+                        <div class="list-item-news row">
+                            @foreach (var item in Model.ListNews.Skip(1))
+                            {
+                                <div class="item-news col-lg-12 col-md-6 col-sm-12">
+                                    <a href="@item.GetUrl()">
+                                        <figure class="hover-style-1">
+                                            <div class="img ov-h">
+                                                <img class="ofcv lazyload blur-up" data-src="@item.ImageDefault" alt="TIN TỨC SỰ KIỆN KIM CÚC SPORTS">
+                                            </div>
+                                            <figcaption>
+                                                <h3 class="lcl lcl-2">@item.Title</h3>
+                                                <p class="lcl lcl-2">@item.Description</p>
+                                                <div class="list-more-info-news jc-fe">
+                                                    <div class="item" type="time">@Model.ListNews[0].CreateDate.ToString("dd/MM/yyyy")</div>
+                                                    <div class="item" type="view">@item.ViewCount</div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                @*DANH SÁCH TIN TỨC LIÊN QUAN*@
+                <div class="list-news-other row">
+                    @foreach (var item in Model.ListNewsOthers)
+                    {
+                        <div class="item-news-other col-md-6">
+                            <a href="@item.GetUrl()">
+                                <figure class="row no-gutters hover-style-1">
+                                    <div class="img ov-h col-lg-5 col-md-12"><img class="lazyload blur-up ofcv" data-src="@item.ImageDefault" alt="TIN TỨC LIÊN QUAN KIM CÚC SPORTS"></div>
+                                    <figcaption class="col-lg col-md-12">
+                                        <h3 class="lcl lcl-2">@item.Title</h3>
+                                        <p class="lcl lcl-2">@item.Description</p>
+                                        <div class="list-more-info-news">
+                                            <div class="item" type="time">@item.CreateDate.ToString("dd/MM/yyyy")</div>
+                                            <div class="item" type="view">@item.ViewCount</div>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    }
+                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(TempResourceKeyCollection.Read_More)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="list-news-page" id="js-page-verify" hidden></div>

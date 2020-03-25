@@ -1,1 +1,64 @@
 ﻿@model MainProject.SBussiness.LandingPage.Models.About.AboutViewModel
+@using MainProject.Core.Enums
+
+@*SECTION 1 ABOUT*@
+<section class="about-1">
+    <div class="container">
+        <div class="block-title"><h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="description ov-h" data-setHeight="767.98">
+                    <div class="demo-ckeditor content-about-1">
+                        @Html.Raw(Model.Block_1[0].Description)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Block_1[0].ImageDefault" alt="ẢNH GIỚI THIỆU VỀ KIM CÚC SPORTS"></div>
+            </div>
+        </div>
+    </div>
+</section>
+@*SECTION 2*@
+<section class="about-2">
+    <div class="container">
+        <div class="block-title"><h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2></div>
+        <div class="block-item">
+            <div class="row list-item">
+                @foreach (var item in Model.Block_2)
+                {
+                    <div class="item col-md-4">
+                        <figure class="hover-style-2">
+                            <div class="img ov-h"><img class="ofcv" src="@item.ImageDefault" alt="HÌNH ẢNH MỤC TÊU CỦA KIM CÚC SPORTS"></div>
+                            <figcaption>
+                                <h3 class="lcl lcl-1">@item.Title</h3>
+                                <p class="lcl lcl-2">@item.Description</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@*SECTION 3*@
+<section class="about-3">
+    <div class="container">
+        <div class="block-title">
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="description ov-h" data-setHeight="767.98">
+                    <div class="demo-ckeditor content-about-1">
+                        @Html.Raw(Model.Block_3[0].Description)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Block_3[0].ImageDefault" alt="ẢNH PHƯƠNG CHÂM HOẠT ĐỘNG KIM CÚC SPORTS"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="about-page" id="js-page-verify" hidden></div>

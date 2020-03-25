@@ -1,11 +1,12 @@
 ﻿@model MainProject.SBussiness.LandingPage.Models.Home.HomeViewModel
+@using MainProject.Core.Enums
 <!-- BLOCK 1 TRANG CHỦ-->
 <div class="index-1">
     <!-- DANH SÁCH NHÀ PHÂN PHỐI-->
     <!-- NHÀ PHÂN PHỐI-->
     <section class="distributor">
         <div class="container">
-            <h2>NHÀ PHÂN PHỐI CHÍNH HÃNG CÁC THƯƠNG HIỆU</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
             <div class="slider-distributor">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -27,7 +28,7 @@
 <div class="index-2">
     <div class="container">
         <div class="block-title">
-            <h2>SẢN PHẨM BÁN CHẠY</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
         </div>
         <!-- DANH SÁCH SẢN PHẨM BÁN CHẠY-->
         <div class="row list-item">
@@ -35,10 +36,10 @@
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                    <a href="san-pham-chi-tiet.html">
+                    <a href="/ProductDetail/ProductDetail">
                         <figure>
                             <div class="img ov-h">
-                                <img class="lazyload blur-up" data-src="@item.Images" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
+                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
                             </div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
@@ -56,23 +57,22 @@
 <div class="index-3">
     <div class="container">
         <div class="block-title">
-            <h2>sản phẩm tập thể thao</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
         </div>
         <!-- DANH SÁCH SẢN PHẨM THỂ THAO-->
         <div class="row list-item">
-
             @foreach (var item in Model.SportsProduct)
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                    <a href="san-pham-chi-tiet.html">
+                    <a href="/ProductDetail/ProductDetail">
                         <figure>
-                            <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.Images" alt="SẢN PHẨM THỂ THAO KIM CÚC SPORTS"></div>
+                            <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM THỂ THAO KIM CÚC SPORTS"></div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
                                 <div class="code">@item.ProductCode</div>
                                 <div class="price">@item.Price ₫</div>
-                                <div class="btn btn-gift">QUÀ TẶNG</div>
+                                <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
                             </figcaption>
                         </figure>
                     </a>
@@ -91,7 +91,7 @@
 <div class="index-5">
     <div class="container">
         <div class="block-title">
-            <h2>KHÁCH HÀNG CỦA CHÚNG TÔI</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
         </div>
         <!-- SLIDER KHÁCH HÀNG CỦA KIM CÚC SPORTS-->
         <div class="slider-customer">
@@ -125,7 +125,7 @@
             <!-- TIN TỨC NỔI BẬT - TRANG CHỦ-->
             <div class="col-lg-7">
                 <div class="block-title">
-                    <h2>TIN TIÊU ĐIỂM</h2>
+                    <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
                 </div>
                 @if (Model.HomeNews.Count > 0)
                 {
@@ -137,7 +137,7 @@
                                     <h3 class="lcl lcl-2">@Model.HomeNews[0].Title</h3>
                                     <time>@Model.HomeNews[0].CreateDate.ToString("dd/MM/yyyy")</time>
                                     <p class="lcl lcl-4">@Model.HomeNews[0].Description</p>
-                                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">xem thêm</a>
+                                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(TempResourceKeyCollection.Read_More)</a>
                                 </figcaption>
                             </a>
                         </figure>
@@ -148,7 +148,7 @@
             <div class="col-lg-5">
                 <div class="block-home-news">
                     <div class="block-title">
-                        <h2>TIN TỨC - SỰ KIỆN</h2>
+                        <h2>@Html.GetResource(TempResourceKeyCollection.Title)</h2>
                     </div>
                     <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG CHỦ-->
                     <div class="list-home-news clearfix">

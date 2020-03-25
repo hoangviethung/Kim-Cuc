@@ -3,6 +3,7 @@ using MainProject.Core.Commerce;
 using MainProject.SBussiness.LandingPage.Models.News;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using MainProject.Core.Enums;
 
 
 namespace MainProject.SBussiness.LandingPage.Models.Home
@@ -48,7 +49,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/1.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/1.png",
             },
              new Product
             {
@@ -56,7 +57,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/2.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/2.png",
             },
             new Product
             {
@@ -64,7 +65,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/3.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/3.png",
             },
             new Product
             {
@@ -72,7 +73,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/4.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/4.png",
             },
              new Product
             {
@@ -80,7 +81,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/5.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/5.png",
             },
             new Product
             {
@@ -88,7 +89,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/6.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/6.png",
             },
             new Product
             {
@@ -96,7 +97,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/7.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/7.png",
             },
              new Product
             {
@@ -104,7 +105,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/8.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/8.png",
             },
               new Product
             {
@@ -112,7 +113,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/9.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/9.png",
             },
               new Product
              {
@@ -120,7 +121,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/hot-sale/10.png",
+                ImageDefault ="/Content/resources/assets/images/products/hot-sale/10.png",
                 },
         };
         //DANH SÁCH SẢN PHẨM THỂ THAO
@@ -132,7 +133,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/sports/1.png",
+                ImageDefault ="/Content/resources/assets/images/products/sports/1.png",
             },
              new Product
             {
@@ -140,7 +141,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/sports/2.png",
+                ImageDefault ="/Content/resources/assets/images/products/sports/2.png",
             },
             new Product
             {
@@ -148,7 +149,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/sports/3.png",
+                ImageDefault ="/Content/resources/assets/images/products/sports/3.png",
             },
             new Product
             {
@@ -156,7 +157,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/sports/4.png",
+                ImageDefault ="/Content/resources/assets/images/products/sports/4.png",
             },
              new Product
             {
@@ -164,7 +165,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
-                Images ="./Content/resources/assets/images/products/sports/5.png",
+                ImageDefault ="/Content/resources/assets/images/products/sports/5.png",
             },
         };
         //DANH SÁCH KHÁCH HÀNG
@@ -173,31 +174,31 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             new Banner
             {
                 Name = "Trần Văn A",
-                ResourcePath = "Content/resources/assets/images/customer/1.png",
+                ResourcePath = "/Content/resources/assets/images/customer/1.png",
                 Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
             },
             new Banner
             {
                 Name = "Trần Văn B",
-                ResourcePath = "Content/resources/assets/images/customer/2.png",
+                ResourcePath = "/Content/resources/assets/images/customer/2.png",
                 Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
             },
             new Banner
             {
                 Name = "Trần Văn C",
-                ResourcePath = "Content/resources/assets/images/customer/3.png",
+                ResourcePath = "/Content/resources/assets/images/customer/3.png",
                 Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
             },
             new Banner
             {
                 Name = "Trần Văn D",
-                ResourcePath = "Content/resources/assets/images/customer/4.png",
+                ResourcePath = "/Content/resources/assets/images/customer/4.png",
                 Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
             },
             new Banner
             {
                 Name = "Trần Văn E",
-                ResourcePath = "Content/resources/assets/images/customer/5.png",
+                ResourcePath = "/Content/resources/assets/images/customer/5.png",
                 Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
             },
         };
