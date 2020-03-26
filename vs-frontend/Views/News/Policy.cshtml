@@ -1,10 +1,10 @@
 ﻿@model MainProject.SBussiness.LandingPage.Models.News.PolicyViewModel
-@using MainProject.Core.Enums
+
 
 <section class="block-policy">
     <div class="container tab-container">
         <div class="block-title">
-            <h2>@Model.Categorys.Title</h2>
+            <h2>@Model.Article.Category.Title</h2>
         </div>
         <div class="row">
             <div class="col-lg-3">
@@ -17,9 +17,9 @@
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
                         <div class="block">
                             <ul class="list-item-category">
-                                @foreach (var item in Model.Menus)
+                                @foreach (var item in Model.Articles)
                                 {
-                                    <li class="item-category"><a href="#" class="item">@item.Title</a></li>
+                                    <li class="item-category"><a href="@item.GetUrl()" class="item">@item.Title</a></li>
                                 }
                             </ul>
                         </div>
@@ -30,12 +30,13 @@
                 <div class="content-policy">
                     <div class="content">
                         <div class="title-policy">
-                            <h3>@Model.Articles.Title</h3>
+                            <h3>@Model.Article.Title</h3>
                         </div>
                         <div class="description">
                             @*class demo ckeditor*@
-                            <div class="demo-ckeditor content-policy-detail"></div>
-                            @Html.Raw(Model.Articles.Description)
+                            <div class="demo-ckeditor content-policy-detail">
+                                @Html.Raw(Model.Article.Body)
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,16 +1,15 @@
-﻿@model MainProject.SBussiness.LandingPage.Models.Product.ProductViewModel
-@using MainProject.Core.Enums
+﻿@model MainProject.SCommerce.LandingPage.Models.Product.ProductViewModel
 
 <section class="block-list-product">
     <div class="container">
         @*THANH PHÂN TRANG NẾU KẾT QUẢ LAYOUT TRẢ TRUE THÌ XUẤT HIỆN*@
-        @Html.Partial("_Pagination")
+        @Html.Partial("_Pagination", Model.PagingModel)
         <div class="row">
             <div class="col-lg-3">
                 <aside class="aside-filter">
                     <div class="nav-filter mobile">
                         <div class="item" toggle-view="filter">@Html.GetResource(TempResourceKeyCollection.Filter)</div>
-                        <div class="item" toggle-view="category">thương hiệu</div>
+                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
                     </div>
                     @*BỘ LỌC*@
                     <div class="block-filter" toggle-id="filter">
@@ -41,7 +40,7 @@
                                         <label for="all">@Html.GetResource(TempResourceKeyCollection.All)</label>
                                     </div>
                                     @*DANH SÁCH CÁC THƯƠNG HIỆU*@
-                                    @foreach (var item in Model.ListBrand)
+                                    @foreach (var item in Model.Brands)
                                     {
                                         <div class="form-group">
                                             <input id="addidas" hidden name="brand" type="radio" value="@item.Name">
@@ -56,7 +55,7 @@
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category)</div>
                         <div class="block">
                             <ul class="list-item-category">
-                                @foreach (var item in Model.ListCategory)
+                                @foreach (var item in Model.Categories)
                                 {
                                     <li class="item-category"><a href="@item.GetPrefixUrl()">@item.Title</a></li>
                                 }
@@ -68,12 +67,12 @@
             <div class="col-lg-9">
                 <div class="list-product">
                     <div class="list-item">
-                        @foreach (var item in Model.Product)
+                        @foreach (var item in Model.Products)
                         {
                             <div class="item">
                                 <div class="item-product">
                                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                                    <a href="/Product/ProductDetail">
+                                    <a href="@item.GetUrl()">
                                         <figure>
                                             <div class="img ov-h">
                                                 <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
@@ -94,7 +93,7 @@
             </div>
         </div>
         @*THANH PHÂN TRANG NẾU KẾT QUẢ LAYOUT TRẢ TRUE THÌ XUẤT HIỆN*@
-        @Html.Partial("_Pagination")
+        @Html.Partial("_Pagination", Model.PagingModel)
     </div>
 </section>
 <div class="list-product-page" id="js-page-verify" hidden></div>

@@ -37,6 +37,10 @@ namespace MainProject.Core.Enums
         // News
         News_Hot,
         News,
+        Post_Hours,
+        Post_Days,
+        Post_Months,
+        Post_Years,
 
         // Policy
         Category_Policy,

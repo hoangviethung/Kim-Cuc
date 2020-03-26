@@ -1,4 +1,5 @@
 ﻿using MainProject.SBussiness.LandingPage.Models.Home;
+using MainProject.SCommerce.LandingPage.Models.Cart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace MainProject.Controllers
         // If you don't put the name in View() or PartialView() it'll return View named of Action.
         public ActionResult Index()
         {
+            ViewBag.ShowBreadCrumb = false;
             return View(new HomeViewModel());
         }
 
@@ -25,6 +27,11 @@ namespace MainProject.Controllers
         public ActionResult ShowFooter()
         {
             return PartialView("_Footer", new FooterViewModel());
+        }
+
+        public ActionResult Cart()
+        {
+            return PartialView("_Cart", new CartViewModel());
         }
     }
 }

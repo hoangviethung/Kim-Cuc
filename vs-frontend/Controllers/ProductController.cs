@@ -1,8 +1,5 @@
-﻿using MainProject.SBussiness.LandingPage.Models.Product;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MainProject.SCommerce.LandingPage.Models.Product;
+using MainProject.SCommerce.LandingPage.Models.Cart;
 using System.Web.Mvc;
 
 namespace MainProject.Controllers
@@ -14,7 +11,7 @@ namespace MainProject.Controllers
             return View(new ProductViewModel());
         }
 
-        public ActionResult ProductDetail()
+        public ActionResult Detail()
         {
             return View(new ProductDetailViewModel());
         }

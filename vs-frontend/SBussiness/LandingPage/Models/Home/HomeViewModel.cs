@@ -2,7 +2,6 @@
 using MainProject.Core.Commerce;
 using MainProject.Framework.Helpers;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace MainProject.SBussiness.LandingPage.Models.Home
 {
@@ -11,32 +10,32 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     {
         public Category Categorys { get; set; }
         //DANH SÁCH ẢNH NHÀ TÀI TRỢ
-        public List<Banner> Brands { get; set; } = new List<Banner>
+        public List<Brand> Brands { get; set; } = new List<Brand>
         {
-             new Banner
+             new Brand
             {
-                ResourcePath = "/Content/resources/assets/images/distributor/1.png",
-                Alt = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
+                ImageDefault = "/Content/resources/assets/images/distributor/1.png",
+                Name = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
             },
-            new Banner
+            new Brand
             {
-                ResourcePath = "/Content/resources/assets/images/distributor/2.png",
-                Alt = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
+                ImageDefault = "/Content/resources/assets/images/distributor/2.png",
+                Name = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
             },
-            new Banner
+            new Brand
             {
-                ResourcePath = "/Content/resources/assets/images/distributor/3.png",
-                Alt = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
+                ImageDefault = "/Content/resources/assets/images/distributor/3.png",
+                Name = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
             },
-            new Banner
+            new Brand
             {
-                ResourcePath = "/Content/resources/assets/images/distributor/4.png",
-                Alt = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
+                ImageDefault = "/Content/resources/assets/images/distributor/4.png",
+                Name = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
             },
-            new Banner
+            new Brand
             {
-                ResourcePath = "/Content/resources/assets/images/distributor/5.png",
-                Alt = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
+                ImageDefault = "/Content/resources/assets/images/distributor/5.png",
+                Name = "NHÀ PHÂN PHỐI KIM CÚC SPORTS",
             }
         };
         //DANH SÁCH SẢN PHẨM HOT
@@ -124,7 +123,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 },
         };
         //DANH SÁCH SẢN PHẨM THỂ THAO
-        public List<Core.Commerce.Product> SportsProducts { get; set; } = new List<Core.Commerce.Product>
+        public List<Core.Commerce.Product> SportProducts { get; set; } = new List<Core.Commerce.Product>
         {
              new Core.Commerce.Product
             {
@@ -202,7 +201,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             },
         };
         //DANH SÁCH TIN TỨC TRANG CHỦ
-        public List<Article> HomeNews { get; set; } = new List<Article>
+        public List<Article> HotNews { get; set; } = new List<Article>
         {
             new Article {
                     Id = 001,
