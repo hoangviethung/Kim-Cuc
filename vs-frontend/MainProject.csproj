@@ -145,9 +145,10 @@
     <Compile Include="SBussiness\LandingPage\Models\News\NewsDetailViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\NewsViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\PolicyViewModel.cs" />
-    <Compile Include="SBussiness\LandingPage\Models\Product\CartViewModel.cs" />
-    <Compile Include="SBussiness\LandingPage\Models\Product\ProductDetailViewModel.cs" />
-    <Compile Include="SBussiness\LandingPage\Models\Product\ProductViewModel.cs" />
+    <Compile Include="SCommerce\LandingPage\Product\ProductDetailViewModel.cs" />
+    <Compile Include="SCommerce\LandingPage\Product\ProductViewModel.cs" />
+    <Compile Include="SCommerce\LandingPage\Models\Cart\CartItemModel.cs" />
+    <Compile Include="SCommerce\LandingPage\Models\Cart\CartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MainProject.Core.dll" />
@@ -343,9 +344,10 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_Pagination.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Product\ProductDetail.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Views\Product\Cart.cshtml" />
+    <Content Include="Views\Home\_Cart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
