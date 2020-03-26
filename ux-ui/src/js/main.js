@@ -2,6 +2,7 @@ import Cookie from "./lib/Cookie";
 import Loading from "./lib/Loading";
 import Tab from "./lib/Tab";
 import CartController from "./lib/CartController";
+import CommonController from "./lib/CommonController";
 
 // HÀM SET CHIỀU CAO CỦA BORDER !!!
 const transitionTime = 300;
@@ -528,6 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// TAB
 	const tabProductDetail = new Tab('.product-detail-2');
 	CartController();
+	CommonController();
 	checkPageToAddClassMainSlider();
 });
 
