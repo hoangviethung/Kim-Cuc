@@ -48,6 +48,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/1.png",
+                ExternalUrl ="Product/Detail",
             },
              new Core.Commerce.Product
             {
@@ -56,6 +57,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/2.png",
+                ExternalUrl ="Product/Detail",
             },
             new Core.Commerce.Product
             {
@@ -64,6 +66,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/3.png",
+                ExternalUrl ="Product/Detail",
             },
             new Core.Commerce.Product
             {
@@ -72,6 +75,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/4.png",
+                ExternalUrl ="Product/Detail",
             },
              new Core.Commerce.Product
             {
@@ -80,6 +84,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/5.png",
+                ExternalUrl ="Product/Detail",
             },
             new Core.Commerce.Product
             {
@@ -88,6 +93,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/6.png",
+                ExternalUrl ="Product/Detail",
             },
             new Core.Commerce.Product
             {
@@ -96,6 +102,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/7.png",
+                ExternalUrl ="Product/Detail",
             },
              new Core.Commerce.Product
             {
@@ -104,6 +111,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/8.png",
+                ExternalUrl ="Product/Detail",
             },
               new Core.Commerce.Product
             {
@@ -112,6 +120,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/9.png",
+                ExternalUrl ="Product/Detail",
             },
               new Core.Commerce.Product
              {
@@ -120,6 +129,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/10.png",
+                ExternalUrl ="Product/Detail",
                 },
         };
         //DANH SÁCH SẢN PHẨM THỂ THAO
@@ -132,6 +142,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/1.png",
+                 ExternalUrl ="Product/Detail",
             },
              new Core.Commerce.Product
             {
@@ -140,6 +151,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/2.png",
+                 ExternalUrl ="Product/Detail",
             },
             new Core.Commerce.Product
             {
@@ -148,6 +160,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/3.png",
+                 ExternalUrl ="Product/Detail",
             },
             new Core.Commerce.Product
             {
@@ -156,6 +169,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/4.png",
+                 ExternalUrl ="Product/Detail",
             },
              new Core.Commerce.Product
             {
@@ -164,6 +178,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Name = "Ghế massage Okasa",
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/5.png",
+                 ExternalUrl ="Product/Detail",
             },
         };
         //DANH SÁCH KHÁCH HÀNG
