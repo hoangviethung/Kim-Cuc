@@ -15,26 +15,43 @@ namespace MainProject.Framework.Helpers
 
         public static string GetResource(this HtmlHelper helper, ResourceKeyCollection resourceKey) => resourceKey.ToString();
 
-        //public static string GetDay(this HtmlHelper helper, DateTime dateTime)
-        //{
-        //    var day = DateTime.Now.Subtract(dateTime);
-        //    var daysOfYear = DateTime.IsLeapYear(DateTime.Now.Year) ? 366 : 365;
+        public static string GetDay(this HtmlHelper helper, DateTime dateTime)
+        {
+            var day = DateTime.Now.Subtract(dateTime);
+            var daysOfYear = DateTime.IsLeapYear(DateTime.Now.Year) ? 366 : 365;
 
-        //    if (day.TotalHours <= 24) // Same date
-        //    {
-        //        return string.Format("{0} {1}", day.TotalHours, GetResource(helper, TempResourceKeyCollection.Post_Hours)); // Show hours
-        //    }
-        //    else if (day.TotalDays <= DateTime.DaysInMonth(dateTime.Year, dateTime.Month)) // Same month
-        //    {
-        //        return string.Format("{0} {1}", (int)day.TotalDays, GetResource(helper, TempResourceKeyCollection.Post_Days)); // show days or 1 month
-        //    }
-        //    else if (day.TotalDays < daysOfYear) // Same year
-        //    {
-        //        return string.Format("{0} {1}", day.Days / (daysOfYear / 12), GetResource(helper, TempResourceKeyCollection.Post_Months)); // show months
-        //    }
+            if (day.TotalHours <= 24) // Same date
+            {
+                return string.Format("{0} {1}", day.TotalHours < 1 ? 1 : (int)day.TotalHours, GetResource(helper, TempResourceKeyCollection.Post_Hours)); // Show hours
+            }
+            else if (day.TotalDays <= DateTime.DaysInMonth(dateTime.Year, dateTime.Month)) // Same month
+            {
+                return string.Format("{0} {1}", (int)day.TotalDays, GetResource(helper, TempResourceKeyCollection.Post_Days)); // show days or 1 month
+            }
+            else if (day.TotalDays < daysOfYear) // Same year
+            {
+                return string.Format("{0} {1}", day.Days / (daysOfYear / 12), GetResource(helper, TempResourceKeyCollection.Post_Months)); // show months
+            }
 
-        //    return string.Format("{0} {1}", DateTime.Now.Year - dateTime.Year, GetResource(helper, TempResourceKeyCollection.Post_Years));
-        //}
+            return string.Format("{0} {1}", DateTime.Now.Year - dateTime.Year, GetResource(helper, TempResourceKeyCollection.Post_Years));
+        }
+
+        public static string FormatCurrency(this HtmlHelper helper, decimal value)
+        {
+            return FormatPrice(value);
+        }
+
+        public static string FormatPrice(decimal value)
+        {
+            var format = "{0:0,0}";
+            if (format == "{0:0,0}")
+            {
+                CultureInfo elGR = CultureInfo.CreateSpecificCulture("el-GR");
+                return string.Format(elGR, format, value);
+            }
+
+            return string.Format(format, value);
+        }
 
         #region Paging
         public static HtmlString RenderPaging(this HtmlHelper helper, PagingModel model, PagingStyleModel styleModel)
@@ -55,7 +72,7 @@ namespace MainProject.Framework.Helpers
                     // Check current page must larger than 1 and display button previous
                     if (model.CurrentPage > 1)
                     {
-                        strBuilder.Append("<li " + styleModel.ItemStyle + "><a " + BuildActionCode(model.ActionCode, model.CurrentPage - 1) + "></a></li>");
+                        strBuilder.Append("<li class=\"pagination-prev\"><a " + BuildActionCode(model.ActionCode, model.CurrentPage - 1) + "><</a></li>");
                     }
                     // Get all page lower than current page
                     for (var i = 1; i < model.CurrentPage; i++)
@@ -74,7 +91,7 @@ namespace MainProject.Framework.Helpers
                         {
                             if (!hasDot)
                             {
-                                strBuilder.Append("<span>...</span>");
+                                strBuilder.Append("<li class=\"pagination-dot\"><a href=\"#\">...</a></li>");
                                 hasDot = true;
                             }
                         }
@@ -100,7 +117,7 @@ namespace MainProject.Framework.Helpers
                         {
                             if (!hasDot)
                             {
-                                strBuilder.Append("<span>...</span>");
+                                strBuilder.Append("<li class=\"pagination-dot\"><a href=\"#\">...</a></li>");
                                 hasDot = true;
                             }
                         }
@@ -108,7 +125,7 @@ namespace MainProject.Framework.Helpers
                     // Check current page must be lower than largest page to display next button
                     if (model.CurrentPage < model.TotalPages)
                     {
-                        strBuilder.Append("<li " + styleModel.ItemStyle + "><a " + BuildActionCode(model.ActionCode, model.CurrentPage + 1) + "></a></li>");
+                        strBuilder.Append("<li class=\"pagination-next\"><a " + BuildActionCode(model.ActionCode, model.CurrentPage + 1) + ">></a></li>");
                     }
                 }
                 strBuilder.Append("</ul>");
@@ -123,29 +140,31 @@ namespace MainProject.Framework.Helpers
         }
         #endregion
 
-        public static string GenerateBreadCrumb(this HtmlHelper helper, string seoStandardUrl)
+        public static HtmlString GenerateBreadCrumb(this HtmlHelper helper, string seoStandardUrl)
         {
             // Bind breadcrumb
             string result = "";
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+
             while (!string.IsNullOrEmpty(seoStandardUrl))
             {
-                string title = seoStandardUrl.Substring(seoStandardUrl.LastIndexOf("/"), seoStandardUrl.Length);
+                string title = seoStandardUrl.Substring(seoStandardUrl.LastIndexOf("/") + 1);
                 // Bind current url to breadcrumb
                 if (string.IsNullOrEmpty(result))
                 {
-                    result = string.Format("<li><a href='{0}'>&nbsp; {1}</a></li>", seoStandardUrl, myTI.ToTitleCase(title.ToLower()));
+                    result = string.Format("<li class='active'><a href='{0}'>{1}</a></li>",
+                                            seoStandardUrl, myTI.ToTitleCase(title.ToLower()));
                 }
                 else
                 {
-                    result = string.Format("<li><a href='{0}'>&nbsp; {1}</a></li>{2}", seoStandardUrl,
+                    result = string.Format("<li><a href='{0}'>{1}</a></li>{2}", seoStandardUrl,
                                            myTI.ToTitleCase(title.ToLower()), result);
                 }
                 // Bind parent url to breadcrumb
                 seoStandardUrl = seoStandardUrl.Substring(0, seoStandardUrl.LastIndexOf("/"));
             }
 
-            return string.Format("<ul><li><a href='/'>{0}</a></li>{1}</ul>", "Home", result);
+            return new HtmlString(string.Format("<ul class=\"breadcrumb\"><li><a href='/'>{0}</a></li>{1}</ul>", "Home", result));
         }
 
         public static string ReadFile(string path) => File.ReadAllText(HttpContext.Current.Server.MapPath(path));

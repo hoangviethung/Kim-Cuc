@@ -1,41 +1,42 @@
 ﻿using MainProject.Core;
 using MainProject.Core.Commerce;
+using MainProject.Framework.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MainProject.SBussiness.LandingPage.Models.Product
+namespace MainProject.SCommerce.LandingPage.Models.Product
 {
     public class ProductViewModel
     {
         //DANH SÁCH THƯƠNG HIỆU
-        public List<Core.Commerce.Product> ListBrand = new List<Core.Commerce.Product>
+        public List<Brand> Brands = new List<Brand>
        {
-           new Core.Commerce.Product
+           new Brand
            {
                Name = "Addidas",
 
            },
-           new Core.Commerce.Product
+           new Brand
            {
                Name = "Wilson&W"
            },
-           new Core.Commerce.Product
+           new Brand
            {
                Name = "Nike"
            },
-           new Core.Commerce.Product
+           new Brand
            {
                Name = "Cyber"
            },
-           new Core.Commerce.Product
+           new Brand
            {
                Name = "Yonex"
            },
        };
         //DANH SÁCH DANH MỤC SẢN PHẨM
-        public List<Category> ListCategory = new List<Category>
+        public List<Category> Categories = new List<Category>
         {
             new Category
             {
@@ -55,7 +56,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
             }
         };
         //DANH SÁCH SẢN PHẨM TRANG SẢN PHẨM
-        public List<Core.Commerce.Product> Product = new List<Core.Commerce.Product>
+        public List<Core.Commerce.Product> Products = new List<Core.Commerce.Product>
         {
             new Core.Commerce.Product
             {
@@ -63,6 +64,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
+                ExternalUrl = "/Product/Detail"
             },
              new Core.Commerce.Product
             {
@@ -70,6 +72,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/2.png",
+                ExternalUrl = "/Product/Detail"
             },
               new Core.Commerce.Product
             {
@@ -77,6 +80,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/3.png",
+                ExternalUrl = "/Product/Detail"
             },
                new Core.Commerce.Product
             {
@@ -84,6 +88,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
+                ExternalUrl = "/Product/Detail"
             },
                 new Core.Commerce.Product
             {
@@ -91,6 +96,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/4.png",
+                ExternalUrl = "/Product/Detail"
             },
                  new Core.Commerce.Product
             {
@@ -98,6 +104,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
+                ExternalUrl = "/Product/Detail"
             },
                   new Core.Commerce.Product
             {
@@ -105,6 +112,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/5.png",
+                ExternalUrl = "/Product/Detail"
             },
                    new Core.Commerce.Product
             {
@@ -112,6 +120,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/6.png",
+                ExternalUrl = "/Product/Detail"
             },
                     new Core.Commerce.Product
             {
@@ -119,6 +128,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/7.png",
+                ExternalUrl = "/Product/Detail"
             },
                      new Core.Commerce.Product
             {
@@ -126,6 +136,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/8.png",
+                ExternalUrl = "/Product/Detail"
             },
                       new Core.Commerce.Product
             {
@@ -133,6 +144,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/9.png",
+                ExternalUrl = "/Product/Detail"
             },
                 new Core.Commerce.Product
             {
@@ -140,7 +152,9 @@ namespace MainProject.SBussiness.LandingPage.Models.Product
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/10.png",
+                ExternalUrl = "/Product/Detail"
             },
         };
+        public PagingModel PagingModel { get; set; } = new PagingModel(200, 16, 1, "href=''");
     }
 }

@@ -1,10 +1,10 @@
 ﻿@model MainProject.SBussiness.LandingPage.Models.News.NewsViewModel
-@using MainProject.Core.Enums
+
 @*DANH SÁCH TIN TỨC*@
 <section class="block-list-news">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.Categorys.Title</h2>
+            <h2>@Model.Category.Title</h2>
         </div>
         <div class="row">
             @*MENU CÁC TIN TỨC NỔI BẬT NẰM BÊN TAY TRÁI*@
@@ -18,7 +18,7 @@
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
                         <div class="block">
                             <ul class="list-item-category">
-                                @foreach (var item in Model.NewsHot)
+                                @foreach (var item in Model.HotNews)
                                 {
                                     <li class="item-category"><a href="@item.GetUrl()">@item.Title</a></li>
                                 }
@@ -38,25 +38,26 @@
                                 <a href="@Model.News[0].GetUrl()">
                                     <figure class="hover-style-1">
                                         <div class="img ov-h">
-                                            <img class="ofcv lazyload blur-up" data-src="@Model.News[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS">
+                                            <img class="ofcv lazyload blur-up" data-src="@Model.News[0].ImageDefault" alt="@Model.News[0].Title">
                                         </div>
                                         <figcaption>
                                             <h3 class="lcl lcl-2">@Model.News[0].Title</h3>
                                             <p class="lcl lcl-2">@Model.News[0].Description</p>
                                             <div class="list-more-info-news jc-fe">
-                                                <div class="item" type="time">@Model.News[0].CreateDate.ToString("dd/MM/yyyy")</div>
+                                                <div class="item" type="time">@Html.GetDay(Model.News[0].Order)</div>
                                                 <div class="item" type="view">@Model.News[0].ViewCount</div>
                                             </div>
                                         </figcaption>
                                     </figure>
                                 </a>
-                            </div>}
+                            </div>
+                        }
                     </div>
                     <!-- TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC-->
                     <div class="col-lg-5 col-md-12">
                         <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC-->
                         <div class="list-item-news row">
-                            @foreach (var item in Model.News.Skip(1))
+                            @foreach (var item in Model.News.Skip(1).Take(2))
                             {
                                 <div class="item-news col-lg-12 col-md-6 col-sm-12">
                                     <a href="@item.GetUrl()">
@@ -68,7 +69,7 @@
                                                 <h3 class="lcl lcl-2">@item.Title</h3>
                                                 <p class="lcl lcl-2">@item.Description</p>
                                                 <div class="list-more-info-news jc-fe">
-                                                    <div class="item" type="time">@Model.News[0].CreateDate.ToString("dd/MM/yyyy")</div>
+                                                    <div class="item" type="time">@Html.GetDay(item.Order)</div>
                                                     <div class="item" type="view">@item.ViewCount</div>
                                                 </div>
                                             </figcaption>
@@ -81,7 +82,7 @@
                 </div>
                 @*DANH SÁCH TIN TỨC LIÊN QUAN*@
                 <div class="list-news-other row">
-                    @foreach (var item in Model.NewsOthers)
+                    @foreach (var item in Model.News.Skip(3))
                     {
                         <div class="item-news-other col-md-6">
                             <a href="@item.GetUrl()">
@@ -91,7 +92,7 @@
                                         <h3 class="lcl lcl-2">@item.Title</h3>
                                         <p class="lcl lcl-2">@item.Description</p>
                                         <div class="list-more-info-news">
-                                            <div class="item" type="time">@item.CreateDate.ToString("dd/MM/yyyy")</div>
+                                            <div class="item" type="time">@Html.GetDay(item.Order)</div>
                                             <div class="item" type="view">@item.ViewCount</div>
                                         </div>
                                     </figcaption>

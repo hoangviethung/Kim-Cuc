@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row ai-fe">
             <div class="col-lg-5 col-md-6">
-                <div class="title-footer">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Contact)</div>
+                <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Contact)</div>
                 <ul class="list-info">
                     @*DANH SÁCH THÔNG TIN CỦA CÔNG TY*@
                     @foreach (var item in Model.Branch)
@@ -30,7 +30,7 @@
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="title-footer">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Product)</div>
+                <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Product)</div>
                 <ul class="list-link-product">
                     @Html.Raw(Model.Menus)
                 </ul>

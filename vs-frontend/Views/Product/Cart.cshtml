@@ -1,5 +1,4 @@
-﻿@model MainProject.SBussiness.LandingPage.Models.Product.CartViewModel
-@using MainProject.Core.Enums
+﻿@model MainProject.SCommerce.LandingPage.Models.Cart.CartViewModel
 
 <section class="cart-list-page">
     <div class="container">
@@ -7,7 +6,7 @@
             <div class="col-xl-8">
                 <div class="cart-table-title">
                     <div class="info-title">
-                        <p id="quantity-product">@Html.GetResource(TempResourceKeyCollection.Cart) (6 sản phẩm)</p>
+                        <p id="quantity-product">@Html.GetResource(TempResourceKeyCollection.Cart) (@Html.GetResource(TempResourceKeyCollection.Keep_Shopping) sản phẩm)</p>
                     </div>
                     <div class="quantity-title">
                         <p>@Html.GetResource(TempResourceKeyCollection.Cart_Amount)</p>

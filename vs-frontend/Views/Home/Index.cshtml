@@ -1,5 +1,5 @@
 ﻿@model MainProject.SBussiness.LandingPage.Models.Home.HomeViewModel
-@using MainProject.Core.Enums
+
 <!-- BLOCK 1 TRANG CHỦ-->
 <div class="index-1">
     <!-- DANH SÁCH NHÀ PHÂN PHỐI-->
@@ -12,7 +12,7 @@
                         @foreach (var item in Model.Brands)
                         {
                             <div class="swiper-slide">
-                                <div class="img ov-h"><a href="#"><img class="ofcv" src="@item.ResourcePath" alt="@item.Alt"></a></div>
+                                <div class="img ov-h"><a href="#"><img class="ofcv" src="@item.ImageDefault" alt="@item.Name"></a></div>
                             </div>
                         }
                     </div>
@@ -60,7 +60,7 @@
         </div>
         <!-- DANH SÁCH SẢN PHẨM THỂ THAO-->
         <div class="row list-item">
-            @foreach (var item in Model.SportsProducts)
+            @foreach (var item in Model.SportProducts)
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
@@ -126,16 +126,16 @@
                 <div class="block-title">
                     <h2>@Html.GetResource(TempResourceKeyCollection.News_Hot)</h2>
                 </div>
-                @if (Model.HomeNews.Count > 0)
+                @if (Model.HotNews.Count > 0)
                 {
                     <div class="hot-news">
                         <figure class="hover-style-1">
-                            <a href="@Model.HomeNews[0].GetUrl()">
-                                <div class="img ov-h"><img class="ofcv lazyload blur-up" data-src="@Model.HomeNews[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS"></div>
+                            <a href="@Model.HotNews[0].GetUrl()">
+                                <div class="img ov-h"><img class="ofcv lazyload blur-up" data-src="@Model.HotNews[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS"></div>
                                 <figcaption>
-                                    <h3 class="lcl lcl-2">@Model.HomeNews[0].Title</h3>
-                                    <time>@Model.HomeNews[0].CreateDate.ToString("dd/MM/yyyy")</time>
-                                    <p class="lcl lcl-4">@Model.HomeNews[0].Description</p>
+                                    <h3 class="lcl lcl-2">@Model.HotNews[0].Title</h3>
+                                    <time>@Model.HotNews[0].CreateDate.ToString("dd/MM/yyyy")</time>
+                                    <p class="lcl lcl-4">@Model.HotNews[0].Description</p>
                                     <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(TempResourceKeyCollection.Read_More)</a>
                                 </figcaption>
                             </a>
@@ -151,7 +151,7 @@
                     </div>
                     <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG CHỦ-->
                     <div class="list-home-news clearfix">
-                        @foreach (var item in Model.HomeNews.Skip(1))
+                        @foreach (var item in Model.HotNews.Skip(1))
                         {
                             <div class="item-home-news">
                                 <a href="@item.GetUrl()">

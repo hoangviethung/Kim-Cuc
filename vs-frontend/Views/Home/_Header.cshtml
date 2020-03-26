@@ -14,7 +14,7 @@
         </a>
         <div class="toggle-menu mobile"></div>
         <div class="sologan">
-            <p>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Sologan)</p>
+            <p>@Html.GetResource(TempResourceKeyCollection.Sologan)</p>
         </div>
     </div>
     <!-- TOP HEADER-->
@@ -39,49 +39,7 @@
                         </div>
                     </form>
                 </div>
-                <!-- GIỎ HÀNG-->
-                <div class="block-cart">
-                    <div class="block-text-icon">
-                        <img class="icon lazyload blur-up" data-src="/Content/resources/assets/icons/cart-header.svg" alt="cart">
-                        <h5>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart)</h5>
-                        <div class="cart-number" id="header-cart-number">0</div>
-                    </div>
-                    <div class="cart-panel">
-                        <div class="cart-title">
-                            <svg xmlns="http:/www.w3.org/2000/svg" width="18.4" height="18.4" viewBox="0 0 18.4 18.4">
-                                <defs>
-                                    <style>
-                                        .a1 {
-                                            fill: #1c1c1c;
-                                        }
-
-                                        .b2 {
-                                            fill: none;
-                                            stroke: #ffffff;
-                                            stroke-linecap: round;
-                                            stroke-linejoin: round;
-                                        }
-                                    </style>
-                                </defs>
-                                <circle class="a1" cx="9.2" cy="9.2" r="9.2"></circle>
-                                <g transform="translate(5.962 7.258)">
-                                    <path class="b2" d="M2.246,0,0,2.487,3.9,6.477" transform="translate(0 3.896) rotate(-90)"></path>
-                                </g>
-                            </svg><span>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart_Add_Success)</span>
-                        </div>
-                        <div class="cart-list">
-                            <div class="cart-item">
-                                <div class="info">
-                                    <h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
-                                    <p class="brand">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Brand): <b>Tannoy</b></p>
-                                    <p class="quantity">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart_Amount): <b>1</b></p>
-                                    <p class="price"><b>99.490.000 đ</b></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-button"><a class="btn btn-view-more" href="/product/cart">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart_View)</a></div>
-                    </div>
-                </div>
+                @Html.Action("Cart", "Home")
             </div>
         </div>
     </div>
