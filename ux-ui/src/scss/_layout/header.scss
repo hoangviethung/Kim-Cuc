@@ -434,8 +434,13 @@ header {
 		height: unset;
 
 		.block-logo {
+			width    : 130px;
 			top      : 50%;
 			transform: translateY(-50%);
+
+			.triangle {
+				display: none;
+			}
 
 			.logo {
 				top      : 50%;
