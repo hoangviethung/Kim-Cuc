@@ -127,8 +127,6 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Core\Enums\TempResourceKeyCollection.cs" />
-    <Compile Include="Core\Introduction.cs" />
-    <Compile Include="Core\IntroImage.cs" />
     <Compile Include="Framework\Helpers\JsonHelper.cs" />
     <Compile Include="Framework\Helpers\ResourceHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -151,6 +149,7 @@
     <Compile Include="SCommerce\LandingPage\Models\Cart\CartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MainProject.Core.Commerce.dll" />
     <Content Include="App_Data\MainProject.Core.dll" />
     <Content Include="Content\resources\assets\icons\address-footer.svg" />
     <Content Include="Content\resources\assets\icons\address-site-contact.svg" />
