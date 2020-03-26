@@ -9,6 +9,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Contact
 {
     public class ContactViewModel
     {
+        public Category Categorys { get; set; }
         //DANH DÁCH TITLE TRANG LIÊN HỆ
         public List<Category> ListTitle = new List<Category>
         {

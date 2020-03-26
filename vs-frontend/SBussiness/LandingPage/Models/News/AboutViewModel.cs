@@ -9,24 +9,9 @@ namespace MainProject.SBussiness.LandingPage.Models.News
 {
     public class AboutViewModel
     {
-        public Category Category { get; set; }
-        //DANH SÁCH TITLE TRANG CHỦ
-        public List<Category> TitleAbout = new List<Category>
-        {
-            new Category
-            {
-                Title = "GIỚI THIỆU VỀ KIM CÚC SPORT"
-            },
-            new Category
-            {
-                Title = "MỤC TIÊU PHÁT TRIỂN KIM CÚC SPORT"
-            },
-            new Category
-            {
-                Title = "PHƯƠNG CHÂM HOẠT ĐỘNG"
-            }
-        };
+        public Category Categorys { get; set; }
 
+        //BLOCK_1
         public Introduction Block_1 { get; set; } = new Introduction
         {
             Title = "GIỚI THIỆU VỀ KIM CÚC SPORT",
@@ -34,8 +19,10 @@ namespace MainProject.SBussiness.LandingPage.Models.News
             Image = "/Content/resources/assets/images/about/section-about-1.png"
         };
 
+        //BLOCK_2
         public Introduction Block_2 { set; get; } = new Introduction
         {
+            Title = "MỤC TIÊU PHÁT TRIỂN KIM CÚC SPORT",
             Image = JsonHelper.Serialize(new List<IntroImage>
             {
                 new IntroImage
@@ -58,13 +45,13 @@ namespace MainProject.SBussiness.LandingPage.Models.News
                 },
             })
         };
-        public List<Article> Block_3 { set; get; } = new List<Article>
+
+        //BLOCK_3
+        public Introduction Block_3 { get; set; } = new Introduction
         {
-            new Article
-            {
-               Description = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-               ImageDefault = "/Content/resources/assets/images/about/section-about-3.png"
-            },
+            Title = "PHƯƠNG CHÂM HOẠT ĐỘNG",
+            Content = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p> Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<p>",
+            Image = "/Content/resources/assets/images/about/section-about-3.png"
         };
     };
 }

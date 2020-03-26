@@ -8,35 +8,12 @@ namespace MainProject.SBussiness.LandingPage.Models.News
 {
     public class PolicyViewModel
     {
-        //DANH DÁCH TITLE TRANG CHÍNH SÁCH
-        public List<Category> ListTitle = new List<Category>
+        public Category Categorys { get; set; } = new Category
         {
-             new Category
-            {
-                Title = "CHÍNH SÁCH"
-            },
-        };
-        //MENU
-        public List<Article> Menu = new List<Article>
-        {
-            new Article
-            {
-                Title = "Điều kiện bảo hành",
-                SeName = "policy-01",
-            },
-            new Article
-            {
-                Title = "Chính sách bảo mật",
-                SeName = "policy-02",
-            },
-             new Article
-            {
-                Title = "Chính sách bảo hành",
-                SeName = "policy-03",
-            }
+            Title = "CHÍNH SÁCH"
         };
         //CONTENT
-        public List<Article> Content = new List<Article>
+        public List<Article> Articles = new List<Article>
         {
             new Article
             {

@@ -4,7 +4,7 @@
 <section class="block-list-news">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.ListTitle[0].Title</h2>
+            <h2>@Model.Categorys.Title</h2>
         </div>
         <div class="row">
             @*MENU CÁC TIN TỨC NỔI BẬT NẰM BÊN TAY TRÁI*@
@@ -12,13 +12,13 @@
                 <aside class="aside-filter">
                     <div class="nav-filter mobile">
                         <div class="item" toggle-view="#"></div>
-                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Hot_News)</div>
+                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
                     </div>
                     <div class="block-filter category" toggle-id="category">
-                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Hot_News)</div>
+                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
                         <div class="block">
                             <ul class="list-item-category">
-                                @foreach (var item in Model.ListHotNews)
+                                @foreach (var item in Model.NewsHot)
                                 {
                                     <li class="item-category"><a href="@item.GetUrl()">@item.Title</a></li>
                                 }
@@ -32,20 +32,20 @@
                 <div class="list-news row">
                     <!-- TIN TỨC NỔI BẬT - TRANG DANH SÁCH TIN TỨC-->
                     <div class="col-lg-7 col-md-12">
-                        @if (Model.ListNews.Count > 0)
+                        @if (Model.News.Count > 0)
                         {
                             <div class="hot-news">
-                                <a href="@Model.ListNews[0].GetUrl()">
+                                <a href="@Model.News[0].GetUrl()">
                                     <figure class="hover-style-1">
                                         <div class="img ov-h">
-                                            <img class="ofcv lazyload blur-up" data-src="@Model.ListNews[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS">
+                                            <img class="ofcv lazyload blur-up" data-src="@Model.News[0].ImageDefault" alt="TIN TỨC NỔI BẬT KIM CÚC SPORTS">
                                         </div>
                                         <figcaption>
-                                            <h3 class="lcl lcl-2">@Model.ListNews[0].Title</h3>
-                                            <p class="lcl lcl-2">@Model.ListNews[0].Description</p>
+                                            <h3 class="lcl lcl-2">@Model.News[0].Title</h3>
+                                            <p class="lcl lcl-2">@Model.News[0].Description</p>
                                             <div class="list-more-info-news jc-fe">
-                                                <div class="item" type="time">@Model.ListNews[0].CreateDate.ToString("dd/MM/yyyy")</div>
-                                                <div class="item" type="view">@Model.ListNews[0].ViewCount</div>
+                                                <div class="item" type="time">@Model.News[0].CreateDate.ToString("dd/MM/yyyy")</div>
+                                                <div class="item" type="view">@Model.News[0].ViewCount</div>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -56,19 +56,19 @@
                     <div class="col-lg-5 col-md-12">
                         <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC-->
                         <div class="list-item-news row">
-                            @foreach (var item in Model.ListNews.Skip(1))
+                            @foreach (var item in Model.News.Skip(1))
                             {
                                 <div class="item-news col-lg-12 col-md-6 col-sm-12">
                                     <a href="@item.GetUrl()">
                                         <figure class="hover-style-1">
                                             <div class="img ov-h">
-                                                <img class="ofcv lazyload blur-up" data-src="@item.ImageDefault" alt="TIN TỨC SỰ KIỆN KIM CÚC SPORTS">
+                                                <img class="ofcv lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Title">
                                             </div>
                                             <figcaption>
                                                 <h3 class="lcl lcl-2">@item.Title</h3>
                                                 <p class="lcl lcl-2">@item.Description</p>
                                                 <div class="list-more-info-news jc-fe">
-                                                    <div class="item" type="time">@Model.ListNews[0].CreateDate.ToString("dd/MM/yyyy")</div>
+                                                    <div class="item" type="time">@Model.News[0].CreateDate.ToString("dd/MM/yyyy")</div>
                                                     <div class="item" type="view">@item.ViewCount</div>
                                                 </div>
                                             </figcaption>
@@ -81,12 +81,12 @@
                 </div>
                 @*DANH SÁCH TIN TỨC LIÊN QUAN*@
                 <div class="list-news-other row">
-                    @foreach (var item in Model.ListNewsOthers)
+                    @foreach (var item in Model.NewsOthers)
                     {
                         <div class="item-news-other col-md-6">
                             <a href="@item.GetUrl()">
                                 <figure class="row no-gutters hover-style-1">
-                                    <div class="img ov-h col-lg-5 col-md-12"><img class="lazyload blur-up ofcv" data-src="@item.ImageDefault" alt="TIN TỨC LIÊN QUAN KIM CÚC SPORTS"></div>
+                                    <div class="img ov-h col-lg-5 col-md-12"><img class="lazyload blur-up ofcv" data-src="@item.ImageDefault" alt="@item.Title"></div>
                                     <figcaption class="col-lg col-md-12">
                                         <h3 class="lcl lcl-2">@item.Title</h3>
                                         <p class="lcl lcl-2">@item.Description</p>

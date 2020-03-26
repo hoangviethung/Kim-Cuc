@@ -14,6 +14,11 @@ namespace MainProject.Controllers
             return View(new NewsViewModel());
         }
 
+        public ActionResult NewsDetail()
+        {
+            return View(new NewsDetailViewModel());
+        }
+
         public ActionResult About()
         {
             return View(new AboutViewModel());

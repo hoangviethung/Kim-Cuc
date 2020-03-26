@@ -8,16 +8,12 @@ namespace MainProject.SBussiness.LandingPage.Models.News
 {
     public class NewsViewModel
     {
-        //DANH DÁCH TITLE TRANG TIN TỨC
-        public List<Category> ListTitle = new List<Category>
+        public Category Categorys { get; set; } = new Category
         {
-             new Category
-            {
-                Title = "TIN TỨC - SỰ KIỆN"
-            },
+            Title = "TIN TỨC - SỰ KIỆN"
         };
         //DANH SÁCH TIN TỨC NỔI BẬT ASIDE MENU
-        public List<Article> ListHotNews { get; set; } = new List<Article>
+        public List<Article> NewsHot { get; set; } = new List<Article>
         {
             new Article
             {
@@ -53,7 +49,7 @@ namespace MainProject.SBussiness.LandingPage.Models.News
             }
         };
         //DANH SÁCH TIN TỨC
-        public List<Article> ListNews { get; set; } = new List<Article>
+        public List<Article> News { get; set; } = new List<Article>
         {
             new Article {
                     Id = 001,
@@ -81,7 +77,7 @@ namespace MainProject.SBussiness.LandingPage.Models.News
             }
         };
         //DANH SÁCH TIN TỨC LIÊN QUAN
-        public List<Article> ListNewsOthers { get; set; } = new List<Article>
+        public List<Article> NewsOthers { get; set; } = new List<Article>
         {
             new Article {
                     Id = 001,

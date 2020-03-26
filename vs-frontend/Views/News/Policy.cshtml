@@ -4,7 +4,7 @@
 <section class="block-policy">
     <div class="container tab-container">
         <div class="block-title">
-            <h2>@Model.ListTitle[0].Title</h2>
+            <h2>@Model.Categorys.Title</h2>
         </div>
         <div class="row">
             <div class="col-lg-3">
@@ -17,7 +17,7 @@
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
                         <div class="block">
                             <ul class="list-item-category list-tab">
-                                @foreach (var item in Model.Content)
+                                @foreach (var item in Model.Articles)
                                 {
                                     <li class="item-category"><a class="item active" toggle-for="@item.SeName">@item.Title</a></li>
                                 }
@@ -29,7 +29,7 @@
             <div class="col-lg-9">
                 <div class="tab-content">
                     <div class="content-policy">
-                        @foreach (var item in Model.Content)
+                        @foreach (var item in Model.Articles)
                         {
                             <div class="content" tab-id="@item.SeName">
                                 <div class="title-policy">

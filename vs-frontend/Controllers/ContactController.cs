@@ -10,7 +10,7 @@ namespace MainProject.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
-        public ActionResult Contact()
+        public ActionResult Index()
         {
             return View(new ContactViewModel());
         }

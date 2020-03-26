@@ -1,0 +1,31 @@
+﻿@using MainProject.Core.Enums
+@model MainProject.SBussiness.LandingPage.Models.SubscribeViewModel.ContactManagement
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="name">@Html.GetResource(TempResourceKeyCollection.Full_Name) (*)</label>
+        @Html.TextBoxFor(d => d.Name, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Full_Name), @class = "form-control", id = "name" })
+        @Html.ValidationMessageFor(d => d.Name)
+    </div>
+    <div class="form-group">
+        <label for="email">@Html.GetResource(TempResourceKeyCollection.Email) (*)</label>
+        @Html.TextBoxFor(d => d.Email, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Email), @class = "form-control", id = "email" })
+        @Html.ValidationMessageFor(d => d.Email)
+    </div>
+    <div class="form-group">
+        <label for="phone">@Html.GetResource(TempResourceKeyCollection.Phone_Number) (*)</label>
+        @Html.TextBoxFor(d => d.PhoneNumber, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Phone_Number), @class = "form-control", id = "phone" })
+        @Html.ValidationMessageFor(d => d.PhoneNumber)
+    </div>
+    <div class="form-group">
+        <label for="content">@Html.GetResource(TempResourceKeyCollection.Contact_Content) (*)</label>
+        @Html.TextAreaFor(d => d.ContactContent, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Contact_Content), @class = "form-control", id = "content" })
+        @Html.ValidationMessageFor(d => d.PhoneNumber)
+    </div>
+    <div class="form-group">
+        <label for="#"></label>
+        <button class="btn btn-submit" data-url="ajax">@Html.GetResource(TempResourceKeyCollection.Contact_Submit)</button>
+    </div>
+}

@@ -1,5 +1,6 @@
 ﻿using MainProject.Core;
 using MainProject.Core.Commerce;
+using MainProject.Framework.Helpers;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,34 +9,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     //MODEL CỦA TRANG CHỦ
     public class HomeViewModel
     {
-        //DANH SÁCH TITLE TRANG CHỦ
-        public List<Category> TitleHome = new List<Category>
-        {
-            new Category
-            {
-                Title = "NHÀ PHÂN PHỐI CHÍNH HÃNG CÁC THƯƠNG HIỆU"
-            },
-            new Category
-            {
-                Title = "SẢN PHẨM BÁN CHẠY"
-            },
-            new Category
-            {
-                Title = "SẢN PHẨM TẬP THỂ THAO"
-            },
-            new Category
-            {
-                Title = "KHÁCH HÀNG CỦA CHÚNG TÔI"
-            },
-            new Category
-            {
-                Title = "TIN TIÊU ĐIỂM"
-            },
-            new Category
-            {
-                Title = "TIN TỨC - SỰ KIỆN"
-            }
-        };
+        public Category Categorys { get; set; }
         //DANH SÁCH ẢNH NHÀ TÀI TRỢ
         public List<Banner> Brands { get; set; } = new List<Banner>
         {
@@ -66,9 +40,9 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             }
         };
         //DANH SÁCH SẢN PHẨM HOT
-        public List<Product> HotProducts { get; set; } = new List<Product>
+        public List<Core.Commerce.Product> HotProducts { get; set; } = new List<Core.Commerce.Product>
         {
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -76,7 +50,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/1.png",
             },
-             new Product
+             new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -84,7 +58,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/2.png",
             },
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -92,7 +66,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/3.png",
             },
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -100,7 +74,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/4.png",
             },
-             new Product
+             new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -108,7 +82,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/5.png",
             },
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -116,7 +90,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/6.png",
             },
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -124,7 +98,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/7.png",
             },
-             new Product
+             new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -132,7 +106,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/8.png",
             },
-              new Product
+              new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -140,7 +114,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/hot-sale/9.png",
             },
-              new Product
+              new Core.Commerce.Product
              {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -150,9 +124,9 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 },
         };
         //DANH SÁCH SẢN PHẨM THỂ THAO
-        public List<Product> SportsProduct { get; set; } = new List<Product>
+        public List<Core.Commerce.Product> SportsProducts { get; set; } = new List<Core.Commerce.Product>
         {
-             new Product
+             new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -160,7 +134,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/1.png",
             },
-             new Product
+             new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -168,7 +142,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/2.png",
             },
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -176,7 +150,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/3.png",
             },
-            new Product
+            new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -184,7 +158,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Price = 58600000,
                 ImageDefault ="/Content/resources/assets/images/products/sports/4.png",
             },
-             new Product
+             new Core.Commerce.Product
             {
                //MÃ SẢN PHẨM
                 ProductCode = "OS-868",
@@ -194,7 +168,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             },
         };
         //DANH SÁCH KHÁCH HÀNG
-        public List<Banner> Customer { get; set; } = new List<Banner>
+        public List<Banner> Customers { get; set; } = new List<Banner>
         {
             new Banner
             {
@@ -264,7 +238,8 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     //MODEL CỦA HEADER
     public class HeaderViewModel
     {
-        public string Menu { get; set; }
+        // List Menu
+        public string Menus { get; set; } = ResourceHelper.ReadFile("/bin/HeaderMenu.txt");
         //DANH SÁCH ẢNH BANNER
         public List<Banner> Banners { get; set; } = new List<Banner>
         {
@@ -299,7 +274,10 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     //MODEL CỦA FOOTER
     public class FooterViewModel
     {
-        public string Menu { get; set; } = "<ul class='list-link-product'></ul>";
+        //DANH SÁCH MENU CATEGORY
+        public string Menus { get; set; } = ResourceHelper.ReadFile("/bin/FooterMenu.txt");
+        //DANH SÁCH MENU COPYRIGHT
+        public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/bin/CopyrightMenu.txt");
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
         public List<Branch> Branch { get; set; } = new List<Branch>
         {
@@ -309,42 +287,6 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 Email = "kimcucsport@gmail.com",
                 Address = "133 - 143 Hùng Vương, t.p Quảng Ngãi",
                 Description = "https://www.facebook.com/kimcucsports/",
-            }
-        };
-        //DANH SÁCH LINK THEO DANH MỤC CỦA FOOTER
-        public List<Category> ListLinkCategoryFooter { get; set; } = new List<Category>
-        {
-            new Category
-            {
-                Title = "Phụ kiện thể thao",
-            },
-             new Category
-            {
-                Title = "Xe đạp tập",
-            },
-              new Category
-            {
-                Title = "Máy chạy bộ điện",
-            },
-               new Category
-            {
-                Title = "Ghế massage",
-            }
-        };
-        //DANH SÁCH LINK Ở THANH COPYRIGHT
-        public List<Category> ListLinkCopyRight = new List<Category>
-        {
-            new Category
-            {
-                Title = "Điều kiện"
-            },
-              new Category
-            {
-                Title = "Điều khoản"
-            },
-                new Category
-            {
-                Title = "Chính sách bảo mật"
             }
         };
     }

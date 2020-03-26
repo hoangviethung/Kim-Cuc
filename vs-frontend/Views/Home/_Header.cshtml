@@ -14,7 +14,7 @@
         </a>
         <div class="toggle-menu mobile"></div>
         <div class="sologan">
-            <p>Sức khỏe của bạn là thành tựu của chúng tôi !</p>
+            <p>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Sologan)</p>
         </div>
     </div>
     <!-- TOP HEADER-->
@@ -67,19 +67,19 @@
                                 <g transform="translate(5.962 7.258)">
                                     <path class="b2" d="M2.246,0,0,2.487,3.9,6.477" transform="translate(0 3.896) rotate(-90)"></path>
                                 </g>
-                            </svg><span>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Add_Cart_Contact_Success)</span>
+                            </svg><span>@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart_Add_Success)</span>
                         </div>
                         <div class="cart-list">
                             <div class="cart-item">
                                 <div class="info">
                                     <h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
                                     <p class="brand">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Brand): <b>Tannoy</b></p>
-                                    <p class="quantity">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Amount): <b>1</b></p>
+                                    <p class="quantity">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart_Amount): <b>1</b></p>
                                     <p class="price"><b>99.490.000 đ</b></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="cart-button"><a class="btn btn-view-more" href="gio-hang.html">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.View_Cart)</a></div>
+                        <div class="cart-button"><a class="btn btn-view-more" href="/product/cart">@Html.GetResource(MainProject.Core.Enums.TempResourceKeyCollection.Cart_View)</a></div>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
         <div class="container">
             <div class="main-nav">
                 <ul class="nav-list">
-                    @Html.Raw(Model.Menu)
+                    @Html.Raw(Model.Menus)
                     <li class="nav-item">
                         <div class="language">
                             <div class="item active"><a href="#"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/vn.svg" alt=""></a></div>

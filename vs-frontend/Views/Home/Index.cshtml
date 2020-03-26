@@ -3,10 +3,9 @@
 <!-- BLOCK 1 TRANG CHỦ-->
 <div class="index-1">
     <!-- DANH SÁCH NHÀ PHÂN PHỐI-->
-    <!-- NHÀ PHÂN PHỐI-->
     <section class="distributor">
         <div class="container">
-            <h2>@Model.TitleHome[0].Title</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Home_Distributer)</h2>
             <div class="slider-distributor">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -28,7 +27,7 @@
 <div class="index-2">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.TitleHome[1].Title</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Product_Hot)</h2>
         </div>
         <!-- DANH SÁCH SẢN PHẨM BÁN CHẠY-->
         <div class="row list-item">
@@ -57,11 +56,11 @@
 <div class="index-3">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.TitleHome[2].Title</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Product_Best_Seller)</h2>
         </div>
         <!-- DANH SÁCH SẢN PHẨM THỂ THAO-->
         <div class="row list-item">
-            @foreach (var item in Model.SportsProduct)
+            @foreach (var item in Model.SportsProducts)
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
@@ -91,13 +90,13 @@
 <div class="index-5">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.TitleHome[3].Title</h2>
+            <h2>@Html.GetResource(TempResourceKeyCollection.Home_Customer)</h2>
         </div>
         <!-- SLIDER KHÁCH HÀNG CỦA KIM CÚC SPORTS-->
         <div class="slider-customer">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    @foreach (var item in Model.Customer)
+                    @foreach (var item in Model.Customers)
                     {
                         <div class="swiper-slide">
                             <figure>
@@ -125,7 +124,7 @@
             <!-- TIN TỨC NỔI BẬT - TRANG CHỦ-->
             <div class="col-lg-7">
                 <div class="block-title">
-                    <h2>@Model.TitleHome[4].Title</h2>
+                    <h2>@Html.GetResource(TempResourceKeyCollection.News_Hot)</h2>
                 </div>
                 @if (Model.HomeNews.Count > 0)
                 {
@@ -148,7 +147,7 @@
             <div class="col-lg-5">
                 <div class="block-home-news">
                     <div class="block-title">
-                        <h2>@Model.TitleHome[5].Title</h2>
+                        <h2>@Html.GetResource(TempResourceKeyCollection.News)</h2>
                     </div>
                     <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG CHỦ-->
                     <div class="list-home-news clearfix">

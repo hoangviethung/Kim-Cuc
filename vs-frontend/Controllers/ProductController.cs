@@ -1,4 +1,4 @@
-﻿using MainProject.SBussiness.LandingPage.Models.ProductSite;
+﻿using MainProject.SBussiness.LandingPage.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,19 @@ namespace MainProject.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: ProductSite
-        public ActionResult ProductSite()
+        public ActionResult Index()
         {
-            return View(new ProductSiteViewModel());
+            return View(new ProductViewModel());
+        }
+
+        public ActionResult ProductDetail()
+        {
+            return View(new ProductDetailViewModel());
+        }
+
+        public ActionResult Cart()
+        {
+            return View(new CartViewModel());
         }
     }
 }

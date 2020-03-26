@@ -5,31 +5,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MainProject.SBussiness.LandingPage.Models.ProductSite
+namespace MainProject.SBussiness.LandingPage.Models.Product
 {
-    public class ProductSiteViewModel
+    public class ProductViewModel
     {
         //DANH SÁCH THƯƠNG HIỆU
-        public List<Product> ListBrand = new List<Product>
+        public List<Core.Commerce.Product> ListBrand = new List<Core.Commerce.Product>
        {
-           new Product
+           new Core.Commerce.Product
            {
                Name = "Addidas",
 
            },
-           new Product
+           new Core.Commerce.Product
            {
                Name = "Wilson&W"
            },
-           new Product
+           new Core.Commerce.Product
            {
                Name = "Nike"
            },
-           new Product
+           new Core.Commerce.Product
            {
                Name = "Cyber"
            },
-           new Product
+           new Core.Commerce.Product
            {
                Name = "Yonex"
            },
@@ -55,86 +55,86 @@ namespace MainProject.SBussiness.LandingPage.Models.ProductSite
             }
         };
         //DANH SÁCH SẢN PHẨM TRANG SẢN PHẨM
-        public List<Product> ListProduct = new List<Product>
+        public List<Core.Commerce.Product> Product = new List<Core.Commerce.Product>
         {
-            new Product
+            new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
             },
-             new Product
+             new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/2.png",
             },
-              new Product
+              new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/3.png",
             },
-               new Product
+               new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
             },
-                new Product
+                new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/4.png",
             },
-                 new Product
+                 new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
             },
-                  new Product
+                  new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/5.png",
             },
-                   new Product
+                   new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/6.png",
             },
-                    new Product
+                    new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/7.png",
             },
-                     new Product
+                     new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/8.png",
             },
-                      new Product
+                      new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
                 ImageDefault = "/Content/resources/assets/images/products/list-product/9.png",
             },
-                new Product
+                new Core.Commerce.Product
             {
                 ProductCode = "OS-868",
                 Name = "Ghế massage Okasa",

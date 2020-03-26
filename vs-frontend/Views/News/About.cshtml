@@ -22,7 +22,7 @@
 @*SECTION 2*@
 <section class="about-2">
     <div class="container">
-        <div class="block-title"><h2>@Model.TitleAbout[1].Title</h2></div>
+        <div class="block-title"><h2>@Html.Raw(Model.Block_2.Title)</h2></div>
         <div class="block-item">
             <div class="row list-item">
                 @foreach (var item in JsonHelper.Deserialize<List<IntroImage>>(Model.Block_2.Image) ?? new List<IntroImage>())
@@ -45,18 +45,18 @@
 <section class="about-3">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.TitleAbout[2].Title</h2>
+            <h2>@Html.Raw(Model.Block_3.Title)</h2>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="description ov-h" data-setHeight="767.98">
                     <div class="demo-ckeditor content-about-1">
-                        @Html.Raw(Model.Block_3[0].Description)
+                        @Html.Raw(Model.Block_3.Content)
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Block_3[0].ImageDefault" alt="ẢNH PHƯƠNG CHÂM HOẠT ĐỘNG KIM CÚC SPORTS"></div>
+                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Block_3.Image" alt="@Model.Block_3.Title"></div>
             </div>
         </div>
     </div>
