@@ -1,6 +1,5 @@
 ﻿@model MainProject.SCommerce.LandingPage.Models.Cart.CartViewModel
 
-
 <!-- GIỎ HÀNG-->
 <div class="block-cart">
     <div class="block-text-icon">
@@ -13,9 +12,16 @@
             <svg xmlns="http:/www.w3.org/2000/svg" width="18.4" height="18.4" viewBox="0 0 18.4 18.4">
                 <defs>
                     <style>
-                        .a1 { fill: #1c1c1c; }
+                        .a1 {
+                            fill: #1c1c1c;
+                        }
 
-                        .b2 { fill: none; stroke: #ffffff; stroke-linecap: round; stroke-linejoin: round; }
+                        .b2 {
+                            fill: none;
+                            stroke: #ffffff;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                        }
                     </style>
                 </defs>
                 <circle class="a1" cx="9.2" cy="9.2" r="9.2"></circle>
@@ -38,6 +44,6 @@
                 </div>
             }
         </div>
-        <div class="cart-button"><a class="btn btn-view-more" href="/product/cart">@Html.GetResource(TempResourceKeyCollection.Cart_View)</a></div>
+        <div class="cart-button"><a class="btn btn-view-more" href="/cart/index">@Html.GetResource(TempResourceKeyCollection.Cart_View)</a></div>
     </div>
 </div>

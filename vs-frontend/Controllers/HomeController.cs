@@ -28,10 +28,5 @@ namespace MainProject.Controllers
         {
             return PartialView("_Footer", new FooterViewModel());
         }
-
-        public ActionResult Cart()
-        {
-            return PartialView("_Cart", new CartViewModel());
-        }
     }
 }

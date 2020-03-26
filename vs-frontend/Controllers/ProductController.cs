@@ -15,10 +15,5 @@ namespace MainProject.Controllers
         {
             return View(new ProductDetailViewModel());
         }
-
-        public ActionResult Cart()
-        {
-            return View(new CartViewModel());
-        }
     }
 }
