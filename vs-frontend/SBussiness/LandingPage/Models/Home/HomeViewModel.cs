@@ -167,38 +167,41 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
             },
         };
         //DANH SÁCH KHÁCH HÀNG
-        public List<Banner> Customers { get; set; } = new List<Banner>
+        public Introduction Customer { get; set; } = new Introduction
         {
-            new Banner
+            Image = JsonHelper.Serialize(new List<Core.Image>
             {
-                Name = "Trần Văn A",
-                ResourcePath = "/Content/resources/assets/images/customer/1.png",
-                Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
-            },
-            new Banner
-            {
-                Name = "Trần Văn B",
-                ResourcePath = "/Content/resources/assets/images/customer/2.png",
-                Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
-            },
-            new Banner
-            {
-                Name = "Trần Văn C",
-                ResourcePath = "/Content/resources/assets/images/customer/3.png",
-                Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
-            },
-            new Banner
-            {
-                Name = "Trần Văn D",
-                ResourcePath = "/Content/resources/assets/images/customer/4.png",
-                Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
-            },
-            new Banner
-            {
-                Name = "Trần Văn E",
-                ResourcePath = "/Content/resources/assets/images/customer/5.png",
-                Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
-            },
+                new Core.Image
+                {
+                    Name = "Trần Văn A",
+                    ImageDefault = "/Content/resources/assets/images/customer/1.png",
+                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                },
+                new Core.Image
+                {
+                    Name = "Trần Văn B",
+                    ImageDefault = "/Content/resources/assets/images/customer/2.png",
+                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                },
+                new Core.Image
+                {
+                    Name = "Trần Văn C",
+                    ImageDefault = "/Content/resources/assets/images/customer/3.png",
+                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                },
+                new Core.Image
+                {
+                    Name = "Trần Văn D",
+                    ImageDefault = "/Content/resources/assets/images/customer/4.png",
+                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                },
+                new Core.Image
+                {
+                    Name = "Trần Văn E",
+                    ImageDefault = "/Content/resources/assets/images/customer/5.png",
+                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                },
+            })
         };
         //DANH SÁCH TIN TỨC TRANG CHỦ
         public List<Article> HotNews { get; set; } = new List<Article>
@@ -238,7 +241,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     public class HeaderViewModel
     {
         // List Menu
-        public string Menus { get; set; } = ResourceHelper.ReadFile("/bin/HeaderMenu.txt");
+        public string Menu { get; set; } = ResourceHelper.ReadFile("/bin/HeaderMenu.txt");
         //DANH SÁCH ẢNH BANNER
         public List<Banner> Banners { get; set; } = new List<Banner>
         {
@@ -274,7 +277,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     public class FooterViewModel
     {
         //DANH SÁCH MENU CATEGORY
-        public string Menus { get; set; } = ResourceHelper.ReadFile("/bin/FooterMenu.txt");
+        public string Menu { get; set; } = ResourceHelper.ReadFile("/bin/FooterMenu.txt");
         //DANH SÁCH MENU COPYRIGHT
         public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/bin/CopyrightMenu.txt");
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY

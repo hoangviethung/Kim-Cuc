@@ -1,4 +1,5 @@
-﻿@model MainProject.SBussiness.LandingPage.Models.Home.HomeViewModel
+﻿@using MainProject.Core
+@model MainProject.SBussiness.LandingPage.Models.Home.HomeViewModel
 
 <!-- BLOCK 1 TRANG CHỦ-->
 <div class="index-1">
@@ -96,12 +97,12 @@
         <div class="slider-customer">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    @foreach (var item in Model.Customers)
+                    @foreach (var item in JsonHelper.Deserialize<List<Image>>(Model.Customer.Image) ?? new List<Image>())
                     {
                         <div class="swiper-slide">
                             <figure>
                                 <div class="img ov-h">
-                                    <img class="ofcv" src="@item.ResourcePath" alt="@item.Alt">
+                                    <img class="ofcv" src="@item.ImageDefault" alt="@item.AltImage">
                                 </div>
                                 <figcaption>
                                     <p class="lcl lcl-1">@item.Name</p>

@@ -29,6 +29,7 @@ namespace MainProject.Core.Enums
         Actual_Amount_Total,
         Thank_You,
         Here,
+        Copy_Right,
 
         // Home
         Home_Distributer,
