@@ -526,7 +526,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxFormContact();
 	ajaxOrderProduct();
 	// TAB
-	const tabPolicy = new Tab('.block-policy');
 	const tabProductDetail = new Tab('.product-detail-2');
 	CartController();
 	checkPageToAddClassMainSlider();

@@ -27,10 +27,13 @@ namespace MainProject.Core.Enums
         Temp_Price,
         Discount_Amount,
         Actual_Amount_Total,
+        Thank_You,
+        Here,
 
         // Home
         Home_Distributer,
         Home_Customer,
+
         // News
         News_Hot,
         News,
@@ -43,6 +46,8 @@ namespace MainProject.Core.Enums
         Cart_Add_Success,
         Cart_View,
         Cart_Amount,
+        Cart_Order_Confirmation,
+        Cart_Order_Success,
 
         // Product
         Product,

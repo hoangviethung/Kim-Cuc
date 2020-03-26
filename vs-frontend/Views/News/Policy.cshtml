@@ -13,13 +13,13 @@
                         <div class="item" toggle-view="#"></div>
                         <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
                     </div>
-                    <div class="block-filter category" toggle-id="category">
+                    <div class="block-filter category">
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
                         <div class="block">
-                            <ul class="list-item-category list-tab">
-                                @foreach (var item in Model.Articles)
+                            <ul class="list-item-category">
+                                @foreach (var item in Model.Menus)
                                 {
-                                    <li class="item-category"><a class="item active" toggle-for="@item.SeName">@item.Title</a></li>
+                                    <li class="item-category"><a href="#" class="item">@item.Title</a></li>
                                 }
                             </ul>
                         </div>
@@ -27,21 +27,16 @@
                 </aside>
             </div>
             <div class="col-lg-9">
-                <div class="tab-content">
-                    <div class="content-policy">
-                        @foreach (var item in Model.Articles)
-                        {
-                            <div class="content" tab-id="@item.SeName">
-                                <div class="title-policy">
-                                    <h3>@item.Title</h3>
-                                </div>
-                                <div class="description">
-                                    @*class demo ckeditor*@
-                                    <div class="demo-ckeditor content-policy-detail"></div>
-                                    @Html.Raw(item.Description)
-                                </div>
-                            </div>
-                        }
+                <div class="content-policy">
+                    <div class="content">
+                        <div class="title-policy">
+                            <h3>@Model.Articles.Title</h3>
+                        </div>
+                        <div class="description">
+                            @*class demo ckeditor*@
+                            <div class="demo-ckeditor content-policy-detail"></div>
+                            @Html.Raw(Model.Articles.Description)
+                        </div>
                     </div>
                 </div>
             </div>
