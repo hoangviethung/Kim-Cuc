@@ -14,7 +14,7 @@ namespace MainProject.Controllers
             return View(new NewsViewModel());
         }
 
-        public ActionResult NewsDetail()
+        public ActionResult Detail()
         {
             return View(new NewsDetailViewModel());
         }

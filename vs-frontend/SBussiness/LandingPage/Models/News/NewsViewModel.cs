@@ -58,6 +58,7 @@ namespace MainProject.SBussiness.LandingPage.Models.News
                     Order = System.DateTime.Now,
                     ViewCount = 100,
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
+                    ExternalUrl = "/news/detail",
             },
             new Article {
                     Id = 002,
@@ -66,6 +67,7 @@ namespace MainProject.SBussiness.LandingPage.Models.News
                     Order = System.DateTime.Now,
                     ViewCount = 170,
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
+                    ExternalUrl = "/news/detail",
             },
             new Article {
                     Id = 003,
@@ -74,25 +76,28 @@ namespace MainProject.SBussiness.LandingPage.Models.News
                     Order = System.DateTime.Now,
                     ViewCount = 99,
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
+                     ExternalUrl = "/news/detail",
             },
             new Article {
-                    Id = 001,
+                    Id = 004,
                     Title = "Tin tức nổi bật của Kim Cúc Sports",
                     ImageDefault = "/Content/resources/assets/images/news/news-others/1.png",
                     Order = System.DateTime.Now,
                     ViewCount = 100,
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
+                     ExternalUrl = "/news/detail",
             },
             new Article {
-                    Id = 002,
+                    Id = 005,
                     Title = "Tin tức bình thường của Kim Cúc Sports",
                     ImageDefault = "/Content/resources/assets/images/news/news-others/1.png",
                     Order = System.DateTime.Now,
                     ViewCount = 170,
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
+                     ExternalUrl = "/news/detail",
             },
             new Article {
-                    Id = 003,
+                    Id = 006,
                     Title = "Tin tức bình thường của Kim Cúc Sports",
                     ImageDefault = "/Content/resources/assets/images/news/news-others/1.png",
                     Order = System.DateTime.Now,
@@ -100,12 +105,13 @@ namespace MainProject.SBussiness.LandingPage.Models.News
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
             },
             new Article {
-                    Id = 003,
+                    Id = 007,
                     Title = "Tin tức bình thường của Kim Cúc Sports",
                     ImageDefault = "/Content/resources/assets/images/news/news-others/1.png",
                     Order = System.DateTime.Now,
                     ViewCount = 99,
                     Description = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, and when an unknown printer took a galley of type and scrambled it to make a type made specimen book. It has survived not only five centuries, but also the leap into and type electronic typesetting, remaining essentially unchanged.",
+                     ExternalUrl = "/news/detail",
             }
         };
     };

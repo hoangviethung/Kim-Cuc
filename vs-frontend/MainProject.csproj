@@ -344,7 +344,7 @@
     <Content Include="Views\Shared\_Pagination.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
-    <Content Include="Views\News\NewsDetail.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Product\Cart.cshtml" />
     <Content Include="Views\Home\_Cart.cshtml" />
   </ItemGroup>
