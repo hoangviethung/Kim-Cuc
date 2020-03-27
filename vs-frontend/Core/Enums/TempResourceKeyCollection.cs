@@ -23,8 +23,6 @@ namespace MainProject.Core.Enums
         Buy_Now,
         Sologan,
         Delete,
-        Keep_Shopping,
-        Order,
         Temp_Price,
         Discount_Amount,
         Actual_Amount_Total,
@@ -35,6 +33,11 @@ namespace MainProject.Core.Enums
         // Home
         Home_Distributer,
         Home_Customer,
+
+        // ORDER
+        Order,
+        Order_Address,
+        Keep_Shopping,
 
         // News
         News_Hot,
