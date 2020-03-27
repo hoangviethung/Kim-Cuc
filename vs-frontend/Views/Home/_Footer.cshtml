@@ -8,29 +8,26 @@
                 <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Contact)</div>
                 <ul class="list-info">
                     @*DANH SÁCH THÔNG TIN CỦA CÔNG TY*@
-                    @foreach (var item in Model.Branch)
-                    {
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/phone-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
-                            <div class="text"><a href="tel:@item.Phone">@item.Phone</a></div>
-                        </li>
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/mail-footer.svg" alt="ICON EMAIL"></div>
-                            <div class="text"><a href="tel:@item.Email">@item.Email</a></div>
-                        </li>
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/address-footer.svg" alt="ICON ĐỊA CHỈ"></div>
-                            <div class="text"><a href="tel:@item.Address">@item.Address</a></div>
-                        </li>
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/facebook-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
-                            <div class="text"><a target="_blank" href="@item.Description">@item.Description</a></div>
-                        </li>
-                    }
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/phone-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
+                        <div class="text"><a href="tel:@Model.Branchs.Phone">@Model.Branchs.Phone</a></div>
+                    </li>
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/mail-footer.svg" alt="ICON EMAIL"></div>
+                        <div class="text"><a href="tel:@Model.Branchs.Email">@Model.Branchs.Email</a></div>
+                    </li>
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/address-footer.svg" alt="ICON ĐỊA CHỈ"></div>
+                        <div class="text"><a href="tel:@Model.Branchs.Address">@Model.Branchs.Address</a></div>
+                    </li>
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/facebook-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
+                        <div class="text"><a target="_blank" href="@Model.Branchs.Description">@Model.Branchs.Description</a></div>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Product)</div>
+                <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
                 <ul class="list-link-product">
                     @Html.Raw(Model.Menu)
                 </ul>
@@ -46,7 +43,7 @@
 <div class="copy-right">
     <div class="container">
         <ul class="list-link">
-            @Html.GetResource(TempResourceKeyCollection.Copy_Right)
+            @Html.Raw(Model.CopyrightMenus)
         </ul>
     </div>
 </div>

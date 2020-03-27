@@ -1,0 +1,27 @@
+﻿@model MainProject.SCommerce.LandingPage.Models.Cart.OrderViewModel
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.TextBoxFor(d => d.Name, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Full_Name), @class = "form-control", id = "fullname" })
+        @Html.ValidationMessageFor(d => d.Name)
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+            <label for="phone">@Html.GetResource(TempResourceKeyCollection.Phone_Number) (*)</label>
+            @Html.TextBoxFor(d => d.PhoneNumber, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Phone_Number), @class = "form-control", id = "phone" })
+            @Html.ValidationMessageFor(d => d.PhoneNumber)
+        </div>
+    </div>
+    <br>
+    <h3>@Html.GetResource(TempResourceKeyCollection.Contact_Info)</h3>
+    <div class="form-group">
+        <textarea id="address" name="" placeholder="Địa chỉ chi tiết: ví dụ 151, Quang Trung, Gò Vấp"></textarea>
+
+        @Html.TextAreaFor(d => d.Address, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Contact_Content), @class = "form-control", id = "content" })
+        @Html.ValidationMessageFor(d => d.Address)
+    </div>
+    <div class="form-button">
+        <button class="btn btn-apply" data-url="ajax">@Html.GetResource(TempResourceKeyCollection.Cart_Order_Confirmation)</button>
+    </div>
+}

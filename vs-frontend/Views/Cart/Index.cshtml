@@ -65,21 +65,7 @@
 <div class="d-n">
     <div class="popup-checkout" id="popup-checkout">
         <h2>@Html.GetResource(TempResourceKeyCollection.Contact_Us)</h2>
-        <form>
-            <div class="form-group">
-                <input id="fullname" type="text" name="" placeholder="@Html.GetResource(TempResourceKeyCollection.Full_Name)">
-            </div>
-            <div class="form-group">
-                <input id="phone" type="text" name="" placeholder="@Html.GetResource(TempResourceKeyCollection.Phone_Number)">
-            </div><br>
-            <h3>@Html.GetResource(TempResourceKeyCollection.Contact_Info)</h3>
-            <div class="form-group">
-                <textarea id="address" name="" placeholder="Địa chỉ chi tiết: ví dụ 151, Quang Trung, Gò Vấp"></textarea>
-            </div>
-            <div class="form-button">
-                <button class="btn btn-apply" data-url="ajax">@Html.GetResource(TempResourceKeyCollection.Cart_Order_Confirmation)</button>
-            </div>
-        </form>
+        @Html.Partial("_Order", new MainProject.SCommerce.LandingPage.Models.Cart.OrderViewModel())
     </div>
 </div>
 <div class="d-n">

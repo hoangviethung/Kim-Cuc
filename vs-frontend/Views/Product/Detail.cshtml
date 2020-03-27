@@ -85,7 +85,9 @@
                     <h1>@Model.Product.Name</h1>
                     <div class="product-code">@Html.GetResource(TempResourceKeyCollection.Product_Code):<span>@Model.Product.ProductCode</span></div>
                     <div class="product-brand">@Html.GetResource(TempResourceKeyCollection.Brand):<span>@Model.Product.Brand.Name</span></div>
-                    @Html.Raw(Model.Product.Description)
+                    <div class="description-general-information lcl lcl-6">
+                        @Html.Raw(Model.Product.Description)
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,20 +108,11 @@
         <div class="tab-content content-product-detail">
             <div class="content" tab-id="tab-info-product">
                 <div class="description">
-                    <div class="demo-ckeditor content-tab-info-product">
-                        <h3>@Model.Product.Name</h3>
-                        <div class="d-f">
-                            <div class="code">@Html.GetResource(TempResourceKeyCollection.Product_Code):<span>@Model.Product.ProductCode</span></div>
-                            <div class="brand">@Html.GetResource(TempResourceKeyCollection.Brand):<span>@Model.Product.Brand.Name</span></div>
-                        </div>
-                        @Html.Raw(Model.Product.Body)
-                    </div>
+                    @Html.Raw(Model.Product.Body)
                 </div>
             </div>
             <div class="content" tab-id="tab-specifications-product">
-                <div class="demo-ckeditor content-tab-specifications-product">
-                    @Html.Raw(Model.Product.Body)
-                </div>
+                @Html.Raw(Model.Product.Body)
             </div>
         </div>
     </div>
@@ -137,7 +130,8 @@
                     {
                         <div class="swiper-slide">
                             <div class="item-product">
-                                <!-- LINK VÀO SẢN PHẨM CHI TIẾT--><a href="@item.GetUrl()">
+                                <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
+                                <a href="@item.GetUrl()">
                                     <figure>
                                         <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Name"></div>
                                         <figcaption>

@@ -2,12 +2,12 @@
 @model MainProject.SBussiness.LandingPage.Models.News.AboutViewModel
 
 @*SECTION 1 ABOUT*@
-<section class="about-1">
+<section class="about-1 about-content">
     <div class="container">
         <div class="block-title"><h2>@Model.Block_1.Title</h2></div>
         <div class="row">
             <div class="col-md-6">
-                <div class="description ov-h" data-setHeight="767.98">
+                <div class="description" data-setHeight="767.98">
                     <div class="demo-ckeditor content-about-1">
                         @Html.Raw(Model.Block_1.Content)
                     </div>
@@ -42,14 +42,14 @@
     </div>
 </section>
 @*SECTION 3*@
-<section class="about-3">
+<section class="about-3 about-content">
     <div class="container">
         <div class="block-title">
             <h2>@Html.Raw(Model.Block_3.Title)</h2>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="description ov-h" data-setHeight="767.98">
+                <div class="description" data-setHeight="767.98">
                     <div class="demo-ckeditor content-about-1">
                         @Html.Raw(Model.Block_3.Content)
                     </div>

@@ -144,6 +144,7 @@
     <Compile Include="SBussiness\LandingPage\Models\News\NewsDetailViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\NewsViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\PolicyViewModel.cs" />
+    <Compile Include="SCommerce\LandingPage\Models\Cart\OrderViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Product\ProductDetailViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Product\ProductViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Models\Cart\CartItemModel.cs" />
@@ -348,6 +349,7 @@
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\_Cart.cshtml" />
+    <Content Include="Views\Cart\_Order.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

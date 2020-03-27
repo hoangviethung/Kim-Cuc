@@ -296,15 +296,12 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
         //DANH SÁCH MENU COPYRIGHT
         public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/bin/CopyrightMenu.txt");
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
-        public List<Branch> Branch { get; set; } = new List<Branch>
+        public Branch Branchs { get; set; } = new Branch
         {
-            new Branch
-            {
-                Phone = "0906.523.876",
-                Email = "kimcucsport@gmail.com",
-                Address = "133 - 143 Hùng Vương, t.p Quảng Ngãi",
-                Description = "https://www.facebook.com/kimcucsports/",
-            }
+            Phone = "0906.523.876",
+            Email = "kimcucsport@gmail.com",
+            Address = "133 - 143 Hùng Vương, t.p Quảng Ngãi",
+            Description = "https://www.facebook.com/kimcucsports/",
         };
     }
 }

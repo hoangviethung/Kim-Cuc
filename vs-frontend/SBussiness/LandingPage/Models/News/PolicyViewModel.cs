@@ -13,14 +13,17 @@ namespace MainProject.SBussiness.LandingPage.Models.News
             new Article
             {
                 Title = "Điều kiện bảo hành",
+                ExternalUrl = "/news/policy",
             },
             new Article
             {
                 Title = "Chính sách bảo mật",
+                ExternalUrl = "/news/policy",
             },
             new Article
             {
                 Title = "Chính sách bảo hành",
+                ExternalUrl = "/news/policy",
             }
 
         };

@@ -529,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// TAB
 	const tabProductDetail = new Tab('.product-detail-2');
 	CartController();
-	CommonController();
+	// CommonController();
 	checkPageToAddClassMainSlider();
 });
 

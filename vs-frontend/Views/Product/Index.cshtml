@@ -37,7 +37,7 @@
                                 <div class="check-box">
                                     <div class="form-group">
                                         <input id="all" hidden name="brand" type="radio" checked>
-                                        <label for="all">@Html.GetResource(TempResourceKeyCollection.All)</label>
+                                        <label for="all">@Html.GetResource(TempResourceKeyCollection.All_Brand)</label>
                                     </div>
                                     @*DANH SÁCH CÁC THƯƠNG HIỆU*@
                                     @foreach (var item in Model.Brands)
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="block-filter mt-20px" toggle-id="category">
-                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category)</div>
+                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
                         <div class="block">
                             <ul class="list-item-category">
                                 @foreach (var item in Model.Categories)
