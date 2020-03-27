@@ -77,7 +77,8 @@ body {
 	opacity       : 0;
 	pointer-events: none;
 
-	&.show {
+	&.active {
+		pointer-events: visible;
 		opacity       : 1;
 		pointer-events: static;
 	}
@@ -600,12 +601,6 @@ body {
 						top      : 50%;
 						right    : 5px;
 						transform: translateY(-50%);
-
-						button {
-							line-height: 1;
-							background : none;
-							border     : 0;
-						}
 					}
 				}
 

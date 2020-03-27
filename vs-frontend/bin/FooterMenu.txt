@@ -1,4 +1,4 @@
-<li class="item-link-product"><a href="danh-sach-san-pham.html">Phụ kiện thể thao</a></li>
-<li class="item-link-product"><a href="danh-sach-san-pham.html">Xe đạp tập</a></li>
-<li class="item-link-product"><a href="danh-sach-san-pham.html">Máy chạy bộ điện</a></li>
-<li class="item-link-product"><a href="danh-sach-san-pham.html">Ghế massage</a></li>
+<li class="item-link-product"><a href="/product/index">Phụ kiện thể thao</a></li>
+<li class="item-link-product"><a href="/product/index">Xe đạp tập</a></li>
+<li class="item-link-product"><a href="/product/index">Máy chạy bộ điện</a></li>
+<li class="item-link-product"><a href="/product/index">Ghế massage</a></li>

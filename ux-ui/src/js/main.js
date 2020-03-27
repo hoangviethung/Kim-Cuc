@@ -501,6 +501,44 @@ const checkLayoutBanner = () => {
 	} else {}
 }
 
+// SHOW BACK TO TOP
+const showBackToTop = () => {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 800) {
+			$('#back-to-top').addClass('active');
+		} else {
+			$('#back-to-top').removeClass('active');
+		}
+	});
+
+	$("#back-to-top").on("click", function(e) {
+		e.preventDefault();
+		$("html,body").animate({
+			scrollTop: 0
+		})
+	})
+}
+
+const keyupAsideFilter = () => {
+	$(".aside-filter .block-filter .brand .search input").on('keyup', function() {
+		const valSearch = $(this).val().toLowerCase();
+		const Listitem = $(".aside-filter .block-filter .brand .check-box .form-group input");
+
+		Listitem.each(function() {
+			const valCheckBox = $(this).val().toLowerCase();
+			if (valSearch !== "") {
+				if (valCheckBox.search(valSearch) != -1) {
+					$(this).parents('.form-group').css('display', "block");
+				} else {
+					$(this).parents('.form-group').css('display', "none");
+				}
+			} else {
+				$(this).parents('.form-group').css('display', "block");
+			}
+		});
+	});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING !!!
 	Loading().then(() => {
@@ -531,6 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	CartController();
 	// CommonController();
 	checkPageToAddClassMainSlider();
+	showBackToTop();
+	keyupAsideFilter();
 });
 
 window.addEventListener('scroll', () => {
