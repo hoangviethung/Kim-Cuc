@@ -151,6 +151,10 @@
     <Compile Include="SCommerce\LandingPage\Models\Cart\CartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Read_File\Category_Product.txt" />
+    <Content Include="App_Data\Read_File\CopyrightMenu.txt" />
+    <Content Include="App_Data\Read_File\FooterMenu.txt" />
+    <Content Include="App_Data\Read_File\HeaderMenu.txt" />
     <Content Include="App_Data\MainProject.Core.Commerce.dll" />
     <Content Include="App_Data\MainProject.Core.dll" />
     <Content Include="Content\resources\assets\icons\address-footer.svg" />

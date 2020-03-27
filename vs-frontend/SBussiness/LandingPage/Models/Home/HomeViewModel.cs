@@ -256,7 +256,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     public class HeaderViewModel
     {
         // List Menu
-        public string Menu { get; set; } = ResourceHelper.ReadFile("/bin/HeaderMenu.txt");
+        public string Menu { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/HeaderMenu.txt");
         //DANH SÁCH ẢNH BANNER
         public List<Banner> Banners { get; set; } = new List<Banner>
         {
@@ -292,9 +292,9 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
     public class FooterViewModel
     {
         //DANH SÁCH MENU CATEGORY
-        public string Menu { get; set; } = ResourceHelper.ReadFile("/bin/FooterMenu.txt");
+        public string Menu { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/FooterMenu.txt");
         //DANH SÁCH MENU COPYRIGHT
-        public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/bin/CopyrightMenu.txt");
+        public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/CopyrightMenu.txt");
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
         public Branch Branch { get; set; } = new Branch
         {

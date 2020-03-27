@@ -20,19 +20,17 @@
                             <div class="price">
                                 <div id="value-text" data-min-html data-max-html></div>
                                 <input type="text" id="amount" readonly hidden>
-                                <div id="slider-range" data-min="@Model.DefaultToPrice" data-max="@Model.DefaultFromPrice" data-current-min="@Model.FromPrice" data-current-max="@Model.ToPrice"></div>
+                                <div id="slider-range" data-min="@Model.DefaultFromPrice" data-max="@Model.DefaultToPrice" data-current-min="@Model.FromPrice" data-current-max="@Model.ToPrice"></div>
                                 <div class="about-price"><span>@Html.FormatCurrency(Model.FromPrice)</span><span>@Html.FormatCurrency(Model.ToPrice)</span></div>
                             </div>
                             <!-- THƯƠNG HIỆU-->
                             <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
                             <div class="brand">
                                 <div class="search">
-                                    <form action="#" method="POST">
-                                        <input type="text" placeholder="@Html.GetResource(TempResourceKeyCollection.Enter_Brand)">
-                                        <div class="submit">
-                                            <button><img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search"></button>
-                                        </div>
-                                    </form>
+                                    <input type="text" placeholder="@Html.GetResource(TempResourceKeyCollection.Enter_Brand)">
+                                    <div class="submit">
+                                        <img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search">
+                                    </div>
                                 </div>
                                 <div class="check-box">
                                     <div class="form-group">
@@ -43,8 +41,8 @@
                                     @foreach (var item in Model.Brands)
                                     {
                                         <div class="form-group">
-                                            <input id="addidas" hidden name="brand" type="radio" value="@item.Name">
-                                            <label for="addidas">@item.Name</label>
+                                            <input id="@item.Name" hidden name="brand" type="radio" value="@item.Name">
+                                            <label for="@item.Name">@item.Name</label>
                                         </div>
                                     }
                                 </div>
@@ -54,7 +52,9 @@
                     <div class="block-filter mt-20px" toggle-id="category">
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
                         <div class="block">
-                            @Html.Raw(Model.CommerceMenu)
+                            <ul class="list-item-category">
+                                @Html.Raw(Model.CommerceMenu)
+                            </ul>
                         </div>
                     </div>
                 </aside>

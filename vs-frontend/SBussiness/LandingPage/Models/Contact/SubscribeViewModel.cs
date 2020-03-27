@@ -19,4 +19,4 @@ namespace MainProject.SBussiness.LandingPage.Models.SubscribeViewModel
 
         public string ContactContent { get; set; }
     }
-}
+}   

@@ -40,6 +40,7 @@ namespace MainProject.SCommerce.LandingPage.Models.Product
 
         public List<ProductDetailViewModel> Products { get; set; }
 
+
         #region SEO
         public string MetaTitle { get; set; }
         public string MetaDescription { get; set; }

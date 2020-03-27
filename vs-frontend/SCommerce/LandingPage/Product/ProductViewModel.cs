@@ -1,5 +1,6 @@
 ﻿using MainProject.Core;
 using MainProject.Core.Commerce;
+using MainProject.Framework.Helpers;
 using MainProject.Framework.Models;
 using System;
 using System.Collections.Generic;
@@ -160,17 +161,16 @@ namespace MainProject.SCommerce.LandingPage.Models.Product
             },
         };
         public PagingModel PagingModel { get; set; } = new PagingModel(200, 16, 1, "href=''");
-
-        public string CommerceMenu { get; set; }
+        public string CommerceMenu { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/Category_Product.txt");
 
         #region Filtering
-        public decimal DefaultFromPrice { get; set; }
+        public decimal DefaultFromPrice { get; set; } = new decimal(10000000);
 
-        public decimal DefaultToPrice { get; set; }
+        public decimal DefaultToPrice { get; set; } = new decimal(120000000);
 
-        public decimal ToPrice { get; set; }
+        public decimal FromPrice { get; set; } = new decimal(10000000);
 
-        public decimal FromPrice { get; set; }
+        public decimal ToPrice { get; set; } = new decimal(120000000);
 
         public List<string> BrandSelectedValues { get; set; } = new List<string>
         {
