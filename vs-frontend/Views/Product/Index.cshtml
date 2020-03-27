@@ -20,8 +20,8 @@
                             <div class="price">
                                 <div id="value-text" data-min-html data-max-html></div>
                                 <input type="text" id="amount" readonly hidden>
-                                <div id="slider-range" data-min="100000" data-max="120000000" data-current-min="100000" data-current-max="120000000"></div>
-                                <div class="about-price"><span>1.000.000</span><span>120.000.000</span></div>
+                                <div id="slider-range" data-min="@Model.DefaultToPrice" data-max="@Model.DefaultFromPrice" data-current-min="@Model.FromPrice" data-current-max="@Model.ToPrice"></div>
+                                <div class="about-price"><span>@Html.FormatCurrency(Model.FromPrice)</span><span>@Html.FormatCurrency(Model.ToPrice)</span></div>
                             </div>
                             <!-- THƯƠNG HIỆU-->
                             <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
@@ -54,12 +54,7 @@
                     <div class="block-filter mt-20px" toggle-id="category">
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
                         <div class="block">
-                            <ul class="list-item-category">
-                                @foreach (var item in Model.Categories)
-                                {
-                                    <li class="item-category"><a href="@item.GetPrefixUrl()">@item.Title</a></li>
-                                }
-                            </ul>
+                            @Html.Raw(Model.CommerceMenu)
                         </div>
                     </div>
                 </aside>
@@ -72,14 +67,14 @@
                             <div class="item">
                                 <div class="item-product">
                                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                                    <a href="@item.GetUrl()">
+                                    <a href="@item.Url">
                                         <figure>
                                             <div class="img ov-h">
-                                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
+                                                <img class="lazyload blur-up" data-src="@item.Image" alt="@item.Name">
                                             </div>
                                             <figcaption>
                                                 <div class="name">@item.Name</div>
-                                                <div class="code">@item.ProductCode</div>
+                                                <div class="code">@item.Code</div>
                                                 <div class="price">@item.Price ₫</div>
                                                 <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
                                             </figcaption>

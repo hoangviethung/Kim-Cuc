@@ -21,7 +21,7 @@ namespace MainProject.Controllers
 
         public ActionResult About()
         {
-            return View(new AboutViewModel());
+            return View(new IntroductionViewModel());
         }
 
         public ActionResult Policy()

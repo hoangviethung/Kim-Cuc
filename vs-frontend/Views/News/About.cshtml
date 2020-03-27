@@ -1,20 +1,20 @@
 ﻿@using MainProject.Core
-@model MainProject.SBussiness.LandingPage.Models.News.AboutViewModel
+@model MainProject.SBussiness.LandingPage.Models.News.IntroductionViewModel
 
 @*SECTION 1 ABOUT*@
-<section class="about-1 about-content">
+<section class="about-1">
     <div class="container">
-        <div class="block-title"><h2>@Model.Block_1.Title</h2></div>
+        <div class="block-title"><h2>@Model.Section1.Title</h2></div>
         <div class="row">
             <div class="col-md-6">
-                <div class="description" data-setHeight="767.98">
+                <div class="description ov-h" data-setHeight="767.98">
                     <div class="demo-ckeditor content-about-1">
-                        @Html.Raw(Model.Block_1.Content)
+                        @Html.Raw(Model.Section1.Content)
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Block_1.Image" alt="@Model.Block_1.Title"></div>
+                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Section1.Image" alt="@Model.Section1.Title"></div>
             </div>
         </div>
     </div>
@@ -22,10 +22,10 @@
 @*SECTION 2*@
 <section class="about-2">
     <div class="container">
-        <div class="block-title"><h2>@Html.Raw(Model.Block_2.Title)</h2></div>
+        <div class="block-title"><h2>@Html.Raw(Model.Section2.Title)</h2></div>
         <div class="block-item">
             <div class="row list-item">
-                @foreach (var item in JsonHelper.Deserialize<List<IntroImage>>(Model.Block_2.Image) ?? new List<IntroImage>())
+                @foreach (var item in JsonHelper.Deserialize<List<IntroImage>>(Model.Section2.Image) ?? new List<IntroImage>())
                 {
                     <div class="item col-md-4">
                         <figure class="hover-style-2">
@@ -42,21 +42,21 @@
     </div>
 </section>
 @*SECTION 3*@
-<section class="about-3 about-content">
+<section class="about-3">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.Raw(Model.Block_3.Title)</h2>
+            <h2>@Html.Raw(Model.Section3.Title)</h2>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="description" data-setHeight="767.98">
+                <div class="description ov-h" data-setHeight="767.98">
                     <div class="demo-ckeditor content-about-1">
-                        @Html.Raw(Model.Block_3.Content)
+                        @Html.Raw(Model.Section3.Content)
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Block_3.Image" alt="@Model.Block_3.Title"></div>
+                <div class="image ov-h" data-getHeight><img class="ofcv" src="@Model.Section3.Image" alt="@Model.Section3.Title"></div>
             </div>
         </div>
     </div>
