@@ -56,105 +56,128 @@ namespace MainProject.SCommerce.LandingPage.Models.Product
             }
         };
         //DANH SÁCH SẢN PHẨM TRANG SẢN PHẨM
-        public List<Core.Commerce.Product> Products = new List<Core.Commerce.Product>
+        public List<ProductDetailViewModel> Products = new List<ProductDetailViewModel>()
         {
-            new Core.Commerce.Product
+            new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
+                Brand = null,
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/1.png",
+                Url = "/Product/Detail"
             },
-             new Core.Commerce.Product
+             new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/2.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/2.png",
+                Url = "/Product/Detail"
             },
-              new Core.Commerce.Product
+              new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/3.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/3.png",
+                Url = "/Product/Detail"
             },
-               new Core.Commerce.Product
+               new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/1.png",
+                Url = "/Product/Detail"
             },
-                new Core.Commerce.Product
+                new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/4.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/4.png",
+                Url = "/Product/Detail"
             },
-                 new Core.Commerce.Product
+                 new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/1.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/1.png",
+                Url = "/Product/Detail"
             },
-                  new Core.Commerce.Product
+                  new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
+                Brand = null,
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/5.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/5.png",
+                Url = "/Product/Detail"
             },
-                   new Core.Commerce.Product
+                   new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
+                Brand = null,
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/6.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/6.png",
+                Url = "/Product/Detail"
             },
-                    new Core.Commerce.Product
+                    new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
+                Brand = null,
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/7.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/7.png",
+                Url = "/Product/Detail"
             },
-                     new Core.Commerce.Product
+                new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/8.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/8.png",
+                Url = "/Product/Detail"
             },
-                      new Core.Commerce.Product
+                    new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/9.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/9.png",
+                Url = "/Product/Detail"
             },
-                new Core.Commerce.Product
+                new ProductDetailViewModel()
             {
-                ProductCode = "OS-868",
+                Code = "OS-868",
                 Name = "Ghế massage Okasa",
                 Price = 999999,
-                ImageDefault = "/Content/resources/assets/images/products/list-product/10.png",
-                ExternalUrl = "/Product/Detail"
+                Image = "/Content/resources/assets/images/products/list-product/10.png",
+                Url = "/Product/Detail"
             },
         };
         public PagingModel PagingModel { get; set; } = new PagingModel(200, 16, 1, "href=''");
+
+        public string CommerceMenu { get; set; }
+
+        #region Filtering
+        public decimal DefaultFromPrice { get; set; }
+
+        public decimal DefaultToPrice { get; set; }
+
+        public decimal ToPrice { get; set; }
+
+        public decimal FromPrice { get; set; }
+
+        public List<string> BrandSelectedValues { get; set; } = new List<string>
+        {
+
+        };
+
+        public string Type { get; set; }
+        #endregion
     }
 }

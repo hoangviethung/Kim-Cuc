@@ -10,24 +10,24 @@
                     @*DANH SÁCH THÔNG TIN CỦA CÔNG TY*@
                     <li class="item-info">
                         <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/phone-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
-                        <div class="text"><a href="tel:@Model.Branchs.Phone">@Model.Branchs.Phone</a></div>
+                        <div class="text"><a href="tel:@Model.Branch.Phone">@Model.Branch.Phone</a></div>
                     </li>
                     <li class="item-info">
                         <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/mail-footer.svg" alt="ICON EMAIL"></div>
-                        <div class="text"><a href="tel:@Model.Branchs.Email">@Model.Branchs.Email</a></div>
+                        <div class="text"><a href="tel:@Model.Branch.Email">@Model.Branch.Email</a></div>
                     </li>
                     <li class="item-info">
                         <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/address-footer.svg" alt="ICON ĐỊA CHỈ"></div>
-                        <div class="text"><a href="tel:@Model.Branchs.Address">@Model.Branchs.Address</a></div>
+                        <div class="text"><a href="tel:@Model.Branch.Address">@Model.Branch.Address</a></div>
                     </li>
                     <li class="item-info">
                         <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/facebook-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
-                        <div class="text"><a target="_blank" href="@Model.Branchs.Description">@Model.Branchs.Description</a></div>
+                        <div class="text"><a target="_blank" href="@Model.Branch.Description">@Model.Branch.Description</a></div>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
+                <div class="title-footer">@Html.GetResource(TempResourceKeyCollection.Product)</div>
                 <ul class="list-link-product">
                     @Html.Raw(Model.Menu)
                 </ul>
@@ -43,7 +43,7 @@
 <div class="copy-right">
     <div class="container">
         <ul class="list-link">
-            @Html.Raw(Model.CopyrightMenus)
+            @Html.GetResource(TempResourceKeyCollection.Copy_Right)
         </ul>
     </div>
 </div>

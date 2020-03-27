@@ -296,7 +296,7 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
         //DANH SÁCH MENU COPYRIGHT
         public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/bin/CopyrightMenu.txt");
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
-        public Branch Branchs { get; set; } = new Branch
+        public Branch Branch { get; set; } = new Branch
         {
             Phone = "0906.523.876",
             Email = "kimcucsport@gmail.com",
