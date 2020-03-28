@@ -311,11 +311,15 @@
 							const headerCartNumber = $('#header-cart-number');
 							const headerQuantityProduct = $("#header-quantity-product");
 							const headerActualAmountTotal = $('#header-actual_amount_total');
+							const actualAmountTotal = $("#actual_amount_total");
 							if (res.Code == 200) {
 								// CẬP NHẬT GIỎ HÀNG TẠI THANH MENU
 								headerCartNumber.text(res.Result.ItemCount);
 								headerQuantityProduct.text(res.Result.ItemCount + " ");
-								headerActualAmountTotal.html(response.Result.AfterDiscount + " đ");
+								// ĐƠN GIÁ 1 SẢN PHẨM HEADER
+								headerActualAmountTotal.text(Number(res.Result.Price).toLocaleString() + Currency);
+								// TỔNG SỐ TIỀN CẦN THANH TOÁN
+								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + Currency);
 							} else {
 								console.log('Giỏ hàng không được thay đổi');
 							}

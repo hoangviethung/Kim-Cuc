@@ -444,30 +444,31 @@ const ajaxFormContact = () => {
 	});
 }
 
+const getFormData = (obj) => {
+	let formData = new FormData();
+	for (let field in obj) {
+		formData.append(field, obj[field])
+	}
+	return formData;
+}
+
 const ajaxOrderProduct = () => {
 	$('.popup-checkout .form-button button').on('click', function(e) {
 		e.preventDefault();
-		const fullname = $('#fullname').val();
-		const phone = $('#phone').val();
-		const province = $('#province').val();
-		const district = $('#district').val();
-		const ward = $('#ward').val();
-		const address = $('#address').val();
-		const defaultAddress = $('#default-address').val();
+		let fields = {
+			fullname: $('#fullname').val(),
+			phone: $('#phone').val(),
+			address: $('#address').val(),
+		};
+
 		const url = $(this).attr('data-url');
 		if ($(".popup-checkout form").valid() === true) {
 			$.ajax({
 				type: "POST",
 				url: url,
-				data: {
-					fullname: fullname,
-					phone: phone,
-					province: province,
-					district: district,
-					ward: ward,
-					address: address,
-					defaultAddress: defaultAddress
-				},
+				data: getFormData(fields),
+				processData: false,
+				contentType: false,
 				success: function(res) {
 					if (res.Code === 200) {
 						$.fancybox.open({
