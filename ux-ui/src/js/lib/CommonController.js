@@ -36,6 +36,9 @@
 	}
 
 	$(document).ready(function() {
-		ChangeCulture();
+		$('.language .item').on('click', function() {
+			const language = $(this).attr('data-language');
+			ChangeCulture(language);
+		});
 	});
 }
