@@ -308,7 +308,7 @@
 						}),
 						cache: false,
 						success: function(res) {
-							const headerCartNumber = ('#header-cart-number');
+							const headerCartNumber = $('#header-cart-number');
 							const headerQuantityProduct = $("#header-quantity-product");
 							const headerActualAmountTotal = $('#header-actual_amount_total');
 							if (res.Code == 200) {
