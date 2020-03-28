@@ -72,7 +72,7 @@
 					success: function(res) {
 						if (res.Code == 200) {
 							// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
-							headerCartNumber.text(res.Result.ItemsCount);
+							headerCartNumber.text(res.Result.ItemCount);
 						} else
 							alert(res.Message);
 					},
@@ -244,9 +244,9 @@
 						success: function(res) {
 							if (res.Code == 200) {
 								// SỐ LƯỢNG GIỎ HÀNG TRONG MENU
-								headerCartNumber.text(res.Result.ItemsCount);
+								headerCartNumber.text(res.Result.ItemCount);
 								// SỐ LƯỢNG SẢN PHẨM Ở TRANG GIỎ HÀNG
-								quantityProduct.text(res.Result.ItemsCount + " ");
+								quantityProduct.text(res.Result.ItemCount + " ");
 								// XÓA SẢN PHẨM ĐƯỢC CLICK VÀO
 								itemRemove.remove();
 							}
@@ -313,8 +313,8 @@
 							const headerActualAmountTotal = $('#header-actual_amount_total');
 							if (res.Code == 200) {
 								// CẬP NHẬT GIỎ HÀNG TẠI THANH MENU
-								headerCartNumber.text(res.Result.ItemsCount);
-								headerQuantityProduct.text(res.Result.ItemsCount + " ");
+								headerCartNumber.text(res.Result.ItemCount);
+								headerQuantityProduct.text(res.Result.ItemCount + " ");
 								headerActualAmountTotal.html(response.Result.AfterDiscount + " đ");
 							} else {
 								console.log('Giỏ hàng không được thay đổi');
@@ -326,7 +326,6 @@
 					});
 				}
 			},
-
 
 
 
