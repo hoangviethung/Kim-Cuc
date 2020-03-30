@@ -1,4 +1,5 @@
-﻿@model MainProject.SCommerce.LandingPage.Models.Product.ProductDetailViewModel
+﻿@using MainProject.Core
+@model MainProject.SCommerce.LandingPage.Models.Product.ProductDetailViewModel
 
 <section class="product-detail-1">
     <div class="container">
@@ -10,32 +11,14 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
+                                    <div class="img ov-h"><img class="ofcv" src="@Model.Image" alt=""></div>
                                 </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
+                                @foreach (var item in (JsonHelper.Deserialize<List<Image>>(Model.Images) ?? new List<Image>()).OrderBy(x => x.Order))
+                                {
+                                    <div class="swiper-slide ov-h">
+                                        <div class="img ov-h"><img class="ofcv" src="@item.Path" alt="@item.Alt"></div>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div class="ta-c">
@@ -47,32 +30,14 @@
                         <div class="swiper-container h-100">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
+                                    <div class="img ov-h"><img class="ofcv" src="@Model.Image" alt=""></div>
                                 </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
-                                <div class="swiper-slide ov-h">
-                                    <div class="img ov-h"><img class="ofcv" src="/Content/resources/assets/images/products/product-detail/1.png" alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT"></div>
-                                </div>
+                                @foreach (var item in (JsonHelper.Deserialize<List<Image>>(Model.Images) ?? new List<Image>()).OrderBy(x => x.Order))
+                                {
+                                    <div class="swiper-slide ov-h">
+                                        <div class="img ov-h"><img class="ofcv" src="@item.Path" alt="@item.Alt"></div>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div class="swiper-button-prev"></div>
@@ -85,7 +50,23 @@
                     <h1>@Model.Name</h1>
                     <div class="product-code">@Html.GetResource(TempResourceKeyCollection.Product_Code):<span>@Model.Code</span></div>
                     <div class="product-brand">@Html.GetResource(TempResourceKeyCollection.Brand):<span>@Model.Brand.Name</span></div>
-                    @Html.Raw(Model.Description)
+                    <div class="description-general-information lcl lcl-6">@Html.Raw(Model.Description)</div>
+                    <div class="block-amount-price">
+                        <div class="price">GIÁ:<span>@Html.FormatCurrency(Model.Price) VNĐ</span></div>
+                        <div class="block-buttons">
+                            <div class="amount quantity-input">
+                                <div class="text">số lượng</div>
+                                <input class="quantity-cart" name="quantity" type="text" value="1" readonly>
+                                <div class="block-up-down">
+                                    <div class="upQuantity" data-url-update="/cap-nhat-gio-hang"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/up.svg" alt=""></div>
+                                    <div class="downQuantity" data-url-update="/cap-nhat-gio-hang"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/down.svg" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="submit-cart">
+                                <div class="add-cart btn btn-submit" data-pid="@Model.Id" data-propertyid="0" data-url="/them-vao-gio-hang">mua online ngay</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,13 +93,13 @@
                             <div class="code">@Html.GetResource(TempResourceKeyCollection.Product_Code):<span>@Model.Code</span></div>
                             <div class="brand">@Html.GetResource(TempResourceKeyCollection.Brand):<span>@Model.Brand.Name</span></div>
                         </div>
-                        @Html.Raw(Model.Body)
+                        @Html.Raw(Model.Content)
                     </div>
                 </div>
             </div>
             <div class="content" tab-id="tab-specifications-product">
                 <div class="demo-ckeditor content-tab-specifications-product">
-                    @Html.Raw(Model.Body)
+                    @Html.Raw(Model.Specification)
                 </div>
             </div>
         </div>
@@ -143,7 +124,7 @@
                                         <figcaption>
                                             <div class="name">@item.Name</div>
                                             <div class="code">@item.Code</div>
-                                            <div class="price">@item.Price ₫</div>
+                                            <div class="price">@Html.FormatCurrency(item.Price) ₫</div>
                                             <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
                                         </figcaption>
                                     </figure>

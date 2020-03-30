@@ -32,20 +32,20 @@
                 <div class="list-news row">
                     <!-- TIN TỨC NỔI BẬT - TRANG DANH SÁCH TIN TỨC-->
                     <div class="col-lg-7 col-md-12">
-                        @if (Model.News.Count > 0)
+                        @if (Model.Articles.Count > 0)
                         {
                             <div class="hot-news">
-                                <a href="@Model.News[0].GetUrl()">
+                                <a href="@Model.Articles[0].GetUrl()">
                                     <figure class="hover-style-1">
                                         <div class="img ov-h">
-                                            <img class="ofcv lazyload blur-up" data-src="@Model.News[0].ImageDefault" alt="@Model.News[0].Title">
+                                            <img class="ofcv lazyload blur-up" data-src="@Model.Articles[0].ImageDefault" alt="@Model.Articles[0].Title">
                                         </div>
                                         <figcaption>
-                                            <h3 class="lcl lcl-2">@Model.News[0].Title</h3>
-                                            <p class="lcl lcl-2">@Model.News[0].Description</p>
+                                            <h3 class="lcl lcl-2">@Model.Articles[0].Title</h3>
+                                            <p class="lcl lcl-2">@Model.Articles[0].Description</p>
                                             <div class="list-more-info-news jc-fe">
-                                                <div class="item" type="time">@Html.GetDay(Model.News[0].Order)</div>
-                                                <div class="item" type="view">@Model.News[0].ViewCount</div>
+                                                <div class="item" type="time">@Html.GetDay(Model.Articles[0].Order)</div>
+                                                <div class="item" type="view">@Model.Articles[0].ViewCount</div>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -57,7 +57,7 @@
                     <div class="col-lg-5 col-md-12">
                         <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG DANH SÁCH TIN TỨC-->
                         <div class="list-item-news row">
-                            @foreach (var item in Model.News.Skip(1).Take(2))
+                            @foreach (var item in Model.Articles.Skip(1).Take(2))
                             {
                                 <div class="item-news col-lg-12 col-md-6 col-sm-12">
                                     <a href="@item.GetUrl()">
@@ -82,7 +82,7 @@
                 </div>
                 @*DANH SÁCH TIN TỨC LIÊN QUAN*@
                 <div class="list-news-other row">
-                    @foreach (var item in Model.News.Skip(3))
+                    @foreach (var item in Model.Articles.Skip(3))
                     {
                         <div class="item-news-other col-md-6">
                             <a href="@item.GetUrl()">

@@ -27,10 +27,10 @@
                             <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
                             <div class="brand">
                                 <div class="search">
-                                    <input type="text" placeholder="@Html.GetResource(TempResourceKeyCollection.Enter_Brand)">
-                                    <div class="submit">
-                                        <img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search">
-                                    </div>
+                                        <input type="text" placeholder="@Html.GetResource(TempResourceKeyCollection.Enter_Brand)">
+                                        <div class="submit">
+                                           <img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search">
+                                        </div>
                                 </div>
                                 <div class="check-box">
                                     <div class="form-group">
@@ -41,8 +41,8 @@
                                     @foreach (var item in Model.Brands)
                                     {
                                         <div class="form-group">
-                                            <input id="@item.Name" hidden name="brand" type="radio" value="@item.Name">
-                                            <label for="@item.Name">@item.Name</label>
+                                            <input id="addidas" hidden name="brand" type="radio" value="@item.Name">
+                                            <label for="addidas">@item.Name</label>
                                         </div>
                                     }
                                 </div>
@@ -52,9 +52,7 @@
                     <div class="block-filter mt-20px" toggle-id="category">
                         <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
                         <div class="block">
-                            <ul class="list-item-category">
-                                @Html.Raw(Model.CommerceMenu)
-                            </ul>
+                            @Html.Raw(Model.CommerceMenu)
                         </div>
                     </div>
                 </aside>
@@ -75,7 +73,7 @@
                                             <figcaption>
                                                 <div class="name">@item.Name</div>
                                                 <div class="code">@item.Code</div>
-                                                <div class="price">@item.Price ₫</div>
+                                                <div class="price">@Html.FormatCurrency(item.Price) ₫</div>
                                                 <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
                                             </figcaption>
                                         </figure>

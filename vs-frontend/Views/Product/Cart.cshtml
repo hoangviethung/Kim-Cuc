@@ -1,0 +1,94 @@
+﻿@model MainProject.SCommerce.LandingPage.Models.Cart.CartViewModel
+
+<section class="cart-list-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="cart-table-title">
+                    <div class="info-title">
+                        <p id="quantity-product">@Html.GetResource(TempResourceKeyCollection.Cart) (@Html.GetResource(TempResourceKeyCollection.Keep_Shopping) sản phẩm)</p>
+                    </div>
+                    <div class="quantity-title">
+                        <p>@Html.GetResource(TempResourceKeyCollection.Cart_Amount)</p>
+                    </div>
+                    <div class="price-title">
+                        <p>@Html.GetResource(TempResourceKeyCollection.Price)</p>
+                    </div>
+                </div>
+                <div class="cart-table">
+                    <div class="cart-item">
+                        <div class="item-info">
+                            <div class="imgbox"><img src="/Content/resources/assets/images/products/list-product/1.png" alt=""></div><a class="name" href="/product/index">
+                                <h3>Tên sản phẩm</h3>
+                            </a>
+                            <input class="remove-cart" type="button" value="@Html.GetResource(TempResourceKeyCollection.Delete)" data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang">
+                        </div>
+                        <div class="item-quantity">
+                            <div class="mobile item-label">@Html.GetResource(TempResourceKeyCollection.Cart_Amount)</div>
+                            <div class="quantity-input">
+                                <div class="downQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">-</div>
+                                <input class="quantity-cart" name="quantity" type="text" value="499" data-pid="11223344" data-propertyid="11223344">
+                                <div class="upQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">+</div>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <div class="mobile item-label">@Html.GetResource(TempResourceKeyCollection.Price)</div>
+                            <div class="item-price-wrapper">
+                                <p class="price"><b>9.490.000đ</b></p>
+                                <p class="price-old">
+                                    <del>12.390.000đ</del>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-back"><a href="danh-sach-san-pham.html">@Html.GetResource(TempResourceKeyCollection.Keep_Shopping)</a></div>
+            </div>
+            <div class="col-xl-4">
+                <div class="cart-summary">
+                    <div class="cart-summary-block">
+                        <p><span>@Html.GetResource(TempResourceKeyCollection.Temp_Price):</span><span id="temp_price">515.000.000đ</span></p>
+                        <p><span>@Html.GetResource(TempResourceKeyCollection.Discount_Amount):</span><span id="discount_amount">-15.000.000đ</span></p>
+                    </div>
+                    <div class="cart-summary-block">
+                        <p><span>@Html.GetResource(TempResourceKeyCollection.Actual_Amount_Total):</span><strong class="price" id="actual_amount_total">515.000.000đ</strong></p>
+                        <p class="vat">(Đã bao gồm VAT)</p>
+                    </div>
+                </div>
+                <div class="cart-checkout">
+                    <div class="btn btn-submit w-100" data-fancybox="popup-checkout" data-src="#popup-checkout">@Html.GetResource(TempResourceKeyCollection.Order)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="d-n">
+    <div class="popup-checkout" id="popup-checkout">
+        <h2>@Html.GetResource(TempResourceKeyCollection.Contact_Us)</h2>
+        <form>
+            <div class="form-group">
+                <input id="fullname" type="text" name="" placeholder="@Html.GetResource(TempResourceKeyCollection.Full_Name)">
+            </div>
+            <div class="form-group">
+                <input id="phone" type="text" name="" placeholder="@Html.GetResource(TempResourceKeyCollection.Phone_Number)">
+            </div><br>
+            <h3>@Html.GetResource(TempResourceKeyCollection.Contact_Info)</h3>
+            <div class="form-group">
+                <textarea id="address" name="" placeholder="Địa chỉ chi tiết: ví dụ 151, Quang Trung, Gò Vấp"></textarea>
+            </div>
+            <div class="form-button">
+                <button class="btn btn-apply" data-url="ajax">@Html.GetResource(TempResourceKeyCollection.Cart_Order_Confirmation)</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="d-n">
+    <div class="popup-checkout-complete" id="popup-checkout-complete">
+        <img src="./assets/icons/cam-on.svg" alt="">
+        <h1>@Html.GetResource(TempResourceKeyCollection.Cart_Order_Success)</h1>
+        <p>@Html.GetResource(TempResourceKeyCollection.Thank_You)</p>
+        <p>Quản trị viên sẽ liên hệ để lại để xác nhận.</p><br><br>
+        <p>Bạn có thể xem lại đơn hàng tại <a href="#">@Html.GetResource(TempResourceKeyCollection.Here)</a></p>
+    </div>
+</div>
+<div class="policy-page" id="js-page-verify" hidden></div>

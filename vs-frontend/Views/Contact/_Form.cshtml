@@ -1,4 +1,4 @@
-﻿@model MainProject.SBussiness.LandingPage.Models.SubscribeViewModel.ContactManagement
+﻿@model MainProject.SBussiness.LandingPage.Models.Contact.ContactManageModel
 
 @using (Html.BeginForm())
 {
@@ -14,13 +14,13 @@
     </div>
     <div class="form-group">
         <label for="phone">@Html.GetResource(TempResourceKeyCollection.Phone_Number) (*)</label>
-        @Html.TextBoxFor(d => d.PhoneNumber, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Phone_Number), @class = "form-control", id = "phone" })
-        @Html.ValidationMessageFor(d => d.PhoneNumber)
+        @Html.TextBoxFor(d => d.Phone, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Phone_Number), @class = "form-control", id = "phone" })
+        @Html.ValidationMessageFor(d => d.Phone)
     </div>
     <div class="form-group">
         <label for="content">@Html.GetResource(TempResourceKeyCollection.Contact_Content) (*)</label>
-        @Html.TextAreaFor(d => d.ContactContent, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Contact_Content), @class = "form-control", id = "content" })
-        @Html.ValidationMessageFor(d => d.PhoneNumber)
+        @Html.TextAreaFor(d => d.Content, new { placeholder = @Html.GetResource(TempResourceKeyCollection.Contact_Content), @class = "form-control", id = "content" })
+        @Html.ValidationMessageFor(d => d.Content)
     </div>
     <div class="form-group">
         <label for="#"></label>

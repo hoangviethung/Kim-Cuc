@@ -1,5 +1,5 @@
-﻿@model MainProject.SCommerce.LandingPage.Models.Cart.CartViewModel
-
+﻿@using MainProject.Framework.Constant
+@model MainProject.SCommerce.LandingPage.Models.Cart.CartViewModel
 
 <!-- GIỎ HÀNG-->
 <div class="block-cart">
@@ -33,11 +33,15 @@
                         <h4 class="name"><a href="@item.Product.GetUrl()">@item.Product.Name</a></h4>
                         <p class="brand">@Html.GetResource(TempResourceKeyCollection.Brand): <b>@item.Product.Brand.Name</b></p>
                         <p class="quantity">@Html.GetResource(TempResourceKeyCollection.Cart_Amount): <b>@item.Quantity</b></p>
-                        <p class="price"><b>@item.ProductPrice đ</b></p>
+                        <p class="price"><b>@Html.FormatCurrency(item.Product.GetPrice()) đ</b></p>
                     </div>
                 </div>
             }
         </div>
-        <div class="cart-button"><a class="btn btn-view-more" href="/cart/index">@Html.GetResource(TempResourceKeyCollection.Cart_View)</a></div>
+        <div class="cart-button">
+            <a class="btn btn-view-more" href="/@StringUrlConstant.CartIndex">
+                @Html.GetResource(TempResourceKeyCollection.Cart_View)
+            </a>
+        </div>
     </div>
 </div>

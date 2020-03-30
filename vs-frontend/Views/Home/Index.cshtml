@@ -36,15 +36,15 @@
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                    <a href="/ProductDetail/ProductDetail">
+                    <a href="@item.GetUrl()">
                         <figure>
                             <div class="img ov-h">
-                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
+                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Name">
                             </div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
                                 <div class="code">@item.ProductCode</div>
-                                <div class="price">@item.Price ₫</div>
+                                <div class="price">@Html.FormatCurrency(item.Price) ₫</div>
                             </figcaption>
                         </figure>
                     </a>
@@ -65,13 +65,13 @@
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                    <a href="/ProductDetail/ProductDetail">
+                    <a href="@item.GetUrl()">
                         <figure>
                             <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Name"></div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
                                 <div class="code">@item.ProductCode</div>
-                                <div class="price">@item.Price ₫</div>
+                                <div class="price">@Html.FormatCurrency(item.Price) ₫</div>
                                 <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
                             </figcaption>
                         </figure>
@@ -91,7 +91,7 @@
 <div class="index-5">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Home_Customer)</h2>
+            <h2>@Model.Customer.Title</h2>
         </div>
         <!-- SLIDER KHÁCH HÀNG CỦA KIM CÚC SPORTS-->
         <div class="slider-customer">
@@ -102,7 +102,7 @@
                         <div class="swiper-slide">
                             <figure>
                                 <div class="img ov-h">
-                                    <img class="ofcv" src="@item.ImageDefault" alt="@item.AltImage">
+                                    <img class="ofcv" src="@item.Path" alt="@item.Alt">
                                 </div>
                                 <figcaption>
                                     <p class="lcl lcl-1">@item.Name</p>

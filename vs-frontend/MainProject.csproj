@@ -128,6 +128,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Core\Enums\TempResourceKeyCollection.cs" />
+    <Compile Include="Framework\Constant\StringConstant.cs" />
     <Compile Include="Framework\Helpers\JsonHelper.cs" />
     <Compile Include="Framework\Helpers\ResourceHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -137,13 +138,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SBussiness\LandingPage\Models\Contact\SubscribeViewModel.cs" />
+    <Compile Include="SBussiness\LandingPage\Models\Contact\ContactManageModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\AboutViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\Contact\ContactViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\Home\HomeViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\NewsDetailViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\NewsViewModel.cs" />
-    <Compile Include="SBussiness\LandingPage\Models\News\PolicyViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Models\Cart\OrderViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Product\ProductDetailViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Product\ProductViewModel.cs" />
@@ -325,24 +325,15 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="ViewsReadMe\_ViewStart.cshtml" />
-    <Content Include="ViewsReadMe\Home\Index.cshtml" />
-    <Content Include="ViewsReadMe\Shared\_Breadcrumb.cshtml" />
-    <Content Include="ViewsReadMe\Shared\_Layout.cshtml" />
-    <Content Include="ViewsReadMe\Shared\Error.cshtml" />
-    <Content Include="ViewsReadMe\Shared\Maintainance.cshtml" />
-    <Content Include="ViewsReadMe\Web.config" />
-    <Content Include="ViewsReadMe\Home\_Footer.cshtml" />
-    <Content Include="ViewsReadMe\Home\_Header.cshtml" />
-    <Content Include="ViewsReadMe\Home\_Subscribe.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\_Cart.cshtml" />
     <Content Include="Views\Cart\_Order.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Contact\_Subscribe.cshtml" />
+    <Content Include="Views\Contact\_Form.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_Footer.cshtml" />
     <Content Include="Views\Home\_Header.cshtml" />
+    <Content Include="Views\Home\_Subscribe.cshtml" />
     <Content Include="Views\News\About.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\News\Index.cshtml" />

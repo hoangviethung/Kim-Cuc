@@ -5,9 +5,9 @@ using MainProject.SBussiness.LandingPage.Models.Contact;
 using System.Collections.Generic;
 using MainProject.Core.Enums;
 
-namespace MainProject.SBussiness.LandingPage.Models.SubscribeViewModel
+namespace MainProject.SBussiness.LandingPage.Models.Contact
 {
-    public class ContactManagement
+    public class ContactManageModel
     {
         public string Name { get; set; }
 
@@ -15,8 +15,8 @@ namespace MainProject.SBussiness.LandingPage.Models.SubscribeViewModel
         public string Email { get; set; }
 
         [Required]
-        public string PhoneNumber { get; set; }
+        public string Phone { get; set; }
 
-        public string ContactContent { get; set; }
+        public string Content { get; set; }
     }
 }   
