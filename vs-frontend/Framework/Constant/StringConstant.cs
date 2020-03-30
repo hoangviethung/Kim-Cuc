@@ -24,7 +24,7 @@ namespace MainProject.Framework.Constant
         public const string FAQGet = "get-faq";
 
         // Cart
-        public const string CartIndex = "gio-hang";
+        public const string CartIndex = "Cart/Index";
         public const string AddToCart = "them-vao-gio-hang";
         public const string UpdateToCart = "cap-nhat-gio-hang";
         public const string RemoveFromCart = "xoa-khoi-gio-hang";

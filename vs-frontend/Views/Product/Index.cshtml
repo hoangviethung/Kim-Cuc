@@ -8,15 +8,15 @@
             <div class="col-lg-3">
                 <aside class="aside-filter">
                     <div class="nav-filter mobile">
-                        <div class="item" toggle-view="filter">@Html.GetResource(TempResourceKeyCollection.Filter)</div>
-                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
+                        <div class="item" toggle-view="filter">@Html.GetResource(ResourceKeyCollection.Filter)</div>
+                        <div class="item" toggle-view="category">@Html.GetResource(ResourceKeyCollection.Brand)</div>
                     </div>
                     @*BỘ LỌC*@
                     <div class="block-filter" toggle-id="filter">
-                        <div class="title-filter" icon="filter">@Html.GetResource(TempResourceKeyCollection.Filter)</div>
+                        <div class="title-filter" icon="filter">@Html.GetResource(ResourceKeyCollection.Filter)</div>
                         <div class="block">
                             <!-- GIÁ-->
-                            <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Price)</div>
+                            <div class="type-filter">@Html.GetResource(ResourceKeyCollection.Price)</div>
                             <div class="price">
                                 <div id="value-text" data-min-html data-max-html></div>
                                 <input type="text" id="amount" readonly hidden>
@@ -24,18 +24,18 @@
                                 <div class="about-price"><span>@Html.FormatCurrency(Model.FromPrice)</span><span>@Html.FormatCurrency(Model.ToPrice)</span></div>
                             </div>
                             <!-- THƯƠNG HIỆU-->
-                            <div class="type-filter">@Html.GetResource(TempResourceKeyCollection.Brand)</div>
+                            <div class="type-filter">@Html.GetResource(ResourceKeyCollection.Brand)</div>
                             <div class="brand">
                                 <div class="search">
-                                        <input type="text" placeholder="@Html.GetResource(TempResourceKeyCollection.Enter_Brand)">
-                                        <div class="submit">
-                                           <img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search">
-                                        </div>
+                                    <input type="text" placeholder="@Html.GetResource(ResourceKeyCollection.Enter_Brand)">
+                                    <div class="submit">
+                                        <img class="lazyload blur-up" src="/Content/resources/assets/icons/search.svg" alt="search">
+                                    </div>
                                 </div>
                                 <div class="check-box">
                                     <div class="form-group">
                                         <input id="all" hidden name="brand" type="radio" checked>
-                                        <label for="all">@Html.GetResource(TempResourceKeyCollection.All_Brand)</label>
+                                        <label for="all">@Html.GetResource(ResourceKeyCollection.All_Brand)</label>
                                     </div>
                                     @*DANH SÁCH CÁC THƯƠNG HIỆU*@
                                     @foreach (var item in Model.Brands)
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="block-filter mt-20px" toggle-id="category">
-                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Product)</div>
+                        <div class="title-filter" icon="category">@Html.GetResource(ResourceKeyCollection.Category_Product)</div>
                         <div class="block">
                             @Html.Raw(Model.CommerceMenu)
                         </div>
@@ -73,8 +73,8 @@
                                             <figcaption>
                                                 <div class="name">@item.Name</div>
                                                 <div class="code">@item.Code</div>
-                                                <div class="price">@Html.FormatCurrency(item.Price) ₫</div>
-                                                <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
+                                                <div class="price">@Html.FormatCurrency(item.Price) @Html.GetResource(ResourceKeyCollection.Currency)</div>
+                                                <div class="btn btn-gift">@Html.GetResource(ResourceKeyCollection.Gift)</div>
                                             </figcaption>
                                         </figure>
                                     </a>

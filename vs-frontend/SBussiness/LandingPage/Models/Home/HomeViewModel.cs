@@ -294,7 +294,10 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
         //DANH SÁCH MENU CATEGORY
         public string Menu { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/FooterMenu.txt");
         //DANH SÁCH MENU COPYRIGHT
-        public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/CopyrightMenu.txt");
+        public List<Article> Articles { get; set; } = new List<Article>
+        {
+
+        };
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
         public Branch Branch { get; set; } = new Branch
         {

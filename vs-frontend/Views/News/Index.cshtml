@@ -12,10 +12,10 @@
                 <aside class="aside-filter">
                     <div class="nav-filter mobile">
                         <div class="item" toggle-view="#"></div>
-                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
+                        <div class="item" toggle-view="category">@Html.GetResource(ResourceKeyCollection.News_Hot)</div>
                     </div>
                     <div class="block-filter category" toggle-id="category">
-                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
+                        <div class="title-filter" icon="category">@Html.GetResource(ResourceKeyCollection.News_Hot)</div>
                         <div class="block">
                             <ul class="list-item-category">
                                 @foreach (var item in Model.HotNews)
@@ -100,7 +100,7 @@
                             </a>
                         </div>
                     }
-                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(TempResourceKeyCollection.Read_More)</a>
+                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(ResourceKeyCollection.Read_More)</a>
                 </div>
             </div>
         </div>

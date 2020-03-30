@@ -132,6 +132,7 @@
     <Compile Include="Framework\Helpers\JsonHelper.cs" />
     <Compile Include="Framework\Helpers\ResourceHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Framework\Helpers\SettingHelper.cs" />
     <Compile Include="Framework\Models\PagingModel.cs" />
     <Compile Include="Framework\Models\PagingStyleModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +146,7 @@
     <Compile Include="SBussiness\LandingPage\Models\News\NewsDetailViewModel.cs" />
     <Compile Include="SBussiness\LandingPage\Models\News\NewsViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Models\Cart\OrderViewModel.cs" />
+    <Compile Include="SCommerce\LandingPage\Models\Payment\OrderInfoViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Product\ProductDetailViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Product\ProductViewModel.cs" />
     <Compile Include="SCommerce\LandingPage\Models\Cart\CartItemModel.cs" />
@@ -152,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Read_File\Category_Product.txt" />
-    <Content Include="App_Data\Read_File\CopyrightMenu.txt" />
     <Content Include="App_Data\Read_File\FooterMenu.txt" />
     <Content Include="App_Data\Read_File\HeaderMenu.txt" />
     <Content Include="App_Data\MainProject.Core.Commerce.dll" />
@@ -338,7 +339,6 @@
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Policy.cshtml" />
-    <Content Include="Views\Product\Cart.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />

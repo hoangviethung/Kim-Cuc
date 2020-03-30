@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="ta-c">
-                            <div class="gift">@Html.GetResource(TempResourceKeyCollection.Gift_Incentives)</div>
+                            <div class="gift">@Html.GetResource(ResourceKeyCollection.Gift_Incentives)</div>
                         </div>
                     </div>
                     <!-- - ## CHIỀU CAO CỦA SLIDER THUBNAIL ĐƯỢC SET BẰNG JS -## //-->
@@ -48,11 +48,11 @@
             <div class="col-md-6">
                 <div class="general-information" data-setHeight="767.98">
                     <h1>@Model.Name</h1>
-                    <div class="product-code">@Html.GetResource(TempResourceKeyCollection.Product_Code):<span>@Model.Code</span></div>
-                    <div class="product-brand">@Html.GetResource(TempResourceKeyCollection.Brand):<span>@Model.Brand.Name</span></div>
+                    <div class="product-code">@Html.GetResource(ResourceKeyCollection.Product_Code):<span>@Model.Code</span></div>
+                    <div class="product-brand">@Html.GetResource(ResourceKeyCollection.Brand):<span>@Model.Brand.Name</span></div>
                     <div class="description-general-information lcl lcl-6">@Html.Raw(Model.Description)</div>
                     <div class="block-amount-price">
-                        <div class="price">GIÁ:<span>@Html.FormatCurrency(Model.Price) VNĐ</span></div>
+                        <div class="price">GIÁ:<span>@Html.FormatCurrency(Model.Price) @Html.GetResource(ResourceKeyCollection.Currency)</span></div>
                         <div class="block-buttons">
                             <div class="amount quantity-input">
                                 <div class="text">số lượng</div>
@@ -77,10 +77,10 @@
         <!-- MENU TAB ĐÚNG ID TOGGLE FOR SẼ HIỆN NỘI DUNG TAB-->
         <ul class="list-tab-product-detail list-tab">
             <li class="item-tab-product-detail">
-                <div class="item" toggle-for="tab-info-product">@Html.GetResource(TempResourceKeyCollection.Product_Information)</div>
+                <div class="item" toggle-for="tab-info-product">@Html.GetResource(ResourceKeyCollection.Product_Information)</div>
             </li>
             <li class="item-tab-product-detail">
-                <div class="item" toggle-for="tab-specifications-product">@Html.GetResource(TempResourceKeyCollection.Product_Specifications)</div>
+                <div class="item" toggle-for="tab-specifications-product">@Html.GetResource(ResourceKeyCollection.Product_Specifications)</div>
             </li>
         </ul>
         <!-- NỘI DUNG TAB TABID === TOGGLE-FOR-->
@@ -90,8 +90,8 @@
                     <div class="demo-ckeditor content-tab-info-product">
                         <h3>@Model.Name</h3>
                         <div class="d-f">
-                            <div class="code">@Html.GetResource(TempResourceKeyCollection.Product_Code):<span>@Model.Code</span></div>
-                            <div class="brand">@Html.GetResource(TempResourceKeyCollection.Brand):<span>@Model.Brand.Name</span></div>
+                            <div class="code">@Html.GetResource(ResourceKeyCollection.Product_Code):<span>@Model.Code</span></div>
+                            <div class="brand">@Html.GetResource(ResourceKeyCollection.Brand):<span>@Model.Brand.Name</span></div>
                         </div>
                         @Html.Raw(Model.Content)
                     </div>
@@ -109,7 +109,7 @@
 <section class="products-other">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Product_Others)</h2>
+            <h2>@Html.GetResource(ResourceKeyCollection.Product_Others)</h2>
         </div>
         <div class="slider-products-other">
             <div class="swiper-container">
@@ -124,8 +124,8 @@
                                         <figcaption>
                                             <div class="name">@item.Name</div>
                                             <div class="code">@item.Code</div>
-                                            <div class="price">@Html.FormatCurrency(item.Price) ₫</div>
-                                            <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
+                                            <div class="price">@Html.FormatCurrency(item.Price) @Html.GetResource(ResourceKeyCollection.Currency)</div>
+                                            <div class="btn btn-gift">@Html.GetResource(ResourceKeyCollection.Gift)</div>
                                         </figcaption>
                                     </figure>
                                 </a>
