@@ -67,7 +67,17 @@
 		.slider-main-banner {
 			.swiper-slide {
 				figure {
-					height: unset;
+					height: 185px;
+				}
+			}
+		}
+
+		&.small-banner {
+			.slider-main-banner {
+				.swiper-slide {
+					figure {
+						height: 185px;
+					}
 				}
 			}
 		}

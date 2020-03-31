@@ -262,28 +262,28 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
         {
             new Banner
             {
-                ResourcePath = "/Content/resources/assets/images/banner/home-banner.png",
+                ResourcePath = "/Content/resources/assets/images/banner/1.png",
                 Alt = "BANNER QUẢNG CÁO 1",
             },
             new Banner
             {
-                ResourcePath = "/Content/resources/assets/images/banner/normal-banner-1.png",
+                ResourcePath = "/Content/resources/assets/images/banner/2.png",
                 Alt = "BANNER QUẢNG CÁO 2",
             },
             new Banner
             {
-                ResourcePath = "/Content/resources/assets/images/banner/normal-banner-2.png",
+                ResourcePath = "/Content/resources/assets/images/banner/3.png",
                 Alt = "BANNER QUẢNG CÁO 3",
             },
             new Banner
             {
-                ResourcePath = "/Content/resources/assets/images/banner/normal-banner-3.png",
+                ResourcePath = "/Content/resources/assets/images/banner/4.png",
                 Alt = "BANNER QUẢNG CÁO 4",
             },
             new Banner
             {
-                ResourcePath = "/Content/resources/assets/images/banner/normal-banner-4.png",
-                Alt = "BANNER QUẢNG CÁO 4",
+                ResourcePath = "/Content/resources/assets/images/banner/5.png",
+                Alt = "BANNER QUẢNG CÁO 5",
             }
         };
     }
