@@ -52,7 +52,9 @@
                     <div class="block-filter mt-20px" toggle-id="category">
                         <div class="title-filter" icon="category">@Html.GetResource(ResourceKeyCollection.Category_Product)</div>
                         <div class="block">
-                            @Html.Raw(Model.CommerceMenu)
+                            <ul class="list-item-category">
+                                @Html.Raw(Model.CommerceMenu)
+                            </ul>
                         </div>
                     </div>
                 </aside>

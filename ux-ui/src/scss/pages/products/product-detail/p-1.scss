@@ -65,9 +65,8 @@
 	}
 
 	.general-information {
-		position  : relative;
-		height    : 100%;
-		max-height: 448px;
+		position: relative;
+		height  : 100%;
 
 		h1 {
 			color        : #464646;
@@ -106,9 +105,7 @@
 		}
 
 		.block-amount-price {
-			position: absolute;
-			left    : 0;
-			bottom  : 0;
+			margin-top: 25px;
 
 			.price {
 				font-size  : 30px;
@@ -194,10 +191,6 @@
 			}
 
 			.block-amount-price {
-				position: absolute;
-				left    : 0;
-				bottom  : 0;
-
 				.price {
 					font-size: 24px;
 
@@ -275,7 +268,6 @@
 		.general-information {
 			margin-top    : 25px;
 			display       : flex;
-			flex-wrap     : wrap;
 			flex-direction: column;
 
 			h1 {
@@ -294,12 +286,13 @@
 			.description-general-information {
 				-webkit-line-clamp: unset;
 				font-size         : 14px;
+				-webkit-box-orient: unset;
+				display           : block;
+				overflow          : unset;
+				text-overflow     : unset;
 			}
 
 			.block-amount-price {
-				position     : static;
-				bottom       : unset;
-				left         : unset;
 				order        : -1;
 				margin-bottom: 15px;
 
