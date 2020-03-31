@@ -386,6 +386,7 @@ const rangeSliderPrice = () => {
 		$("#value-text").html($("#slider-range").slider("values", 0) + "đ - " + $("#slider-range").slider("values", 1) + "đ");
 	} else {
 		$('.block-filter .price').remove();
+		$('.block-filter .type-filter')[0].remove();
 	}
 }
 

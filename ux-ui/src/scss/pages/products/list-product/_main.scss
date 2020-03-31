@@ -1,7 +1,13 @@
 @import 'list-product';
 
 section.block-list-product {
+	margin-top: 50px;
+
 	.pagination {
 		margin: 15px 0;
+	}
+
+	@media (max-width: 1024.98px) {
+		margin-top: 25px;
 	}
 }
