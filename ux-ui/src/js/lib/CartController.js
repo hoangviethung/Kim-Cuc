@@ -57,7 +57,7 @@
 				// THUỘC TÍNH
 				const propertyId = $(this).attr("data-propertyid");
 				// SỐ TRÊN GIỎ HÀNG THANH MENU
-				const headerCartNumber = ('#header-cart-number');
+				const headerCartNumber = $('#header-cart-number');
 
 				$.ajax({
 					url: url,
@@ -227,7 +227,7 @@
 				const productId = $(this).attr("data-pid");
 				const propertyId = $(this).attr("data-propertyid");
 				const itemRemove = $(this).parents('.cart-item');
-				const headerCartNumber = ('#header-cart-number');
+				const headerCartNumber = $('#header-cart-number');
 				const quantityProduct = $("#quantity-product");
 				// Check product's id is number
 				if (productId != '' && $.isNumeric(productId) &&
