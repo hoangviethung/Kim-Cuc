@@ -18,6 +18,8 @@ namespace MainProject.SCommerce.LandingPage.Models.Product
 
         public string Image { get; set; }
 
+        public string Images { get; set; }
+
         public string Code { get; set; }
 
         public string ImageFolder { get; set; }
@@ -34,7 +36,7 @@ namespace MainProject.SCommerce.LandingPage.Models.Product
 
         public string Specification { get; set; }
 
-        public string Body { get; set; }
+        public string Content { get; set; }
 
         public DateTime Order { get; set; }
 

@@ -4,7 +4,7 @@
 <section class="block-info-contact">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Contact_Info)</h2>
+            <h2>@Html.GetResource(ResourceKeyCollection.Contact_Info)</h2>
         </div>
         <div class="row">
             <div class="col-lg-5">
@@ -13,25 +13,24 @@
                     <div class="name">KIM CÚC SPORT</div>
                 </div>
                 <ul class="list-info-contact">
-                    @foreach (var item in Model.Branch)
-                    {
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/address-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
-                            <a class="text" href="javascript:void(0)">@item.Address</a>
-                        </li>
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/phone-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
-                            <a class="text" href="tel:@item.Phone">@item.Phone</a>
-                        </li>
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/mail-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
-                            <a class="text" href="mailto:@item.Email">@item.Email</a>
-                        </li>
-                        <li class="item-info">
-                            <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/facebook-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
-                            <a class="text" target="_blank" href="@item.Description">@item.Description</a>
-                        </li>
-                    }
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/address-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
+                        <a class="text" href="javascript:void(0)">@Model.Branch.Address</a>
+                    </li>
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/phone-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
+                        <a class="text" href="tel:@Model.Branch.Phone">@Model.Branch.Phone</a>
+                    </li>
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/mail-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
+                        <a class="text" href="mailto:@Model.Branch.Email">@Model.Branch.Email</a>
+                    </li>
+                    <li class="item-info">
+                        <div class="icon"><img class="lazyload blur-up" data-src="/Content/resources/assets/icons/facebook-site-contact.svg" alt="ICON ĐỊA CHỈ"></div>
+                        <a class="text" target="_blank" href="@SettingHelper.GetValueSetting("FacebookPage")">
+                            @SettingHelper.GetValueSetting("FacebookPage")
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-7">
@@ -45,10 +44,10 @@
 <section class="block-form-contact">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Contact_Us)</h2>
+            <h2>@Html.GetResource(ResourceKeyCollection.Contact_Us)</h2>
         </div>
         <div class="block-form block-send-mail">
-            @Html.Partial("_Subscribe", new MainProject.SBussiness.LandingPage.Models.SubscribeViewModel.ContactManagement())
+            @Html.Partial("_Form", new MainProject.SBussiness.LandingPage.Models.Contact.ContactManageModel())
         </div>
     </div>
 </section>

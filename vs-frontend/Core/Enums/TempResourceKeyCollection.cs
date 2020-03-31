@@ -32,7 +32,6 @@ namespace MainProject.Core.Enums
 
         // Home
         Home_Distributer,
-        Home_Customer,
 
         // ORDER
         Order,

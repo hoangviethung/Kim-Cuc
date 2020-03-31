@@ -189,32 +189,32 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
                 new Core.Image
                 {
                     Name = "Trần Văn A",
-                    ImageDefault = "/Content/resources/assets/images/customer/1.png",
-                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                    Path = "/Content/resources/assets/images/customer/1.png",
+                    Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
                 },
                 new Core.Image
                 {
                     Name = "Trần Văn B",
-                    ImageDefault = "/Content/resources/assets/images/customer/2.png",
-                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                    Path = "/Content/resources/assets/images/customer/2.png",
+                    Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
                 },
                 new Core.Image
                 {
                     Name = "Trần Văn C",
-                    ImageDefault = "/Content/resources/assets/images/customer/3.png",
-                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                    Path = "/Content/resources/assets/images/customer/3.png",
+                    Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
                 },
                 new Core.Image
                 {
                     Name = "Trần Văn D",
-                    ImageDefault = "/Content/resources/assets/images/customer/4.png",
-                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                    Path = "/Content/resources/assets/images/customer/4.png",
+                    Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
                 },
                 new Core.Image
                 {
                     Name = "Trần Văn E",
-                    ImageDefault = "/Content/resources/assets/images/customer/5.png",
-                    AltImage ="KHÁCH HÀNG KIM CÚC SPORTS",
+                    Path = "/Content/resources/assets/images/customer/5.png",
+                    Alt ="KHÁCH HÀNG KIM CÚC SPORTS",
                 },
             })
         };
@@ -294,7 +294,10 @@ namespace MainProject.SBussiness.LandingPage.Models.Home
         //DANH SÁCH MENU CATEGORY
         public string Menu { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/FooterMenu.txt");
         //DANH SÁCH MENU COPYRIGHT
-        public string CopyrightMenus { get; set; } = ResourceHelper.ReadFile("/App_Data/Read_File/CopyrightMenu.txt");
+        public List<Article> Articles { get; set; } = new List<Article>
+        {
+
+        };
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
         public Branch Branch { get; set; } = new Branch
         {

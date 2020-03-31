@@ -4,20 +4,20 @@
 <section class="block-news-detail">
     <div class="container">
         <div class="block-title">
-            <h2>@Model.Categorys.Title</h2>
+            <h2>@Model.Article.Category.Title</h2>
         </div>
         <div class="row">
             <div class="col-lg-3">
                 <aside class="aside-filter">
                     <div class="nav-filter mobile">
                         <div class="item" toggle-view="#"></div>
-                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
+                        <div class="item" toggle-view="category">@Html.GetResource(ResourceKeyCollection.News_Hot)</div>
                     </div>
                     <div class="block-filter category" toggle-id="category">
-                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.News_Hot)</div>
+                        <div class="title-filter" icon="category">@Html.GetResource(ResourceKeyCollection.News_Hot)</div>
                         <div class="block">
                             <ul class="list-item-category">
-                                @foreach (var item in Model.NewsHot)
+                                @foreach (var item in Model.Articles)
                                 {
                                     <li class="item-category"><a href="@item.GetUrl()">@item.Title</a></li>
                                 }
@@ -29,14 +29,14 @@
             <div class="col-lg-9">
                 <div class="news-detail">
                     <div class="title-news-detail">
-                        <h1>@Model.Content.Title</h1>
+                        <h1>@Model.Article.Title</h1>
                         <div class="list-more-info-news">
-                            <div class="item" type="time">@Model.Content.Order.ToString("dd/MM/yyyy")</div>
-                            <div class="item" type="view">@Model.Content.ViewCount lượt xem</div>
+                            <div class="item" type="time">@Model.Article.CreateDate.ToString("dd/MM/yyyy")</div>
+                            <div class="item" type="view">@Model.Article.ViewCount lượt xem</div>
                         </div>
                     </div>
                     <div class="description">
-                        @Html.Raw(Model.Content.Description)
+                        @Html.Raw(Model.Article.Body)
                     </div>
                 </div>
             </div>

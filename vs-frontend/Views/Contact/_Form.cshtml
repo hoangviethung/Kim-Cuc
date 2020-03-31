@@ -1,0 +1,29 @@
+﻿@model MainProject.SBussiness.LandingPage.Models.Contact.ContactManageModel
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="name">@Html.GetResource(ResourceKeyCollection.Full_Name) (*)</label>
+        @Html.TextBoxFor(d => d.Name, new { placeholder = @Html.GetResource(ResourceKeyCollection.Full_Name), @class = "form-control", id = "name" })
+        @Html.ValidationMessageFor(d => d.Name)
+    </div>
+    <div class="form-group">
+        <label for="email">@Html.GetResource(ResourceKeyCollection.Email) (*)</label>
+        @Html.TextBoxFor(d => d.Email, new { placeholder = @Html.GetResource(ResourceKeyCollection.Email), @class = "form-control", id = "email" })
+        @Html.ValidationMessageFor(d => d.Email)
+    </div>
+    <div class="form-group">
+        <label for="phone">@Html.GetResource(ResourceKeyCollection.Phone_Number) (*)</label>
+        @Html.TextBoxFor(d => d.Phone, new { placeholder = @Html.GetResource(ResourceKeyCollection.Phone_Number), @class = "form-control", id = "phone" })
+        @Html.ValidationMessageFor(d => d.Phone)
+    </div>
+    <div class="form-group">
+        <label for="content">@Html.GetResource(ResourceKeyCollection.Contact_Content) (*)</label>
+        @Html.TextAreaFor(d => d.Content, new { placeholder = @Html.GetResource(ResourceKeyCollection.Contact_Content), @class = "form-control", id = "content" })
+        @Html.ValidationMessageFor(d => d.Content)
+    </div>
+    <div class="form-group">
+        <label for="#"></label>
+        <button class="btn btn-submit" data-url="/dang-ky">@Html.GetResource(ResourceKeyCollection.Contact_Submit)</button>
+    </div>
+}

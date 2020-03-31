@@ -6,7 +6,7 @@
     <!-- DANH SÁCH NHÀ PHÂN PHỐI-->
     <section class="distributor">
         <div class="container">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Home_Distributer)</h2>
+            <h2>@Html.GetResource(ResourceKeyCollection.Home_Distributer)</h2>
             <div class="slider-distributor">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -28,7 +28,7 @@
 <div class="index-2">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Product_Hot)</h2>
+            <h2>@Html.GetResource(ResourceKeyCollection.Product_Hot)</h2>
         </div>
         <!-- DANH SÁCH SẢN PHẨM BÁN CHẠY-->
         <div class="row list-item">
@@ -36,15 +36,15 @@
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                    <a href="/ProductDetail/ProductDetail">
+                    <a href="@item.GetUrl()">
                         <figure>
                             <div class="img ov-h">
-                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="SẢN PHẨM BÁN CHẠY KIM CÚC SPORTS">
+                                <img class="lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Name">
                             </div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
                                 <div class="code">@item.ProductCode</div>
-                                <div class="price">@item.Price ₫</div>
+                                <div class="price">@Html.FormatCurrency(item.Price) @Html.GetResource(ResourceKeyCollection.Currency)</div>
                             </figcaption>
                         </figure>
                     </a>
@@ -57,7 +57,7 @@
 <div class="index-3">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Product_Best_Seller)</h2>
+            <h2>@Html.GetResource(ResourceKeyCollection.Product_Best_Seller)</h2>
         </div>
         <!-- DANH SÁCH SẢN PHẨM THỂ THAO-->
         <div class="row list-item">
@@ -65,14 +65,14 @@
             {
                 <div class="item-product">
                     <!-- LINK VÀO SẢN PHẨM CHI TIẾT-->
-                    <a href="/ProductDetail/ProductDetail">
+                    <a href="@item.GetUrl()">
                         <figure>
                             <div class="img ov-h"><img class="lazyload blur-up" data-src="@item.ImageDefault" alt="@item.Name"></div>
                             <figcaption>
                                 <div class="name">@item.Name</div>
                                 <div class="code">@item.ProductCode</div>
-                                <div class="price">@item.Price ₫</div>
-                                <div class="btn btn-gift">@Html.GetResource(TempResourceKeyCollection.Gift)</div>
+                                <div class="price">@Html.FormatCurrency(item.Price) @Html.GetResource(ResourceKeyCollection.Currency)</div>
+                                <div class="btn btn-gift">@Html.GetResource(ResourceKeyCollection.Gift)</div>
                             </figcaption>
                         </figure>
                     </a>
@@ -91,7 +91,7 @@
 <div class="index-5">
     <div class="container">
         <div class="block-title">
-            <h2>@Html.GetResource(TempResourceKeyCollection.Home_Customer)</h2>
+            <h2>@Model.Customer.Title</h2>
         </div>
         <!-- SLIDER KHÁCH HÀNG CỦA KIM CÚC SPORTS-->
         <div class="slider-customer">
@@ -102,7 +102,7 @@
                         <div class="swiper-slide">
                             <figure>
                                 <div class="img ov-h">
-                                    <img class="ofcv" src="@item.ImageDefault" alt="@item.AltImage">
+                                    <img class="ofcv" src="@item.Path" alt="@item.Alt">
                                 </div>
                                 <figcaption>
                                     <p class="lcl lcl-1">@item.Name</p>
@@ -125,7 +125,7 @@
             <!-- TIN TỨC NỔI BẬT - TRANG CHỦ-->
             <div class="col-lg-7">
                 <div class="block-title">
-                    <h2>@Html.GetResource(TempResourceKeyCollection.News_Hot)</h2>
+                    <h2>@Html.GetResource(ResourceKeyCollection.News_Hot)</h2>
                 </div>
                 @if (Model.HotNews.Count > 0)
                 {
@@ -137,7 +137,7 @@
                                     <h3 class="lcl lcl-2">@Model.HotNews[0].Title</h3>
                                     <time>@Model.HotNews[0].CreateDate.ToString("dd/MM/yyyy")</time>
                                     <p class="lcl lcl-4">@Model.HotNews[0].Description</p>
-                                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(TempResourceKeyCollection.Read_More)</a>
+                                    <a href="tin-tuc-chi-tiet.html" class="btn btn-view-more">@Html.GetResource(ResourceKeyCollection.Read_More)</a>
                                 </figcaption>
                             </a>
                         </figure>
@@ -148,7 +148,7 @@
             <div class="col-lg-5">
                 <div class="block-home-news">
                     <div class="block-title">
-                        <h2>@Html.GetResource(TempResourceKeyCollection.News)</h2>
+                        <h2>@Html.GetResource(ResourceKeyCollection.News)</h2>
                     </div>
                     <!-- DANH SÁCH TIN TỨC - SỰ KIỆN - TRANG CHỦ-->
                     <div class="list-home-news clearfix">

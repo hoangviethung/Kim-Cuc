@@ -3,11 +3,8 @@
 
 @using (Ajax.BeginForm("Subscribe", "Home", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "subscribeSuccess" }))
 {
-    <div class="form-group">
-        @Html.TextBoxFor(d => d.Email, new { placeholder="Enter your e-mail" })
-        @Html.ValidationMessageFor(d => d.Email)
-        <button>SUBSCRIBE</button>
-    </div>
+    @Html.TextBoxFor(d => d.Email, new { @class = "form-control", placeholder = Html.GetResource(ResourceKeyCollection.Subscribe_Email) })
+    <button class="btn-send" href=""><img src="/content/resources/assets/icons/button-send.svg"></button>
 }
 
 <script>

@@ -49,7 +49,7 @@ namespace MainProject.SBussiness.LandingPage.Models.News
             }
         };
         //DANH SÁCH TIN TỨC
-        public List<Article> News { get; set; } = new List<Article>
+        public List<Article> Articles { get; set; } = new List<Article>
         {
             new Article {
                     Id = 001,

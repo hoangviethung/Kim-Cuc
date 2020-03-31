@@ -1,4 +1,4 @@
-﻿@model MainProject.SBussiness.LandingPage.Models.News.PolicyViewModel
+﻿@model MainProject.SBussiness.LandingPage.Models.News.NewsDetailViewModel
 
 
 <section class="block-policy">
@@ -11,10 +11,10 @@
                 <aside class="aside-filter">
                     <div class="nav-filter mobile">
                         <div class="item" toggle-view="#"></div>
-                        <div class="item" toggle-view="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
+                        <div class="item" toggle-view="category">@Html.GetResource(ResourceKeyCollection.Category_Policy)</div>
                     </div>
                     <div class="block-filter category">
-                        <div class="title-filter" icon="category">@Html.GetResource(TempResourceKeyCollection.Category_Policy)</div>
+                        <div class="title-filter" icon="category">@Html.GetResource(ResourceKeyCollection.Category_Policy)</div>
                         <div class="block">
                             <ul class="list-item-category">
                                 @foreach (var item in Model.Articles)

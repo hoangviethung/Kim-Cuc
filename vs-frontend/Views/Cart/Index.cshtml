@@ -6,52 +6,52 @@
             <div class="col-xl-8">
                 <div class="cart-table-title">
                     <div class="info-title">
-                        <p id="quantity-product">@Html.GetResource(TempResourceKeyCollection.Cart) (sản phẩm)</p>
+                        <p id="quantity-product">@Html.GetResource(ResourceKeyCollection.Cart) (@Model.ShoppingCartItems.Sum(x => x.Quantity) sản phẩm)</p>
                     </div>
                     <div class="quantity-title">
-                        <p>@Html.GetResource(TempResourceKeyCollection.Cart_Amount)</p>
+                        <p>@Html.GetResource(ResourceKeyCollection.Cart_Amount)</p>
                     </div>
                     <div class="price-title">
-                        <p>@Html.GetResource(TempResourceKeyCollection.Price)</p>
+                        <p>@Html.GetResource(ResourceKeyCollection.Price)</p>
                     </div>
                 </div>
                 <div class="cart-table">
-                    <div class="cart-item">
-                        <div class="item-info">
-                            <div class="imgbox"><img src="/Content/resources/assets/images/products/list-product/1.png" alt=""></div><a class="name" href="/product/index">
-                                <h3>Tên sản phẩm</h3>
-                            </a>
-                            <input class="remove-cart" type="button" value="@Html.GetResource(ResourceKeyCollection.Delete)" data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang">
-                        </div>
-                        <div class="item-quantity">
-                            <div class="mobile item-label">@Html.GetResource(ResourceKeyCollection.Cart_Amount)</div>
-                            <div class="quantity-input">
-                                <div class="downQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">-</div>
-                                <input class="quantity-cart" name="quantity" type="text" value="499" data-pid="11223344" data-propertyid="11223344">
-                                <div class="upQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">+</div>
+                    @foreach (var item in Model.ShoppingCartItems)
+                    {
+                        <div class="cart-item">
+                            <div class="item-info">
+                                <div class="imgbox"><img src="@item.Product.ImageDefault" alt="@item.Product.Name"></div>
+                                <a class="name" href="@item.Product.GetUrl()">
+                                    <h3>@item.Product.Name</h3>
+                                </a>
+                                <input class="remove-cart" type="button" value="@Html.GetResource(ResourceKeyCollection.Delete)" data-pid="@item.Product.Id" data-propertyid="0" data-url="/xoa-khoi-gio-hang">
+                            </div>
+                            <div class="item-quantity">
+                                <div class="mobile item-label">@Html.GetResource(ResourceKeyCollection.Cart_Amount)</div>
+                                <div class="quantity-input">
+                                    <div class="downQuantity" data-pid="@item.Product.Id" data-propertyid="0" data-url-update="/cap-nhat-gio-hang">-</div>
+                                    <input class="quantity-cart" name="quantity" type="text" value="@item.Quantity" data-pid="@item.Product.Id" data-propertyid="0">
+                                    <div class="upQuantity" data-pid="@item.Product.Id" data-propertyid="0" data-url-update="/cap-nhat-gio-hang">+</div>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <div class="mobile item-label">@Html.GetResource(ResourceKeyCollection.Price)</div>
+                                <div class="item-price-wrapper">
+                                    <p class="price"><b>@Html.FormatCurrency(item.Product.Price)đ</b></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="item-price">
-                            <div class="mobile item-label">@Html.GetResource(ResourceKeyCollection.Price)</div>
-                            <div class="item-price-wrapper">
-                                <p class="price"><b>9.490.000đ</b></p>
-                                <p class="price-old">
-                                    <del>12.390.000đ</del>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
                 <div class="cart-back"><a href="danh-sach-san-pham.html">@Html.GetResource(ResourceKeyCollection.Keep_Shopping)</a></div>
             </div>
             <div class="col-xl-4">
                 <div class="cart-summary">
                     <div class="cart-summary-block">
-                        <p><span>@Html.GetResource(ResourceKeyCollection.Temp_Price):</span><span id="temp_price">515.000.000đ</span></p>
-                        <p><span>@Html.GetResource(ResourceKeyCollection.Discount_Amount):</span><span id="discount_amount">-15.000.000đ</span></p>
-                    </div>
-                    <div class="cart-summary-block">
-                        <p><span>@Html.GetResource(ResourceKeyCollection.Actual_Amount_Total):</span><strong class="price" id="actual_amount_total">515.000.000đ</strong></p>
+                        <p>
+                            <span>@Html.GetResource(ResourceKeyCollection.Actual_Amount_Total):</span>
+                            <strong class="price" id="actual_amount_total">@Html.FormatCurrency(Model.TotalAmount)đ</strong>
+                        </p>
                         <p class="vat">(Đã bao gồm VAT)</p>
                     </div>
                 </div>
@@ -65,12 +65,12 @@
 <div class="d-n">
     <div class="popup-checkout" id="popup-checkout">
         <h2>@Html.GetResource(ResourceKeyCollection.Contact_Us)</h2>
-        @Html.Partial("_Order", new MainProject.SCommerce.LandingPage.Models.Cart.OrderViewModel())
+        @Html.Partial("_Order", new MainProject.SCommerce.LandingPage.Models.Payment.OrderInfoViewModel())
     </div>
 </div>
 <div class="d-n">
     <div class="popup-checkout-complete" id="popup-checkout-complete">
-        <img src="./assets/icons/cam-on.svg" alt="">
+        <img src="/Content/resourcesassets/icons/cam-on.svg" alt="">
         <h1>@Html.GetResource(ResourceKeyCollection.Cart_Order_Success)</h1>
         <p>@Html.GetResource(ResourceKeyCollection.Thank_You)</p>
         <p>Quản trị viên sẽ liên hệ để lại để xác nhận.</p><br><br>

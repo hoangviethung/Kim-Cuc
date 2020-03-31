@@ -2,7 +2,7 @@
 @model MainProject.SBussiness.LandingPage.Models.News.IntroductionViewModel
 
 @*SECTION 1 ABOUT*@
-<section class="about-1 about-content">
+<section class="about-1">
     <div class="container">
         <div class="block-title"><h2>@Model.Section1.Title</h2></div>
         <div class="row">
@@ -29,7 +29,7 @@
                 {
                     <div class="item col-md-4">
                         <figure class="hover-style-2">
-                            <div class="img ov-h"><img class="ofcv" src="@item.ImageDefault" alt="@item.AltImage"></div>
+                            <div class="img ov-h"><img class="ofcv" src="@item.Path" alt="@item.Alt"></div>
                             <figcaption>
                                 <h3 class="lcl lcl-1">@item.Name</h3>
                                 <p class="lcl lcl-2">@item.Content</p>
@@ -42,7 +42,7 @@
     </div>
 </section>
 @*SECTION 3*@
-<section class="about-3 about-content">
+<section class="about-3">
     <div class="container">
         <div class="block-title">
             <h2>@Html.Raw(Model.Section3.Title)</h2>

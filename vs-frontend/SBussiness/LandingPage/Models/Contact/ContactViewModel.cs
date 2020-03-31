@@ -9,29 +9,15 @@ namespace MainProject.SBussiness.LandingPage.Models.Contact
 {
     public class ContactViewModel
     {
-        public Category Categorys { get; set; }
-        //DANH DÁCH TITLE TRANG LIÊN HỆ
-        public List<Category> ListTitle = new List<Category>
-        {
-             new Category
-            {
-                Title = "THÔNG TIN LIÊN HỆ"
-            },
-              new Category
-            {
-                Title = "LIÊN LẠC VỚI CHÚNG TÔI"
-            },
-        };
+        public Category Category { get; set; }
+
         //DANH SÁCH THÔNG TIN CỦA CÔNG TY
-        public List<Branch> Branch { get; set; } = new List<Branch>
+        public Branch Branch { get; set; } = new Branch
         {
-            new Branch
-            {
-                Phone = "0906.523.876",
-                Email = "kimcucsport@gmail.com",
-                Address = "133 - 143 Hùng Vương, t.p Quảng Ngãi",
-                Description = "https://www.facebook.com/kimcucsports/",
-            }
+            Phone = "0906.523.876",
+            Email = "kimcucsport@gmail.com",
+            Address = "133 - 143 Hùng Vương, t.p Quảng Ngãi",
+            Description = "https://www.facebook.com/kimcucsports/",
         };
     }
 }

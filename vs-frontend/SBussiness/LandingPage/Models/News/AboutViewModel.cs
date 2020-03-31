@@ -28,19 +28,19 @@ namespace MainProject.SBussiness.LandingPage.Models.News
                 new IntroImage
                 {
                     Name = "Tầm nhìn sứ mệnh 1",
-                    ImageDefault = "/Content/resources/assets/images/about/target-1.png",
+                    Path = "/Content/resources/assets/images/about/target-1.png",
                     Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna"
                 },
                 new IntroImage
                 {
                     Name = "Tầm nhìn sứ mệnh 2",
-                    ImageDefault = "/Content/resources/assets/images/about/target-2.png",
+                    Path = "/Content/resources/assets/images/about/target-2.png",
                     Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna"
                 },
                 new IntroImage
                 {
                     Name = "Tầm nhìn sứ mệnh 3",
-                    ImageDefault = "/Content/resources/assets/images/about/target-3.png",
+                    Path = "/Content/resources/assets/images/about/target-3.png",
                     Content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna"
                 },
             })
