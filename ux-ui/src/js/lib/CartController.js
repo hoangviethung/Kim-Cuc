@@ -317,9 +317,9 @@
 								headerCartNumber.text(res.Result.ItemCount);
 								headerQuantityProduct.text(res.Result.ItemCount + " ");
 								// ĐƠN GIÁ 1 SẢN PHẨM HEADER
-								headerActualAmountTotal.text(Number(res.Result.Price).toLocaleString() + Currency);
+								headerActualAmountTotal.text(Number(res.Result.Price).toLocaleString() + res.Result.Currency);
 								// TỔNG SỐ TIỀN CẦN THANH TOÁN
-								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + Currency);
+								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + res.Result.Currency);
 							} else {
 								console.log('Giỏ hàng không được thay đổi');
 							}
