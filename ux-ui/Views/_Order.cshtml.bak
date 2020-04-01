@@ -1,0 +1,25 @@
+﻿@using MainProject.Framework.Constant
+@model MainProject.SCommerce.LandingPage.Models.Payment.OrderInfoViewModel
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.TextBoxFor(d => d.RecipientName, new { placeholder = Html.GetResource(ResourceKeyCollection.Full_Name), @class = "form-control", id = "fullname" })
+        @Html.ValidationMessageFor(d => d.RecipientName)
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(d => d.RecipientPhone, new { placeholder = Html.GetResource(ResourceKeyCollection.Phone_Number), @class = "form-control", id = "phone" })
+        @Html.ValidationMessageFor(d => d.RecipientPhone)
+    </div>
+    <br>
+    <h3>@Html.GetResource(ResourceKeyCollection.Contact_Info)</h3>
+    <div class="form-group">
+        @Html.TextAreaFor(d => d.ShippingAddress, new { placeholder = Html.GetResource(ResourceKeyCollection.Order_Address_Input), @class = "form-control", id = "address" })
+        @Html.ValidationMessageFor(d => d.ShippingAddress)
+    </div>
+    <div class="form-button">
+        <button class="btn btn-apply" data-url="/@StringUrlConstant.CartPaymentAddressPost">
+            @Html.GetResource(ResourceKeyCollection.Cart_Order_Confirmation)
+        </button>
+    </div>
+}

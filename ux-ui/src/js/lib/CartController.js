@@ -58,8 +58,9 @@
 				const propertyId = $(this).attr("data-propertyid");
 				// SỐ TRÊN GIỎ HÀNG THANH MENU
 				const headerCartItemCount = $('#header-cart-item-count');
+				// Cart list trên header
+				const headerCartList = $("header .cart-panel .cart-list");
 				// THÔNG TIN CỦA GIỎ HÀNG
-				const listItem = $('header .cart-list');
 				$.ajax({
 					url: url,
 					type: 'POST',
@@ -72,18 +73,15 @@
 					cache: false,
 					success: function(res) {
 						if (res.Code == 200) {
+							let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
 							// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
 							headerCartItemCount.text(res.Result.TotalQuantity);
-							const item =
-								`<div class="cart-item">
-							<div class="info">
-							<h4 class="name"><a id="header-cart-name" href=${res.Result.Url}>${res.Result.Name} </a></h4>
-							<p class="brand">Thương hiệu: <b id="header-cart-brand">${res.Result.Brand}</b></p>
-							<p class="quantity">Số lượng: <b id="header-cart-quantity">${res.Result.ItemCount}</b></p>
-							<p class="price"><b id="header-cart-price">${Number(res.Result.Price).toLocaleString() + res.Result.Currency}</b></p>
-							</div>
-							</div>`
-							listItem.append(item)
+							if (item.length > 0) {
+								item.find("#header-cart-quantity").text(res.Result.ItemCount)
+							} else {
+								item = CartController.helpers.generateCartItem(res);
+								headerCartList.append(item);
+							}
 						} else
 							alert(res.Message);
 					},
@@ -105,7 +103,8 @@
 					// LẤY GIÁ TRỊ CŨ CỦA INPUT
 					let current_val = parseInt(input_val.val());
 					// GIÁ TRỊ MỚI
-					let new_val = ++current_val;
+					let new_val = current_val >= 5 ? 5 : current_val += 1;
+
 					// ĐIỀU KIỆN SỐ LƯỢNG
 					if ($.isNumeric(current_val) && current_val > 0) {
 						// THÕA MÃN THÌ +1
@@ -234,8 +233,8 @@
 			// XÓA SẢN PHẨM KHỎI GIỎ HÀNG
 			removeFromCart: function(e) {
 				e.preventDefault();
-				const url = $(this).attr('data-url');
 				const productId = $(this).attr("data-pid");
+				const url = $(this).attr('data-url');
 				const propertyId = $(this).attr("data-propertyid");
 				const itemRemove = $(this).parents('.cart-item');
 				const headerCartNumber = $('#header-cart-number');
@@ -243,6 +242,7 @@
 				// SỐ TRÊN GIỎ HÀNG THANH MENU
 				const headerCartItemCount = $('#header-cart-item-count');
 				const actualAmountTotal = $("#actual_amount_total");
+				const headerCartList = $("header .cart-panel .cart-list");
 				// Check product's id is number
 				if (productId != '' && $.isNumeric(productId) &&
 					propertyId != '' && $.isNumeric(propertyId)) {
@@ -256,7 +256,6 @@
 						}),
 						cache: false,
 						success: function(res) {
-							console.log(res);
 							if (res.Code == 200) {
 								// SỐ LƯỢNG GIỎ HÀNG TRONG MENU
 								headerCartNumber.text(res.Result.ItemCount);
@@ -267,6 +266,7 @@
 								// CẬP NHẬT GIỎ HÀNG
 								headerCartItemCount.text(res.Result.TotalQuantity);
 								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + res.Result.Currency);
+								headerCartList.find(`.cart-item[data-pid='${productId}']`).remove();
 							}
 						},
 						failure: function(errMsg) {
@@ -310,6 +310,7 @@
 			},
 			// CẬP NHẬT GIỎ HÀNG
 			updateToCart: function(productId, propertyId, quantity, urlUpdate) {
+				const headerCartList = $("header .cart-panel .cart-list")
 				// Check product's Id and quantity is number
 				if (productId != '' && $.isNumeric(productId) &&
 					quantity != '' && $.isNumeric(quantity) &&
@@ -326,20 +327,18 @@
 						cache: false,
 						success: function(res) {
 							const headerCartItemCount = $('#header-cart-item-count');
+							const totalQuantityTable = $('#total-quantity-table');
 							const actualAmountTotal = $("#actual_amount_total");
-							const listItem = $('header .cart-list');
 							if (res.Code == 200) {
-								headerCartItemCount.text(res.Result.TotalQuantity)
-								const item =
-									`<div class="cart-item">
-									<div class="info">
-									<h4 class="name"><a id="header-cart-name" href=${res.Result.Url}>${res.Result.Name} </a></h4>
-									<p class="brand">Thương hiệu: <b id="header-cart-brand">${res.Result.Brand}</b></p>
-									<p class="quantity">Số lượng: <b id="header-cart-quantity">${res.Result.ItemCount}</b></p>
-									<p class="price"><b id="header-cart-price">${Number(res.Result.Price).toLocaleString() + res.Result.Currency}</b></p>
-									</div>
-									</div>`
-								listItem.append(item)
+								headerCartItemCount.text(res.Result.TotalQuantity);
+								totalQuantityTable.text(res.Result.TotalQuantity);
+								let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
+								// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
+								if (res.Result.itemCount <= 0) {
+									item.remove();
+								} else {
+									item.find("#header-cart-quantity").text(res.Result.ItemCount);
+								}
 								// TỔNG SỐ TIỀN CẦN THANH TOÁN
 								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + res.Result.Currency);
 							} else {
@@ -352,11 +351,6 @@
 					});
 				}
 			},
-
-
-
-
-
 			// PHẦN THANH TOÁN (CHƯA LÀM ĐẾN)
 			getCity: function() {
 				var id = ($.isNumeric($(this).attr("data-city")) ? Number($(this).attr("data-city")) : 0);
@@ -424,6 +418,18 @@
 				$(".quantity-input .minus").prop("disabled", "");
 				CartController.model.isDelay == false;
 			},
+		},
+		helpers: {
+			generateCartItem: function(res) {
+				return `<div class="cart-item" data-pid="${res.Result.Id}">
+					<div class="info">
+					<h4 class="name"><a id="header-cart-name" href=${res.Result.Url}>${res.Result.Name} </a></h4>
+					<p class="brand">Thương hiệu: <b id="header-cart-brand">${res.Result.Brand}</b></p>
+					<p class="quantity">Số lượng: <b id="header-cart-quantity">${res.Result.ItemCount}</b></p>
+					<p class="price"><b id="header-cart-price">${Number(res.Result.Price).toLocaleString() + res.Result.Currency}</b></p>
+					</div>
+				</div>`;
+			}
 		}
 	}
 
