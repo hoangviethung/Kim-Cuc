@@ -74,6 +74,7 @@ const toggleMenuMobile = () => {
 		$('.bottom-header').toggleClass('active');
 		$('body').toggleClass('disabled')
 		$('#overlay').toggleClass('active');
+		$('.main-nav .sub-menu-lv1').removeClass('active');
 	});
 
 	$('#overlay').on('click', function() {
@@ -81,7 +82,28 @@ const toggleMenuMobile = () => {
 		$('body').removeClass('disabled')
 		$('.bottom-header').removeClass('active');
 		$('.toggle-menu').removeClass('active');
+		$('.main-nav .sub-menu-lv1').removeClass('active');
 	})
+}
+
+const initializationClassSubMenu = () => {
+	const itemHasSub = $('header .main-nav .nav-list .nav-item').children('.nav-list');
+	itemHasSub.addClass('sub-menu-lv1');
+	itemHasSub.parents('.nav-item').addClass('has-sub');
+}
+
+const SubMenuMobile = () => {
+	if ($(window).width() <= 1024) {
+		$('.main-nav .nav-list .has-sub').on('click', function(e) {
+			e.stopPropagation();
+			$(e.currentTarget).children('.sub-menu-lv1').addClass('active');
+		});
+
+		$('.main-nav .nav-list .has-sub .back').on('click', function(e) {
+			e.stopPropagation();
+			$(e.currentTarget).closest('.sub-menu-lv1').removeClass('active');
+		});
+	}
 }
 
 const toggleCartMenu = () => {
@@ -240,7 +262,7 @@ const setHeightThumbnailSliderProductDetail = () => {
 // SLIDER NHÀ PHÂN PHỐI !!!
 const distributorSlider = () => {
 	var swiper = new Swiper('.slider-distributor .swiper-container', {
-		slidesPerView: 2,
+		slidesPerView: 4,
 		spaceBetween: 10,
 		loop: true,
 		speed: 500,
@@ -254,15 +276,8 @@ const distributorSlider = () => {
 			prevEl: '.slider-distributor .swiper-button-prev',
 		},
 		breakpoints: {
-			768: {
-				slidesPerView: 4,
-				spaceBetween: 10,
-			},
-			1024: {
-				spaceBetween: 10,
-			},
 			1200: {
-				slidesPerView: 4,
+				slidesPerView: 5,
 				spaceBetween: 29,
 			}
 		},
@@ -577,6 +592,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	toggleMenuMobile();
 	toggleCartMenu();
 	activeMenuOnSmallDesktop();
+	initializationClassSubMenu();
+	SubMenuMobile();
 	// SLIDER HERE !!!
 	mainSlider();
 	productDetailSlider();
@@ -606,6 +623,7 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('resize', () => {
 	// TAM GIÁC LOGO HEADER !!!
+	activeMenuOnSmallDesktop();
 	activeHeaderWhenScroll();
 	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 	setHeightThumbnailSliderProductDetail();

@@ -1,6 +1,10 @@
 .cart-list-page {
 	margin: 50px 0;
 
+	.box-left {
+		padding-right: 50px;
+	}
+
 	.cart-back {
 		text-align : right;
 		padding-top: 20px;
@@ -368,6 +372,12 @@
 		@media (max-width: 767.98px) {
 			margin : 0 -10px;
 			padding: 15px;
+		}
+	}
+
+	@media (max-width: 1199.98px) {
+		.box-left {
+			padding-right: 0;
 		}
 	}
 

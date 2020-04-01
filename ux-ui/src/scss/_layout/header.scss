@@ -371,6 +371,87 @@ header {
 				.nav-item {
 					margin-right: 59px;
 
+					&.has-sub {
+						position: relative;
+
+						.back {
+							cursor     : pointer;
+							user-select: none;
+							margin     : 12px 40px 12px 20px;
+							color      : map-get($mau, main);
+							font-size  : 14px;
+							white-space: nowrap;
+						}
+
+						.sub-menu-lv1 {
+							visibility: hidden;
+							opacity   : 0;
+
+							padding-right : 0 !important;
+							position      : absolute;
+							top           : 30px;
+							height        : unset;
+							flex-direction: column;
+							background    : #ffffff;
+							transition    : .3s all ease-in-out;
+
+							.nav-item {
+								margin-right : 0;
+								margin-bottom: 10px;
+								display      : flex;
+								position     : relative;
+								flex-wrap    : wrap;
+								border-bottom: 1px solid #dedede;
+								width        : 100%;
+
+								.nav-link {
+									color      : #000000;
+									font-size  : 14px;
+									width      : 100%;
+									white-space: nowrap;
+									padding    : 12px 40px 12px 20px;
+
+									@media (min-width: 1025px) {
+										&:hover {
+											color: map-get($mau, main);
+
+											&:after {
+												width: 100%;
+											}
+										}
+									}
+								}
+							}
+						}
+
+						&:after {
+							content       : '';
+							position      : absolute;
+							left          : 50%;
+							bottom        : -20px;
+							transform     : translateX(-50%);
+							width         : 100%;
+							height        : 25px;
+							visibility    : hidden;
+							opacity       : 0;
+							pointer-events: none;
+						}
+
+						@media (min-width: 1025px) {
+							&:hover {
+								&:after {
+									visibility: visible;
+									opacity   : 1;
+								}
+
+								.sub-menu-lv1 {
+									visibility: visible;
+									opacity   : 1;
+								}
+							}
+						}
+					}
+
 					.nav-link {
 						position      : relative;
 						font-size     : 18px;
@@ -390,6 +471,16 @@ header {
 							background: map-get($mau, main-2);
 							transform : translateX(-50%);
 							transition: .3s all ease;
+						}
+
+						@media (min-width: 1025px) {
+							&:hover {
+								color: map-get($mau, main);
+
+								&:after {
+									width: 100%;
+								}
+							}
 						}
 					}
 
@@ -413,18 +504,6 @@ header {
 
 					&:last-child {
 						margin-right: 0;
-					}
-
-					@media (min-width: 1025px) {
-						&:hover {
-							.nav-link {
-								color: map-get($mau, main);
-
-								&:after {
-									width: 100%;
-								}
-							}
-						}
 					}
 				}
 			}
@@ -491,13 +570,23 @@ header {
 					height: 70px;
 
 					.nav-item {
-						.nav-link {
-							color: #000;
+
+						&.has-sub {
+							&:after {
+								pointer-events: visible;
+							}
+
+							.sub-menu-lv1 {
+								top: 50px;
+							}
 						}
 
-						@media (min-width: 1025px) {
-							&:hover {
-								.nav-link {
+
+						.nav-link {
+							color: #000;
+
+							@media (min-width: 1025px) {
+								&:hover {
 									color: map-get($mau, main);
 								}
 							}
@@ -574,6 +663,41 @@ header {
 						width         : 100%;
 						border-bottom : 1px solid rgba($color: #000000, $alpha: .3);
 
+						&.has-sub {
+							&:after {
+								content: none;
+							}
+
+							&:before {
+								content          : '';
+								position         : absolute;
+								right            : 0;
+								top              : 35%;
+								width            : 20px;
+								height           : 20px;
+								transform        : translateY(-50%);
+								background-image : url(../assets/icons/slider-next.svg);
+								background-size  : cover;
+								background-repeat: no-repeat;
+							}
+
+							.sub-menu-lv1 {
+								position  : fixed;
+								left      : -100%;
+								top       : 60px;
+								bottom    : 0;
+								width     : 70%;
+								visibility: visible;
+								opacity   : 1;
+								transition: .3s all ease-in-out;
+								z-index   : 100;
+
+								&.active {
+									left: 0;
+								}
+							}
+						}
+
 						.nav-link {
 							font-size: 14px;
 							color    : #000000;
@@ -595,6 +719,18 @@ header {
 	@media (max-width: 767.98px) {
 		.bottom-header {
 			width: 100%;
+
+			.main-nav {
+				.nav-list {
+					.nav-item {
+						&.has-sub {
+							.sub-menu-lv1 {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
