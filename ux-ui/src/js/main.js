@@ -34,7 +34,7 @@ const paddingRightNavList = () => {
 	const widthBlockCart = $('.block-cart').outerWidth();
 	const navList = $('header .bottom-header .nav-list');
 	if ($('header').hasClass('scrolled')) {
-		navList.css('padding-right', widthBlockCart + 59)
+		navList.css('padding-right', widthBlockCart + 30);
 	} else {
 		navList.css('padding-right', 'unset')
 	}
@@ -52,10 +52,19 @@ const addClassScroll = () => {
 
 // HEADER HERE !!!
 const activeHeaderWhenScroll = () => {
-	if ($(window).width() >= 1025) {
+	if ($(window).width() > 1200) {
 		setBorder();
 		paddingRightNavList();
 		addClassScroll();
+	}
+}
+
+// THAY ĐỔI MENU KHI MÀN HÌNH TẦM 1200PX -> 1024PX
+const activeMenuOnSmallDesktop = () => {
+	if ($(window).width() <= 1200 && $(window).width() > 1024) {
+		document.querySelector('header').classList.add('scrolled');
+		const navList = $('header .bottom-header .nav-list');
+		navList.css('padding-right', '130px');
 	}
 }
 
@@ -567,6 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
+	activeMenuOnSmallDesktop();
 	// SLIDER HERE !!!
 	mainSlider();
 	productDetailSlider();

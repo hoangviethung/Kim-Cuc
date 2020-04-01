@@ -16,13 +16,20 @@
 		}
 	}
 
-	@media (max-width: 1024.98px) {
+	@media (max-width: 1024px) {
 		.list-item {
 			.item {
-				-ms-flex        : 0 0 100%;
-				-webkit-box-flex: 0;
-				flex            : 0 0 50%;
-				max-width       : 50%;
+				flex     : 0 0 33.3333%;
+				max-width: 33.3333%;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.list-item {
+			.item {
+				flex     : 0 0 50%;
+				max-width: 50%;
 			}
 		}
 	}
