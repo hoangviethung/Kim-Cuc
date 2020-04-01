@@ -223,8 +223,6 @@ const productOtherSlider = () => {
 
 const setHeightThumbnailSliderProductDetail = () => {
 	if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
-		console.log(1);
-
 		const heightReview = $('.slider-product-detail .review-image img').height();
 		$('.thumbnail-image').css('height', heightReview);
 	}
