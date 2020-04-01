@@ -348,9 +348,13 @@ const rangeSliderPrice = () => {
 			},
 			success: function(res) {
 				const listProduct = $(res).find('.list-product .list-item');
-				const pagination = $(res).find('.block-list-product .pagination')
 				$('.list-product .list-item').html(listProduct.html());
 				$('.block-list-product .pagination').html(pagination.html());
+				if (pagination.html()) {
+					$('.block-list-product .pagination').html(pagination.html());
+				} else {
+					$('.block-list-product .pagination').html('');
+				}
 			},
 			complete: function() {
 				$('.list-product .list-item').css({
@@ -411,8 +415,6 @@ const filterMobile = () => {
 			if (toggleView == toggleId) {
 				$(this).slideToggle();
 				$('.aside-filter .block-filter').not(this).slideUp();
-				// $('#overlay').toggleClass('active');
-				// $('body').toggleClass('disabled');
 			} else {
 				console.log('Không tồn tại toggleView');
 			}
