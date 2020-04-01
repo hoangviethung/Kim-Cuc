@@ -57,8 +57,9 @@
 				// THUỘC TÍNH
 				const propertyId = $(this).attr("data-propertyid");
 				// SỐ TRÊN GIỎ HÀNG THANH MENU
-				const headerCartNumber = $('#header-cart-number');
-
+				const headerCartItemCount = $('#header-cart-item-count');
+				// THÔNG TIN CỦA GIỎ HÀNG
+				const listItem = $('header .cart-list');
 				$.ajax({
 					url: url,
 					type: 'POST',
@@ -72,7 +73,17 @@
 					success: function(res) {
 						if (res.Code == 200) {
 							// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
-							headerCartNumber.text(res.Result.ItemCount);
+							headerCartItemCount.text(res.Result.TotalQuantity);
+							const item =
+								`<div class="cart-item">
+							<div class="info">
+							<h4 class="name"><a id="header-cart-name" href=${res.Result.Url}>${res.Result.Name} </a></h4>
+							<p class="brand">Thương hiệu: <b id="header-cart-brand">${res.Result.Brand}</b></p>
+							<p class="quantity">Số lượng: <b id="header-cart-quantity">${res.Result.ItemCount}</b></p>
+							<p class="price"><b id="header-cart-price">${Number(res.Result.Price).toLocaleString() + res.Result.Currency}</b></p>
+							</div>
+							</div>`
+							listItem.append(item)
 						} else
 							alert(res.Message);
 					},
@@ -229,6 +240,9 @@
 				const itemRemove = $(this).parents('.cart-item');
 				const headerCartNumber = $('#header-cart-number');
 				const quantityProduct = $("#quantity-product");
+				// SỐ TRÊN GIỎ HÀNG THANH MENU
+				const headerCartItemCount = $('#header-cart-item-count');
+				const actualAmountTotal = $("#actual_amount_total");
 				// Check product's id is number
 				if (productId != '' && $.isNumeric(productId) &&
 					propertyId != '' && $.isNumeric(propertyId)) {
@@ -242,13 +256,17 @@
 						}),
 						cache: false,
 						success: function(res) {
+							console.log(res);
 							if (res.Code == 200) {
 								// SỐ LƯỢNG GIỎ HÀNG TRONG MENU
 								headerCartNumber.text(res.Result.ItemCount);
 								// SỐ LƯỢNG SẢN PHẨM Ở TRANG GIỎ HÀNG
-								quantityProduct.text(res.Result.ItemCount + " ");
+								quantityProduct.text(res.Result.ItemCount);
 								// XÓA SẢN PHẨM ĐƯỢC CLICK VÀO
 								itemRemove.remove();
+								// CẬP NHẬT GIỎ HÀNG
+								headerCartItemCount.text(res.Result.TotalQuantity);
+								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + res.Result.Currency);
 							}
 						},
 						failure: function(errMsg) {
@@ -258,7 +276,6 @@
 				} else {
 					console.log('Không thể xóa');
 				}
-
 				return false;
 			},
 			// ĐẾN TRANG THANH TOÁN
@@ -308,16 +325,21 @@
 						}),
 						cache: false,
 						success: function(res) {
-							const headerCartNumber = $('#header-cart-number');
-							const headerQuantityProduct = $("#header-quantity-product");
-							const headerActualAmountTotal = $('#header-actual_amount_total');
+							const headerCartItemCount = $('#header-cart-item-count');
 							const actualAmountTotal = $("#actual_amount_total");
+							const listItem = $('header .cart-list');
 							if (res.Code == 200) {
-								// CẬP NHẬT GIỎ HÀNG TẠI THANH MENU
-								headerCartNumber.text(res.Result.ItemCount);
-								headerQuantityProduct.text(res.Result.ItemCount + " ");
-								// ĐƠN GIÁ 1 SẢN PHẨM HEADER
-								headerActualAmountTotal.text(Number(res.Result.Price).toLocaleString() + res.Result.Currency);
+								headerCartItemCount.text(res.Result.TotalQuantity)
+								const item =
+									`<div class="cart-item">
+									<div class="info">
+									<h4 class="name"><a id="header-cart-name" href=${res.Result.Url}>${res.Result.Name} </a></h4>
+									<p class="brand">Thương hiệu: <b id="header-cart-brand">${res.Result.Brand}</b></p>
+									<p class="quantity">Số lượng: <b id="header-cart-quantity">${res.Result.ItemCount}</b></p>
+									<p class="price"><b id="header-cart-price">${Number(res.Result.Price).toLocaleString() + res.Result.Currency}</b></p>
+									</div>
+									</div>`
+								listItem.append(item)
 								// TỔNG SỐ TIỀN CẦN THANH TOÁN
 								actualAmountTotal.text(Number(res.Result.TotalAmount).toLocaleString() + res.Result.Currency);
 							} else {
