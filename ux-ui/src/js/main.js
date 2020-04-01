@@ -136,7 +136,7 @@ const mainSlider = () => {
 
 const productDetailSlider = () => {
 	var thumbnail = new Swiper('.slider-product-detail .thumbnail-image .swiper-container', {
-		spaceBetween: 35,
+		spaceBetween: 15,
 		slidesPerView: 2,
 		loop: true,
 		observer: true,
@@ -151,13 +151,18 @@ const productDetailSlider = () => {
 			prevEl: '.thumbnail-image .swiper-button-prev',
 		},
 		breakpoints: {
-			1024: {
+			320: {
+				direction: 'vertical',
+				slidesPerView: 2,
+			},
+			575: {
+				direction: 'horizontal',
 				slidesPerView: 3,
 				spaceBetween: 10,
 			},
-			1200: {
-				slidesPerView: 5,
-				spaceBetween: 16,
+			1025: {
+				direction: 'vertical',
+				slidesPerView: 3,
 			}
 		},
 	});
@@ -216,6 +221,15 @@ const productOtherSlider = () => {
 	})
 }
 
+const setHeightThumbnailSliderProductDetail = () => {
+	if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
+		console.log(1);
+
+		const heightReview = $('.slider-product-detail .review-image img').height();
+		$('.thumbnail-image').css('height', heightReview);
+	}
+}
+
 // SLIDER NHÀ PHÂN PHỐI !!!
 const distributorSlider = () => {
 	var swiper = new Swiper('.slider-distributor .swiper-container', {
@@ -238,11 +252,10 @@ const distributorSlider = () => {
 				spaceBetween: 10,
 			},
 			1024: {
-				slidesPerView: 4,
 				spaceBetween: 10,
 			},
 			1200: {
-				slidesPerView: 6,
+				slidesPerView: 4,
 				spaceBetween: 29,
 			}
 		},
@@ -547,6 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		new WOW().init();
 		// GET HEIGHT SOMWE ELEMENT
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
+		setHeightThumbnailSliderProductDetail();
 		activeHeaderWhenScroll();
 	});
 	checkLayoutBanner();
@@ -583,4 +597,5 @@ document.addEventListener('resize', () => {
 	// TAM GIÁC LOGO HEADER !!!
 	activeHeaderWhenScroll();
 	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
+	setHeightThumbnailSliderProductDetail();
 })

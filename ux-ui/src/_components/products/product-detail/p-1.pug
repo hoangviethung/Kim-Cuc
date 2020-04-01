@@ -1,20 +1,19 @@
 section.product-detail-1
 	.container
 		.row
-			.col-md-6
+			.col-lg-6
 				.slider-product-detail
 					// - ## SLIDER HÌNH LỚNN -## //
-					.review-image.ov-h(data-getHeight)
+					.review-image.ov-h
 						.swiper-container
 							.swiper-wrapper
 								-for(i=1;i<10;i++)
 									.swiper-slide.ov-h
 										.img.ov-h
 											img.ofcv(src="./assets/images/products/product-detail/1.png", alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT")
-						.ta-c
-							.gift Ưu đãi quà tặng
+						
 					// - ## CHIỀU CAO CỦA SLIDER THUBNAIL ĐƯỢC SET BẰNG JS -## //
-					.thumbnail-image.ov-h
+					.thumbnail-image
 						.swiper-container.h-100
 							.swiper-wrapper
 								-for(j=1;j<10;j++)
@@ -23,9 +22,10 @@ section.product-detail-1
 											img.ofcv(src="./assets/images/products/product-detail/1.png", alt="HÌNH ẢNH SẢN PHẨM CHI TIẾT")
 						.swiper-button-prev
 						.swiper-button-next
-			.col-md-6
-				.general-information(data-setHeight="767.98")
+			.col-lg-6
+				.general-information
 					h1 GIÀY TENNIS NAM IKECOUR
+					.gift Ưu đãi quà tặng
 					.product-code Mã hàng:
 						span AGS - 262
 					.product-brand Thương hiệu:

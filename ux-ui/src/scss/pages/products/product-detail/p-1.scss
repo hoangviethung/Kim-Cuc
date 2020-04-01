@@ -2,31 +2,44 @@
 	margin-top: 70px;
 
 	.slider-product-detail {
-		margin-right: 70px;
+		display  : flex;
+		flex-wrap: wrap;
 
 		.review-image {
-			padding-bottom: 30px;
-			border-bottom : 4px solid map-get($mau, main);
+			-ms-flex-preferred-size: 0;
+			-ms-flex-positive      : 1;
+			-webkit-box-flex       : 1;
+			flex-basis             : 0;
+			flex-grow              : 1;
+			max-width              : 100%;
+			padding-right          : 50px;
 
 			.img {
+				height: auto;
+
 				img {
 					display: block;
 					margin : 0 auto;
 				}
 			}
-
-			.gift {
-				margin-top: 100px;
-			}
 		}
 
 		.thumbnail-image {
-			position: relative;
-			padding : 25px 55px;
+			position        : relative;
+			-ms-flex        : 0 0 100%;
+			-webkit-box-flex: 0;
+			flex            : 0 0 100px;
+			max-width       : 100px;
+			padding-bottom  : 15px;
 
 			.swiper-slide {
 				cursor : pointer;
 				opacity: .5;
+
+				.img {
+					padding-bottom: 10px;
+					border-bottom : 1px solid #dedede;
+				}
 
 				&.swiper-slide-thumb-active {
 					opacity: 1;
@@ -38,8 +51,8 @@
 				width     : 30px;
 				height    : 30px;
 				margin-top: 0;
-				top       : 50%;
-				transform : translateY(-50%);
+				top       : unset;
+				bottom    : -30px;
 				z-index   : 10;
 
 				&:after {
@@ -47,6 +60,7 @@
 					width          : 100%;
 					height         : 100%;
 					background-size: cover;
+					transform      : rotate(90deg);
 				}
 			}
 
@@ -65,20 +79,22 @@
 	}
 
 	.general-information {
-		position: relative;
-		height  : 100%;
+		padding-left: 50px;
 
 		h1 {
-			color        : #464646;
-			font-size    : 55px;
-			margin-bottom: 15px;
+			color    : #464646;
+			font-size: 32px;
+		}
+
+		.gift {
+			margin: 10px 0;
 		}
 
 		.product-code,
 		.product-brand {
-			font-size    : 18px;
 			color        : #464646;
 			margin-bottom: 5px;
+			margin-top   : 5px;
 
 			span {
 				display    : inline-block;
@@ -94,28 +110,30 @@
 
 		.product-brand {
 			span {
-				font-weight: 700;
-				color      : map-get($mau, main);
+				text-transform: uppercase;
+				font-weight   : 700;
+				color         : map-get($mau, main);
 			}
 		}
 
 		.description-general-information {
+			font-size : 14px;
 			margin-top: 5px;
 			font-style: italic;
 		}
 
 		.block-amount-price {
-			margin-top: 25px;
+			margin-top: 10px;
 
 			.price {
-				font-size  : 30px;
+				font-size  : 24px;
 				font-weight: 700;
 				font-style : italic;
 				line-height: 1;
 
 				span {
 					color    : map-get($mau, main);
-					font-size: 45px;
+					font-size: 32px;
 				}
 			}
 
@@ -129,13 +147,13 @@
 					align-items  : center;
 					background   : #ffffff;
 					box-shadow   : 0 3px 6px rgba($color: #000000, $alpha: .16);
-					height       : 50px;
+					height       : 35px;
 					padding      : 0 10px;
 					border-radius: 5px;
 
 					.text {
 						color         : #707070;
-						font-size     : 18px;
+						font-size     : 14px;
 						text-transform: uppercase;
 						margin-right  : 10px;
 					}
@@ -143,13 +161,13 @@
 					input {
 						border        : 0;
 						background    : map-get($mau, main);
-						height        : 35px;
+						height        : 20px;
+						width         : 20px;
 						color         : #ffffffff;
 						text-align    : center;
-						border-radius : 10px;
-						width         : 35px;
+						border-radius : 5px;
 						letter-spacing: 2px;
-						font-size     : 18px;
+						font-size     : 14px;
 					}
 
 					.block-up-down {
@@ -160,7 +178,23 @@
 
 						.upQuantity,
 						.downQuantity {
-							cursor: pointer;
+							cursor   : pointer;
+							position : absolute;
+							left     : 50%;
+							transform: translateX(-50%);
+
+							img {
+								width      : 80%;
+								user-select: none;
+							}
+						}
+
+						.upQuantity {
+							bottom: -3px;
+						}
+
+						.downQuantity {
+							top: -3px;
 						}
 
 						&:after {
@@ -184,36 +218,6 @@
 		}
 	}
 
-	@media (max-width: 1439.98px) {
-		.general-information {
-			h1 {
-				font-size: 32px;
-			}
-
-			.block-amount-price {
-				.price {
-					font-size: 24px;
-
-					span {
-						font-size: 32px;
-					}
-				}
-
-				.block-buttons {
-					.amount {
-						.text {
-							font-size: 16px;
-						}
-
-						input {
-							font-size: 14px;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	@media (max-width: 1299.98px) {
 		.general-information {
 			.description-general-information {
@@ -226,12 +230,60 @@
 		margin-top: 50px;
 
 		.slider-product-detail {
-			margin-right: 35px;
+			.thumbnail-image {
+				flex     : 0 0 100%;
+				max-width: 100%;
+				overflow : hidden;
+
+				.img {
+					width : 80%;
+					margin: 0 auto;
+				}
+
+				.swiper-button-next,
+				.swiper-button-prev {
+					top      : 50%;
+					transform: translateY(-50%);
+					bottom   : unset;
+
+					&:after {
+						transform: unset;
+					}
+				}
+
+				.swiper-button-next {
+					right: 0;
+				}
+
+				.swiper-button-prev {
+					left: 0;
+				}
+			}
+
+			.review-image {
+				margin-bottom: 25px;
+				padding-right: 10px;
+				padding-left : 10px;
+			}
 		}
 
 		.general-information {
+			margin-top    : 10px;
+			padding-left  : 0;
+			display       : flex;
+			flex-direction: column;
+
 			.description-general-information {
 				-webkit-line-clamp: 3;
+			}
+
+			h1 {
+				order: -2;
+			}
+
+			.block-amount-price {
+				order        : -1;
+				margin-bottom: 15px;
 			}
 		}
 	}
@@ -243,14 +295,7 @@
 			margin-right: 0;
 
 			.review-image {
-				border-bottom : 2px solid map-get($mau, main);
-				padding-bottom: 15px;
-
-				.img {
-					img {
-						width: 80%;
-					}
-				}
+				margin-bottom: 0;
 
 				.gift {
 					font-size   : 18px;
@@ -263,16 +308,26 @@
 					}
 				}
 			}
+
+			.thumbnail-image {
+				flex          : 0 0 100px;
+				max-width     : 100px;
+				padding-bottom: 0;
+
+				.img {
+					width: 60%;
+				}
+
+				.swiper-button-next,
+				.swiper-button-prev {
+					display: none;
+				}
+			}
 		}
 
 		.general-information {
-			margin-top    : 25px;
-			display       : flex;
-			flex-direction: column;
-
 			h1 {
-				font-size    : 24px;
-				margin-bottom: 10px;
+				font-size: 24px;
 			}
 
 			.product-code {
@@ -293,25 +348,11 @@
 			}
 
 			.block-amount-price {
-				order        : -1;
-				margin-bottom: 15px;
-
 				.price {
 					font-size: 18px;
 
 					span {
 						font-size: 24px;
-					}
-				}
-
-				.block-buttons {
-					.submit-cart {
-						margin-top      : 15px;
-						margin-left     : 0;
-						-ms-flex        : 0 0 100%;
-						-webkit-box-flex: 0;
-						flex            : 0 0 100%;
-						max-width       : 100%;
 					}
 				}
 			}

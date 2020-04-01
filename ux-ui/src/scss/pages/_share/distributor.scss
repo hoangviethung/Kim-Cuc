@@ -8,9 +8,11 @@
 
 	.slider-distributor {
 		position: relative;
+		padding : 0 100px;
 
 		.img {
-			height: 45px;
+			text-align: center;
+			height    : 45px;
 		}
 
 		.swiper-button-next,
@@ -30,8 +32,7 @@
 		}
 
 		.swiper-button-next {
-			margin-right: -65px;
-			right       : 0;
+			right: 0;
 
 			&:after {
 				background-image: url(../assets/icons/slider-next.svg);
@@ -39,8 +40,7 @@
 		}
 
 		.swiper-button-prev {
-			margin-left: -65px;
-			left       : 0;
+			left: 0;
 
 			&:after {
 				background-image: url(../assets/icons/slider-prev.svg);
@@ -50,6 +50,8 @@
 
 	@media (max-width: 1439.98px) {
 		.slider-distributor {
+			padding: 0;
+
 			.swiper-button-next {
 				margin-right: 0;
 			}

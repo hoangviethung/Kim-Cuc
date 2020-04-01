@@ -225,8 +225,7 @@ body {
 		}
 
 		figcaption {
-			padding   : 0 15px 20px;
-			margin-top: 30px;
+			padding   : 0 15px 50px;
 			text-align: center;
 
 			.name,
@@ -241,17 +240,20 @@ body {
 
 			.name,
 			.code {
-				font-size: 18px;
-				color    : #464646;
+				color: #464646;
 			}
 
 			.price {
-				font-size: 16px;
-				color    : map-get($mau, main);
+				font-weight: 700;
+				font-size  : 18px;
+				color      : map-get($mau, main);
 			}
 
 			.btn-gift {
-				margin-top: 30px;
+				position : absolute;
+				bottom   : 15px;
+				left     : 50%;
+				transform: translateX(-50%);
 			}
 		}
 
@@ -662,6 +664,8 @@ body {
 			.list-item-category {
 				list-style-type: none;
 				padding-left   : 0;
+				max-height     : 450px;
+				overflow-y     : auto;
 
 				.item-category {
 					text-align    : center;
@@ -670,10 +674,8 @@ body {
 					border-bottom : 2px solid rgba($color: #ffffff, $alpha: .7);
 
 					>a {
-						color         : #464646;
-						font-weight   : 700;
-						text-transform: uppercase;
-						transition    : .3s all ease;
+						color     : #464646;
+						transition: .3s all ease;
 					}
 
 					&:last-child {
@@ -700,6 +702,16 @@ body {
 			left    : 0;
 			width   : 100%;
 			z-index : 500;
+
+			.block {
+				.list-item-category {
+					max-height: 280px;
+
+					.item-category {
+						text-align: left;
+					}
+				}
+			}
 
 			.title-filter {
 				font-size: 14px;
@@ -813,10 +825,10 @@ body {
 .gift {
 	position    : relative;
 	display     : inline-block;
-	font-size   : 25px;
+	font-size   : 18px;
 	font-weight : 700;
 	color       : #464646;
-	padding-left: 46px;
+	padding-left: 30px;
 	cursor      : pointer;
 
 	&:after {
@@ -825,8 +837,8 @@ body {
 		left           : 0;
 		top            : 45%;
 		transform      : translateY(-50%);
-		width          : 29px;
-		height         : 37px;
+		width          : 17px;
+		height         : 21px;
 		background     : url(../assets/icons/giff.svg);
 		background-size: cover;
 	}
