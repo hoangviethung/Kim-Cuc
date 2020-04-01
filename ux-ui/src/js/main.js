@@ -430,19 +430,19 @@ const ajaxFormContact = () => {
 	$('.block-form-contact .block-form button').on('click', function(e) {
 		e.preventDefault();
 		const url = $(this).attr('data-url');
-		const name = $('#name').val();
-		const phone = $('#phone').val();
-		const email = $('#email').val();
-		const content = $('#content').val();
+		const Name = $('#name').val();
+		const Phone = $('#phone').val();
+		const Email = $('#email').val();
+		const Content = $('#content').val();
 		if ($(".block-send-mail form").valid() == true) {
 			$.ajax({
 				type: "POST",
 				url: url,
 				data: {
-					name: name,
-					phone: phone,
-					email: email,
-					content: content
+					Name: Name,
+					Phone: Phone,
+					Email: Email,
+					Content: Content
 				},
 				success: function(res) {
 					if (res.Code === 200) {
@@ -470,9 +470,9 @@ const ajaxOrderProduct = () => {
 	$('.popup-checkout .form-button button').on('click', function(e) {
 		e.preventDefault();
 		let fields = {
-			fullname: $('#fullname').val(),
-			phone: $('#phone').val(),
-			address: $('#address').val(),
+			RecipientName: $('#fullname').val(),
+			RecipientPhone: $('#phone').val(),
+			ShippingAddress: $('#address').val(),
 		};
 
 		const url = $(this).attr('data-url');
