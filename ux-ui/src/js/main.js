@@ -345,6 +345,7 @@ const rangeSliderPrice = () => {
 				})
 			},
 			success: function(res) {
+				const pagination = $(res).find('.block-list-product .pagination');
 				const listProduct = $(res).find('.list-product .list-item');
 				$('.list-product .list-item').html(listProduct.html());
 				$('.block-list-product .pagination').html(pagination.html());
