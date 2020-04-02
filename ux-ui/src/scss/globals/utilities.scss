@@ -694,6 +694,14 @@ body {
 		}
 	}
 
+	@media (max-width: 1199.98px) {
+		.block-filter {
+			.title-filter {
+				font-size: 16px;
+			}
+		}
+	}
+
 	@media (max-width: 1024.98px) {
 		.block-filter {
 			display : none;

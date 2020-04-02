@@ -238,7 +238,7 @@
 				const propertyId = $(this).attr("data-propertyid");
 				const itemRemove = $(this).parents('.cart-item');
 				const headerCartNumber = $('#header-cart-number');
-				const quantityProduct = $("#quantity-product");
+				const totalQuantityTable = $('#total-quantity-table');
 				// SỐ TRÊN GIỎ HÀNG THANH MENU
 				const headerCartItemCount = $('#header-cart-item-count');
 				const actualAmountTotal = $("#actual_amount_total");
@@ -260,7 +260,7 @@
 								// SỐ LƯỢNG GIỎ HÀNG TRONG MENU
 								headerCartNumber.text(res.Result.ItemCount);
 								// SỐ LƯỢNG SẢN PHẨM Ở TRANG GIỎ HÀNG
-								quantityProduct.text(res.Result.ItemCount);
+								totalQuantityTable.text(res.Result.TotalQuantity);
 								// XÓA SẢN PHẨM ĐƯỢC CLICK VÀO
 								itemRemove.remove();
 								// CẬP NHẬT GIỎ HÀNG
