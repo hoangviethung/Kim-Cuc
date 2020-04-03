@@ -430,6 +430,34 @@ const rangeSliderPrice = () => {
 	}
 }
 
+const viewMoreNewsOthers = () => {
+	$('.list-news-other .view-more-news-other').on('click', function(e) {
+		e.preventDefault();
+		const url = $(this).attr('data-url');
+		$.ajax({
+			type: "GET",
+			url: url,
+			beforeSend: function() {
+				$('.block-list-news .list-news-other').css({
+					'opacity': '.2',
+					'pointer-events': 'none'
+				})
+			},
+			success: function(res) {
+				const listNewsOther = $(res).find('.block-list-news .list-news-other');
+				$('.block-list-news .list-news-other').html(listNewsOther.html());
+			},
+			complete: function() {
+				$('.block-list-news .list-news-other').css({
+					'opacity': '1',
+					'pointer-events': 'initial'
+				})
+				window.history.pushState({}, '', url);
+			}
+		});
+	});
+}
+
 const filterMobile = () => {
 	$('.nav-filter .item').on('click', function() {
 		const toggleView = $(this).attr('toggle-view');
@@ -608,6 +636,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//AJAX
 	ajaxFormContact();
 	ajaxOrderProduct();
+	viewMoreNewsOthers();
 	// TAB
 	const tabProductDetail = new Tab('.product-detail-2');
 	CartController();
