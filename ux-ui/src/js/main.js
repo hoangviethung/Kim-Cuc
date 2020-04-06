@@ -169,7 +169,6 @@ const productDetailSlider = () => {
 	var thumbnail = new Swiper('.slider-product-detail .thumbnail-image .swiper-container', {
 		spaceBetween: 15,
 		slidesPerView: 2,
-		loop: true,
 		observer: true,
 		observeParents: true,
 		slideToClickedSlide: true,
@@ -207,8 +206,8 @@ const productDetailSlider = () => {
 			delay: 3000,
 			disableOnInteraction: false,
 		},
-		loop: true,
 		simulateTouch: false,
+		allowTouchMove: false,
 		loopedSlides: 3,
 		thumbs: {
 			swiper: thumbnail,
