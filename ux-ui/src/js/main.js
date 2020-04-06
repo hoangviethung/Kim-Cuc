@@ -616,6 +616,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		setHeightThumbnailSliderProductDetail();
 		activeHeaderWhenScroll();
 	});
+	$('.zoom').magnify({
+		speed: 200,
+	});
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
