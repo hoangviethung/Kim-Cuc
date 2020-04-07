@@ -6,6 +6,12 @@ aside.aside-filter
 		.title-filter(icon="filter") bộ lọc
 		.block
 			// GIÁ
+			.type-filter sắp sếp mức giá
+			.type-filter-price
+				select(name="type")
+					option(value="0") Từ thấp đến cao
+					option(value="1") Từ cao đến thấp
+			// GIÁ
 			.type-filter mức giá
 			.price
 				#value-text(data-min-html data-max-html)
@@ -14,12 +20,6 @@ aside.aside-filter
 				.about-price
 					span 1.000.000
 					span 120.000.000
-			// GIÁ
-			.type-filter sắp sếp mức giá
-			.filter-price
-				select(name="")
-					option(value="0") Từ thấp đến cao
-					option(value="1") Từ cao đến thấp
 			// THƯƠNG HIỆU
 			.type-filter thương hiệu
 			.brand

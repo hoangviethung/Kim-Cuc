@@ -334,6 +334,7 @@ const rangeSliderPrice = () => {
 	const origin = window.location.origin;
 	const url = origin + pathname;
 
+	// LẤY TÊN CỦA THƯƠNG HIỆU
 	const getBrand = e => {
 		let brand;
 		$('.brand .check-box [name="brand"]').each(function() {
@@ -344,19 +345,27 @@ const rangeSliderPrice = () => {
 		return brand;
 	}
 
+	// LẤY KIỂU FILTER
+	const getType = e => {
+		let type = $('.type-filter-price select[name="type"]').val();
+		return type;
+	}
+
+	// LẤU ĐƯỜNG DẪN URL ĐỂ REQUEST
 	const getUrl = (min, max) => {
 		let fromParam = `fromPrice=${min}`;
 		let toParam = `toPrice=${max}`;
-		let brandParam;
+		let brandParam = `brands=${getBrand()}`
+		let typeParam = `type=${getType()}`
 		if (getBrand().length > 0) {
-			brandParam = `brands=${getBrand()}`
-			return `${url}?${fromParam}&${toParam}&${brandParam}`
+			return `${url}?${fromParam}&${toParam}&${brandParam}&${typeParam}`
 		} else {
 			brandParam = null;
-			return `${url}?${fromParam}&${toParam}`
+			return `${url}?${fromParam}&${toParam}&${typeParam}`
 		}
 	}
 
+	// HÀNH ĐỘNG KHI AJAX
 	const ajaxFilterProduct = (url) => {
 		$.ajax({
 			type: "GET",
@@ -388,6 +397,15 @@ const rangeSliderPrice = () => {
 		});
 	}
 
+	// AJAX KHI CHỌN KIỂU FILTER
+	$('.type-filter-price select[name="type"]').on('change', function() {
+		let minFinal = Number($("#value-text").attr('data-min-html'))
+		let maxFinal = Number($("#value-text").attr('data-max-html'))
+		const urlRequest = getUrl(minFinal, maxFinal);
+		ajaxFilterProduct(urlRequest);
+	})
+
+	// AJAX KHI CHỌN THƯƠNG HIỆU
 	$('.brand .check-box [name="brand"]').on('change', () => {
 		let minFinal = Number($("#value-text").attr('data-min-html'))
 		let maxFinal = Number($("#value-text").attr('data-max-html'))
@@ -395,6 +413,7 @@ const rangeSliderPrice = () => {
 		ajaxFilterProduct(urlRequest);
 	})
 
+	// AJAX KHI KÉO GIÁ
 	if (min_price !== max_price) {
 		let curMinPrice = Number($("#slider-range").attr('data-current-min'))
 		let curMaxPrice = Number($("#slider-range").attr('data-current-max'))
