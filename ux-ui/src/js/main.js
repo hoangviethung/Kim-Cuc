@@ -449,30 +449,55 @@ const rangeSliderPrice = () => {
 }
 
 const viewMoreNewsOthers = () => {
-	$('.list-news-other .view-more-news-other').on('click', function(e) {
-		e.preventDefault();
-		const url = $(this).attr('data-url');
+	const pathname = window.location.pathname;
+	const origin = window.location.origin;
+	const url = origin + pathname;
+
+	const getPage = e => {
+		let page = $('.list-news-other .view-more-news-other').attr('data-page');
+		return page
+	}
+
+	// LẤU ĐƯỜNG DẪN URL ĐỂ REQUEST
+	const getUrl = () => {
+		let pageParam = `page=${getPage()}`;
+		if (getPage().length > 0) {
+			return `${url}?${pageParam}`
+		} else {
+			pageParam = null;
+			return `${url}`
+		}
+	}
+
+	// HÀNH ĐỘNG KHI AJAX
+	const ajaxLoadMoreNewsOther = (url) => {
 		$.ajax({
 			type: "GET",
 			url: url,
 			beforeSend: function() {
-				$('.block-list-news .list-news-other').css({
+				$('.list-news-other').css({
 					'opacity': '.2',
 					'pointer-events': 'none'
 				})
 			},
 			success: function(res) {
-				const listNewsOther = $(res).find('.block-list-news .list-news-other');
-				$('.block-list-news .list-news-other').html(listNewsOther.html());
+				const listNewsOther = $(res).find('.list-news-other');
+				$('.list-news-other').html(listNewsOther.html());
 			},
 			complete: function() {
-				$('.block-list-news .list-news-other').css({
+				$('..list-news-other').css({
 					'opacity': '1',
 					'pointer-events': 'initial'
 				})
 				window.history.pushState({}, '', url);
 			}
 		});
+	}
+
+	$('.list-news-other .view-more-news-other').on('click', function(e) {
+		e.preventDefault();
+		const urlRequest = getUrl();
+		ajaxLoadMoreNewsOther(urlRequest);
 	});
 }
 
