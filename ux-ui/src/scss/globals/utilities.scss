@@ -105,6 +105,10 @@ body {
 	top     : 50%;
 	z-index : 999;
 
+	@media (max-width: 1024.98px) {
+		top: 85%;
+	}
+
 	.phone-fixed {
 		position        : relative;
 		display         : block;
@@ -118,6 +122,10 @@ body {
 			0 0 0 0em rgba(map-get($mau, main), 0),
 			0em 0.05em 0.1em rgba(#000000, 0.2);
 		transform: translate3d(0, 0, 0) scale(1);
+
+		@media (max-width: 1024.98px) {
+			font-size: 12vmin;
+		}
 	}
 
 	.phone-fixed::before,
@@ -138,11 +146,11 @@ body {
 	}
 
 	.phone-fixed::after {
-		top                : 0.25em;
-		left               : 0.25em;
-		width              : 0.5em;
-		height             : 0.5em;
-		background         : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYuNiAxMC44YzEuNCAyLjggMy44IDUuMSA2LjYgNi42bDIuMi0yLjJjLjMtLjMuNy0uNCAxLS4yIDEuMS40IDIuMy42IDMuNi42LjUgMCAxIC40IDEgMVYyMGMwIC41LS41IDEtMSAxLTkuNCAwLTE3LTcuNi0xNy0xNyAwLS42LjQtMSAxLTFoMy41Yy41IDAgMSAuNCAxIDEgMCAxLjIuMiAyLjUuNiAzLjYuMS40IDAgLjctLjIgMWwtMi4zIDIuMnoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=);
+		top                : 0.3em;
+		left               : 0.3em;
+		width              : 0.4em;
+		height             : 0.4em;
+		background         : url(../assets/icons/phone-fixed.svg);
 		background-position: 50% 50%;
 		background-repeat  : no-repeat;
 		background-size    : cover;
