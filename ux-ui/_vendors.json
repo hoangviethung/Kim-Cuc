@@ -6,9 +6,9 @@
 		"bower_components/linearicons/dist/web-font/fonts/**"
 	],
 	"js": [
+		"bower_components/swiper/package/js/swiper.js",
 		"bower_components/jquery/dist/jquery.js",
 		"bower_components/fancybox/dist/jquery.fancybox.js",
-		"bower_components/swiper/package/js/swiper.js",
 		"bower_components/lazysizes/lazysizes.js",
 		"bower_components/wow/dist/wow.js",
 		"bower_components/jquery-ui/jquery-ui.js",
@@ -17,8 +17,8 @@
 		"bower_components/jquery-ui/ui/widgets/mouse.js",
 		"bower_components/jquery-ui/ui/widgets/slider.js",
 		"bower_components/jquery-validation/dist/jquery.validate.js",
-		"bower_components/magnify/dist/js/jquery.magnify.js",
-		"vendors/jquery-ui.touch-punch.js"
+		"vendors/jquery-ui.touch-punch.js",
+		"bower_components/elevatezoom/jquery.elevatezoom.js"
 	],
 	"css": [
 		"vendors/linearicons.css",
@@ -27,6 +27,6 @@
 		"bower_components/select2/dist/css/select2.css",
 		"bower_components/wow/css/libs/animate.css",
 		"bower_components/jquery-ui/themes/smoothness/jquery-ui.css",
-		"bower_components/magnify/dist/css/magnify.css"
+		"bower_components/magnifier/magnifier.css"
 	]
 }

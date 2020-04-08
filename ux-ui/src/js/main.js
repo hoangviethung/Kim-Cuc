@@ -4,33 +4,16 @@ import Tab from "./lib/Tab";
 import CartController from "./lib/CartController";
 import CommonController from "./lib/CommonController";
 
-// HÀM SET PADDING CHO NAV LIST ĐỂ BLOCK CART RỚT XUỐNG !!!
-const paddingRightNavList = () => {
-	const widthBlockCart = $('.block-cart').outerWidth();
-	const navList = $('header .bottom-header .nav-list');
-	if ($('header').hasClass('scrolled')) {
-		navList.css('padding-right', widthBlockCart + 30);
-	} else {
-		navList.css('padding-right', 'unset')
-	}
-}
-
 // HÀM ADD CLASS
 const addClassScroll = () => {
-	const header = document.querySelector('header');
-	const heightHeader = header.offsetHeight;
-	if (window.pageYOffset >= heightHeader) {
-		document.querySelector('header').classList.add('scrolled');
-	} else {
-		document.querySelector('header').classList.remove('scrolled');
-	}
-}
-
-// HEADER HERE !!!
-const activeHeaderWhenScroll = () => {
-	if ($(window).width() > 1200) {
-		paddingRightNavList();
-		addClassScroll();
+	if ($(window).width() > 1025) {
+		const header = document.querySelector('header');
+		const heightHeader = header.offsetHeight;
+		if (window.pageYOffset >= heightHeader) {
+			document.querySelector('header').classList.add('scrolled');
+		} else {
+			document.querySelector('header').classList.remove('scrolled');
+		}
 	}
 }
 
@@ -489,7 +472,7 @@ const ajaxFormContact = () => {
 		const Email = $('#email').val();
 		const Content = $('#content').val();
 		if ($(".block-send-mail form").valid() === true) {
-			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".popup-checkout form").valid());
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".block-send-mail form").valid());
 			$.ajax({
 				type: "POST",
 				url: url,
@@ -508,7 +491,7 @@ const ajaxFormContact = () => {
 				}
 			});
 		} else {
-			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".popup-checkout form").valid());
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".block-send-mail form").valid());
 		}
 	});
 }
@@ -609,6 +592,18 @@ const keyupAsideFilter = () => {
 	});
 }
 
+const ZoomImageProductDetail = () => {
+	$('.zoomdkm').elevateZoom({
+		zoomWindowFadeIn: 500,
+		zoomWindowFadeOut: 500,
+		lensFadeIn: 500,
+		lensFadeOut: 500,
+		scrollZoom: true,
+		tint: true,
+		easing: true
+	})
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING !!!
 	Loading().then(() => {
@@ -616,11 +611,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		// GET HEIGHT SOMWE ELEMENT
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 		setHeightThumbnailSliderProductDetail();
-		activeHeaderWhenScroll();
 	});
-	$('.zoom').magnify({
-		speed: 200,
-	});
+
+	ZoomImageProductDetail();
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
@@ -651,12 +644,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', () => {
-	activeHeaderWhenScroll();
+	addClassScroll();
 })
 
 document.addEventListener('resize', () => {
-	// TAM GIÁC LOGO HEADER !!!
-	activeHeaderWhenScroll();
 	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 	setHeightThumbnailSliderProductDetail();
 })

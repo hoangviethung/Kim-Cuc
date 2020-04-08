@@ -49,6 +49,14 @@
 	}
 
 	@media (max-width: 767.98px) {
+		.list-tab-product-detail {
+			.item-tab-product-detail {
+				.item {
+					padding: 10px;
+				}
+			}
+		}
+
 		.content-product-detail {
 			margin-top: 25px;
 		}
