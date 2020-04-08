@@ -4,31 +4,6 @@ import Tab from "./lib/Tab";
 import CartController from "./lib/CartController";
 import CommonController from "./lib/CommonController";
 
-// HÀM SET CHIỀU CAO CỦA BORDER !!!
-const transitionTime = 300;
-const header = document.querySelector('header');
-const transitionEffect = `${transitionTime/1000}s all ease-in-out`;
-header.style.transition = transitionEffect;
-$('.block-logo .triangle').css('transition', transitionEffect);
-
-const setBorder = () => {
-	setTimeout(() => {
-		const width = $('header .block-logo').width();
-		const height = $('header .block-logo').height();
-		if ($('header').hasClass('scrolled')) {
-			$('.triangle').css({
-				'left': '-100%',
-			})
-		} else {
-			$('.triangle').css({
-				'left': '0',
-				'border-right': width + "px solid transparent",
-				'border-top': height + "px solid #ffffff",
-			})
-		}
-	}, transitionTime);
-}
-
 // HÀM SET PADDING CHO NAV LIST ĐỂ BLOCK CART RỚT XUỐNG !!!
 const paddingRightNavList = () => {
 	const widthBlockCart = $('.block-cart').outerWidth();
@@ -42,6 +17,7 @@ const paddingRightNavList = () => {
 
 // HÀM ADD CLASS
 const addClassScroll = () => {
+	const header = document.querySelector('header');
 	const heightHeader = header.offsetHeight;
 	if (window.pageYOffset >= heightHeader) {
 		document.querySelector('header').classList.add('scrolled');
@@ -53,18 +29,8 @@ const addClassScroll = () => {
 // HEADER HERE !!!
 const activeHeaderWhenScroll = () => {
 	if ($(window).width() > 1200) {
-		setBorder();
 		paddingRightNavList();
 		addClassScroll();
-	}
-}
-
-// THAY ĐỔI MENU KHI MÀN HÌNH TẦM 1200PX -> 1024PX
-const activeMenuOnSmallDesktop = () => {
-	if ($(window).width() <= 1200 && $(window).width() > 1024) {
-		document.querySelector('header').classList.add('scrolled');
-		const navList = $('header .bottom-header .nav-list');
-		navList.css('padding-right', '130px');
 	}
 }
 
@@ -426,7 +392,7 @@ const rangeSliderPrice = () => {
 			values: [curMinPrice, curMaxPrice],
 			slide: function(event, ui) {
 				$("#amount").val(ui.values[0] + " - " + ui.values[1]);
-				$("#value-text").html(ui.values[0] + " đ - " + ui.values[1] + " đ");
+				$("#value-text").html(Number(ui.values[0]).toLocaleString() + " đ - " + Number(ui.values[1]).toLocaleString() + " đ");
 				$("#value-text").attr('data-min-html', ui.values[0]);
 				$("#value-text").attr('data-max-html', ui.values[1]);
 			},
@@ -441,7 +407,7 @@ const rangeSliderPrice = () => {
 			}
 		});
 		$("#amount").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
-		$("#value-text").html($("#slider-range").slider("values", 0) + "đ - " + $("#slider-range").slider("values", 1) + "đ");
+		$("#value-text").html(Number($("#slider-range").slider("values", 0)).toLocaleString() + "đ - " + Number($("#slider-range").slider("values", 1)).toLocaleString() + "đ");
 	} else {
 		$('.block-filter .price').remove();
 		$('.block-filter .type-filter')[0].remove();
@@ -520,10 +486,8 @@ const ajaxFormContact = () => {
 		const Phone = $('#phone').val();
 		const Email = $('#email').val();
 		const Content = $('#content').val();
-		var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
-		$.validator.unobtrusive.parse(form);
-		$(".block-form-contact form").valid();
-		if ($(".block-send-mail form").valid()) {
+		if ($(".block-send-mail form").valid() === true) {
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".popup-checkout form").valid());
 			$.ajax({
 				type: "POST",
 				url: url,
@@ -542,7 +506,7 @@ const ajaxFormContact = () => {
 				}
 			});
 		} else {
-			console.log('Không được request lên url vì valid');
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".popup-checkout form").valid());
 		}
 	});
 }
@@ -558,15 +522,14 @@ const getFormData = (obj) => {
 const ajaxOrderProduct = () => {
 	$('.popup-checkout .form-button button').on('click', function(e) {
 		e.preventDefault();
+		const url = $(this).attr('data-url');
 		let fields = {
 			RecipientName: $('#fullname').val(),
 			RecipientPhone: $('#phone').val(),
 			ShippingAddress: $('#address').val(),
 		};
-		const url = $(this).attr('data-url');
-		var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
-		$.validator.unobtrusive.parse(form);
 		if ($(".popup-checkout form").valid() === true) {
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".popup-checkout form").valid());
 			$.ajax({
 				type: "POST",
 				url: url,
@@ -589,7 +552,7 @@ const ajaxOrderProduct = () => {
 				}
 			});
 		} else {
-			console.log('Không được request lên url vì valid');
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".popup-checkout form").valid());
 		}
 	});
 }
@@ -659,7 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
-	activeMenuOnSmallDesktop();
 	initializationClassSubMenu();
 	SubMenuMobile();
 	// SLIDER HERE !!!
@@ -692,7 +654,6 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('resize', () => {
 	// TAM GIÁC LOGO HEADER !!!
-	activeMenuOnSmallDesktop();
 	activeHeaderWhenScroll();
 	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 	setHeightThumbnailSliderProductDetail();

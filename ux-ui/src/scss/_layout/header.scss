@@ -46,12 +46,15 @@ header {
 		.triangle {
 			position     : absolute;
 			top          : 0;
+			left         : 0;
 			bottom       : 0;
 			width        : 0;
 			height       : 0;
 			z-index      : -1;
 			border-left  : 0px solid transparent;
 			border-bottom: 0px solid transparent;
+			border-right : 416px solid transparent;
+			border-top   : 265px solid rgb(255, 255, 255);
 		}
 	}
 
@@ -519,7 +522,7 @@ header {
 			transform: translateY(-50%);
 
 			.triangle {
-				display: none;
+				border-right: 0;
 			}
 
 			.logo {
@@ -597,6 +600,18 @@ header {
 		}
 	}
 
+	@media (max-width: 1439.98px) {
+		.bottom-header {
+			.main-nav {
+				.nav-list {
+					.nav-item {
+						margin-right: 30px;
+					}
+				}
+			}
+		}
+	}
+
 	@media (max-width: 1024.98px) {
 		height    : 60px;
 		background: #ffffff;
@@ -613,6 +628,10 @@ header {
 				top       : 50%;
 				left      : 50%;
 				transform : translate(-50%, -50%);
+			}
+
+			.triangle {
+				display: none;
 			}
 
 			.sologan {
