@@ -38,6 +38,7 @@ const toggleMenuMobile = () => {
 	$('.toggle-menu.mobile').on('click', function() {
 		$(this).toggleClass('active');
 		$('.bottom-header').toggleClass('active');
+		$('.top-header .search').toggleClass('active');
 		$('body').toggleClass('disabled')
 		$('#overlay').toggleClass('active');
 		$('.main-nav .sub-menu-lv1').removeClass('active');
@@ -47,6 +48,7 @@ const toggleMenuMobile = () => {
 		$(this).removeClass('active');
 		$('body').removeClass('disabled')
 		$('.bottom-header').removeClass('active');
+		$('.top-header .search').removeClass('active');
 		$('.toggle-menu').removeClass('active');
 		$('.main-nav .sub-menu-lv1').removeClass('active');
 	})

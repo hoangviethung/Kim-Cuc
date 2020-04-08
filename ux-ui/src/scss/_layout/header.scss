@@ -643,10 +643,31 @@ header {
 			height: 0;
 
 			.social-media,
-			.search,
 			&:after {
 				opacity       : 0;
 				pointer-events: none;
+			}
+
+			.search {
+				position   : fixed;
+				margin-left: 0;
+				top        : 80px;
+				left       : 10px;
+				width      : 50%;
+				z-index    : 100;
+				opacity    : 0;
+
+				.form-group {
+					width: 100%;
+
+					.form-control {
+						background: rgba($color: map-get($mau, main), $alpha: .5);
+					}
+				}
+
+				&.active {
+					opacity: 1;
+				}
 			}
 
 			.block-cart {
@@ -678,7 +699,7 @@ header {
 			transition: .3s all ease-in-out;
 
 			.main-nav {
-				margin-top: 25px;
+				margin-top: 60px;
 
 				.nav-list {
 					flex-direction : column;
@@ -691,6 +712,11 @@ header {
 						padding-bottom: 10px;
 						width         : 100%;
 						border-bottom : 1px solid rgba($color: #000000, $alpha: .3);
+
+						&:first-child {
+							padding-top: 10px;
+							border-top : 1px solid rgba($color: #000000, $alpha: .3);
+						}
 
 						.language {
 							.item {
