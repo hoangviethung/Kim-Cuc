@@ -520,7 +520,10 @@ const ajaxFormContact = () => {
 		const Phone = $('#phone').val();
 		const Email = $('#email').val();
 		const Content = $('#content').val();
-		if ($(".block-send-mail form").valid() == true) {
+		var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
+		$.validator.unobtrusive.parse(form);
+		$(".block-form-contact form").valid();
+		if ($(".block-send-mail form").valid()) {
 			$.ajax({
 				type: "POST",
 				url: url,
@@ -560,8 +563,9 @@ const ajaxOrderProduct = () => {
 			RecipientPhone: $('#phone').val(),
 			ShippingAddress: $('#address').val(),
 		};
-
 		const url = $(this).attr('data-url');
+		var form = $(".modal-POPUP form").removeData("validator").removeData("unobtrusiveValidation");
+		$.validator.unobtrusive.parse(form);
 		if ($(".popup-checkout form").valid() === true) {
 			$.ajax({
 				type: "POST",

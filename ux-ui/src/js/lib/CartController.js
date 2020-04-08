@@ -217,8 +217,8 @@
 				const input_val = $(this);
 				let current_val = parseInt(input_val.val());
 				if ($.isNumeric(input_val.val()) && current_val > 0) {
-					if (current_val > 500) {
-						current_val = 500;
+					if (current_val > 5) {
+						current_val = 5;
 						input_val.val(current_val);
 					}
 				} else {

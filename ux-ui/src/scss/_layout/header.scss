@@ -663,6 +663,12 @@ header {
 						width         : 100%;
 						border-bottom : 1px solid rgba($color: #000000, $alpha: .3);
 
+						.language {
+							.item {
+								margin-right: 50px;
+							}
+						}
+
 						&.has-sub {
 							&:after {
 								content: none;
