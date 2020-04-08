@@ -654,6 +654,16 @@ header {
 				right   : 10px;
 				top     : 15px;
 				z-index : 10;
+
+				.block-text-icon {
+					.icon {
+						margin-right: 10px;
+					}
+
+					h5 {
+						display: none;
+					}
+				}
 			}
 		}
 
@@ -684,7 +694,7 @@ header {
 
 						.language {
 							.item {
-								margin-right: 50px;
+								margin-right: 25px;
 							}
 						}
 

@@ -17,7 +17,8 @@
 		"bower_components/jquery-ui/ui/widgets/mouse.js",
 		"bower_components/jquery-ui/ui/widgets/slider.js",
 		"bower_components/jquery-validation/dist/jquery.validate.js",
-		"bower_components/magnify/dist/js/jquery.magnify.js"
+		"bower_components/magnify/dist/js/jquery.magnify.js",
+		"vendors/jquery-ui.touch-punch.js"
 	],
 	"css": [
 		"vendors/linearicons.css",
