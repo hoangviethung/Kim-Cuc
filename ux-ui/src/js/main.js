@@ -218,6 +218,9 @@ const distributorSlider = () => {
 		loop: true,
 		speed: 500,
 		simulateTouch: false,
+		preloadImages: false,
+		// Enable lazy loading
+		lazy: true,
 		autoplay: {
 			delay: 2000,
 			disableOnInteraction: false,
@@ -243,6 +246,10 @@ const customerSlider = () => {
 		loop: true,
 		speed: 500,
 		simulateTouch: false,
+		// Disable preloading of all images
+		preloadImages: false,
+		// Enable lazy loading
+		lazy: true,
 		autoplay: {
 			delay: 2000,
 			disableOnInteraction: false,
