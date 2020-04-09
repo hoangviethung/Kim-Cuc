@@ -7,15 +7,23 @@ section.block-form-contact
 				.form-group
 					label(for="name") TÊN ĐẦY ĐỦ (*)
 					input.form-control#name(type="text" placeholder="Nhập tên đầy đủ")
+					span.field-validation-error
+						span Contact_Name_Required
 				.form-group
 					label(for="email") EMAIL (*)
 					input.form-control#email(type="text" placeholder="Nhập email")
+					span.field-validation-error
+						span Email_Required
 				.form-group
 					label(for="phone") SỐ ĐIỆN THOẠI (*)
 					input.form-control#phone(type="text" placeholder="Nhập số điện thoại")
+					span.field-validation-error
+						span Contact_Phone_Required
 				.form-group
 					label(for="content") NỘI DUNG (*)
 					textarea.form-control#content(placeholder="Nhập nội dung")
+					span.field-validation-error
+						span Contact_Content_Required
 				.form-group
 					label(for="#")
 					button.btn.btn-submit(data-url="ajax") GỬI LIÊN HỆ
