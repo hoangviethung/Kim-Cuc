@@ -1,8 +1,6 @@
 {
 	"fonts": [
 		"src/fonts/**",
-		"bower_components/mdi/fonts/**",
-		"bower_components/font-awesome/webfonts/**",
 		"bower_components/linearicons/dist/web-font/fonts/**"
 	],
 	"js": [
