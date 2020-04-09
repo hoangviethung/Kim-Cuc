@@ -227,7 +227,9 @@
 				}
 				const productId = $(this).attr("data-pid");
 				const propertyId = $(this).attr("data-propertyid");
-				CartController.events.updateToCart(productId, propertyId, current_val);
+				// ĐỊA CHỈ URL UPDATE
+				const urlUpdate = $(this).attr('data-url-update');
+				CartController.events.updateToCart(productId, propertyId, current_val, urlUpdate);
 				return false;
 			},
 			// XÓA SẢN PHẨM KHỎI GIỎ HÀNG

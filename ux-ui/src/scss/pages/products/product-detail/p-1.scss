@@ -284,6 +284,35 @@
 			.block-amount-price {
 				order        : -1;
 				margin-bottom: 15px;
+
+				.block-buttons {
+					.amount {
+						height: 50px;
+
+						input {
+							height: 30px;
+							width : 30px;
+						}
+
+						.block-up-down {
+							.upQuantity {
+								bottom: 2px;
+							}
+
+							.downQuantity {
+								top: 2px;
+							}
+						}
+					}
+
+					.submit-cart {
+						.btn {
+							&.btn-submit {
+								height: 50px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

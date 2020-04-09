@@ -150,6 +150,7 @@ const productDetailSlider = () => {
 
 	var review = new Swiper('.slider-product-detail .review-image .swiper-container', {
 		effect: 'fade',
+		autoHeight: true,
 		fadeEffect: {
 			crossFade: true,
 		},
