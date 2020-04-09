@@ -594,15 +594,36 @@ const keyupAsideFilter = () => {
 }
 
 const ZoomImageProductDetail = () => {
-	$('.zoomdkm').elevateZoom({
-		zoomWindowFadeIn: 500,
-		zoomWindowFadeOut: 500,
-		lensFadeIn: 500,
-		lensFadeOut: 500,
-		scrollZoom: true,
-		tint: true,
-		easing: true
-	})
+	if ($(window).width() > 1025) {
+		$('.zoomdkm').elevateZoom({
+			zoomWindowFadeIn: 500,
+			zoomWindowFadeOut: 500,
+			lensFadeIn: 500,
+			lensFadeOut: 500,
+			scrollZoom: true,
+			tint: true,
+			easing: true,
+			responsive: true,
+		})
+	} else if ($(window).width() >= 768 && $(window).width() < 1025) {
+		$('.zoomdkm').elevateZoom({
+			zoomType: "inner",
+			cursor: "crosshair",
+		})
+	} else {
+		$('.zoomdkm').elevateZoom({
+			zoomWindowFadeIn: 500,
+			zoomWindowFadeOut: 500,
+			lensFadeIn: 500,
+			lensFadeOut: 500,
+			scrollZoom: true,
+			tint: true,
+			easing: true,
+			responsive: true,
+			zoomWindowWidth: 100,
+			zoomWindowHeight: 100
+		})
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
