@@ -369,6 +369,12 @@ const rangeSliderPrice = () => {
 		ajaxFilterProduct(urlRequest);
 	})
 
+	$('.block-list-product .pagination a').on('click', function(e) {
+		e.preventDefault();
+		const url = $(this).attr('href');
+		ajaxFilterProduct(url)
+	})
+
 	// AJAX KHI CHỌN THƯƠNG HIỆU
 	$('.brand .check-box [name="brand"]').on('change', () => {
 		let minFinal = Number($("#value-text").attr('data-min-html'))
