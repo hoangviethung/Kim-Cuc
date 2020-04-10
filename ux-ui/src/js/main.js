@@ -613,9 +613,10 @@ const ZoomImageProductDetail = () => {
 			responsive: true,
 		})
 	} else if ($(window).width() >= 768 && $(window).width() < 1025) {
+		console.log(1);
 		$('.zoomdkm').elevateZoom({
 			zoomType: "inner",
-			cursor: "crosshair",
+			cursor: "crosshair"
 		})
 	} else {
 		$('.zoomdkm').elevateZoom({

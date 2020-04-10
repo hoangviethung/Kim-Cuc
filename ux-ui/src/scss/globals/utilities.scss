@@ -23,6 +23,7 @@ body {
 	}
 }
 
+
 .tab-container {
 	.list-tab {
 		.item {
@@ -315,12 +316,19 @@ body {
 }
 
 .zoomContainer {
-	z-index: 500;
+	pointer-events: none;
+	z-index       : 100 !important;
 }
 
-.zoomWindow {
-	@media (max-width: 1024.98px) {
-		left: 50%;
+.zoomLens {
+	@media (min-width: 1025px) {
+		width : 100px !important;
+		height: 100px !important;
+	}
+
+	@media (max-width: 575.98px) {
+		width : 50px !important;
+		height: 50px !important;
 	}
 }
 
