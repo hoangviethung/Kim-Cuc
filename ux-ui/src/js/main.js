@@ -169,6 +169,11 @@ const productDetailSlider = () => {
 			prevEl: '.thumbnail-image.swiper-button-prev',
 		}
 	});
+
+	$(".slider-product-detail .review-image .swiper-container").hover(function() {
+		thumbnail.autoplay.stop();
+		review.autoplay.stop();
+	})
 }
 
 const productOtherSlider = () => {
