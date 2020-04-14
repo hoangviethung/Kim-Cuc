@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Chính sách</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;display=swap&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<div id="loading">
+			<div class="logo-loader"><img src="./assets/logo.svg"></div>
+			<div class="progstat-wrapper">Loading:<span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
+		<header>
+			<!-- LOGO-->
+			<div class="toggle-menu mobile"></div>
+			<div class="block-logo">
+				<div class="triangle"></div><a href="index.html">
+					<div class="logo"><img class="lazyload blur-up" src="./assets/logo.svg" alt="logo"></div></a>
+				<div class="sologan">
+					<p>Sức khỏe của bạn là thành tựu của chúng tôi !</p>
+				</div>
+			</div>
+			<!-- TOP HEADER-->
+			<div class="top-header">
+				<div class="container h-100">
+					<div class="row no-gutters ai-c jc-fe h-100">
+						<!-- DANH SÁCH MẠNG XÃ HỘI-->
+						<div class="social-media">
+							<ul>
+								<li><a target="_blank" href="https://www.facebook.com/kimcucsports/"><img class="lazyload blur-up" src="./assets/icons/facebook-header.svg" alt="facebook"></a></li>
+								<li><a href="#"><img class="lazyload blur-up" src="./assets/icons/instagram-header.svg" alt="instagram"></a></li>
+							</ul>
+						</div>
+						<!-- FORM TÌM KIẾM-->
+						<div class="search">
+							<form action="#">
+								<div class="form-group">
+									<input class="form-control" type="text" placeholder="...">
+								</div>
+								<div class="submit">
+									<button><img class="lazyload blur-up" src="./assets/icons/search.svg" alt="search"></button>
+								</div>
+							</form>
+						</div>
+						<!-- GIỎ HÀNG-->
+						<div class="block-cart">
+							<div class="block-text-icon"><img class="icon lazyload blur-up" data-src="./assets/icons/cart-header.svg" alt="cart">
+								<h5>giỏ hàng</h5>
+								<div class="cart-number" id="header-cart-item-count">0</div>
+							</div>
+							<div class="cart-panel">
+								<div class="cart-title">
+									<svg xmlns="http://www.w3.org/2000/svg" width="18.4" height="18.4" viewBox="0 0 18.4 18.4">
+										<defs>
+											<style>
+												.a1 {
+												fill: #1c1c1c;
+												}
+												.b2 {
+												fill: none;
+												stroke: #ffffff;
+												stroke-linecap: round;
+												stroke-linejoin: round;
+												}
+											</style>
+										</defs>
+										<circle class="a1" cx="9.2" cy="9.2" r="9.2"></circle>
+										<g transform="translate(5.962 7.258)">
+											<path class="b2" d="M2.246,0,0,2.487,3.9,6.477" transform="translate(0 3.896) rotate(-90)"></path>
+										</g>
+									</svg><span>Thêm vào giỏ hàng thành công</span>
+								</div>
+								<div class="cart-list">
+									<div class="cart-item">
+										<div class="info">
+											<h4 class="name"><a id="header-cart-name" href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
+											<p class="brand">Thương hiệu: <b id="header-cart-brand">Tannoy</b></p>
+											<p class="quantity">Số lượng: <b id="header-cart-quantity">1</b></p>
+											<p class="price"><b id="header-cart-price">99.490.000 đ</b></p>
+										</div>
+									</div>
+									<div class="cart-item">
+										<div class="info">
+											<h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
+											<p class="brand">Thương hiệu: <b>Tannoy</b></p>
+											<p class="quantity">Số lượng: <b id="header-quantity-product">1</b></p>
+											<p class="price"><b id="header-actual_amount_total">99.490.000 đ</b></p>
+										</div>
+									</div>
+									<div class="cart-item">
+										<div class="info">
+											<h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
+											<p class="brand">Thương hiệu: <b>Tannoy</b></p>
+											<p class="quantity">Số lượng: <b>1</b></p>
+											<p class="price"><b>99.490.000 đ</b></p>
+										</div>
+									</div>
+									<div class="cart-item">
+										<div class="info">
+											<h4 class="name"><a href="sanpham-ct.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit</a></h4>
+											<p class="brand">Thương hiệu: <b>Tannoy</b></p>
+											<p class="quantity">Số lượng: <b>1</b></p>
+											<p class="price"><b>99.490.000 đ</b></p>
+										</div>
+									</div>
+								</div>
+								<div class="cart-button"><a class="btn btn-view-more" href="gio-hang.html">Xem giỏ hàng và thanh toán</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-header">
+				<div class="container">
+					<div class="main-nav">
+						<ul class="nav-list">
+							<li class="nav-item"><a class="nav-link" href="gioi-thieu.html">giới thiệu</a></li>
+							<li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">sản phẩm</a>
+								<ul class="nav-list">
+									<div class="back mobile">Trở về</div>
+									<li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">phụ kiện thể thao</a></li>
+									<li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">máy chạy bộ điện</a></li>
+									<li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">xe đạp tập thể dục</a></li>
+									<li class="nav-item"><a class="nav-link" href="danh-sach-san-pham.html">ghế massage</a></li>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="danh-sach-tin-tuc.html">tin tức - sự kiện</a></li>
+							<li class="nav-item"><a class="nav-link" href="chinh-sach.html">chính sách</a></li>
+							<li class="nav-item"><a class="nav-link" href="lien-he.html">liên hệ</a></li>
+							<li class="nav-item">
+								<div class="language">
+									<div class="item active" data-language="vn"><img class="lazyload blur-up" data-src="./assets/icons/vn.png" alt=""></div>
+									<div class="item" data-language="en"><img class="lazyload blur-up" data-src="./assets/icons/en.png" alt=""></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="main-banner">
+			<div class="slider-main-banner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><a class="swiper-inner" href="#" style="background-image: url(./assets/images/banner/1.jpg">
+								<figure class="ov-h"><img class="ofcv" src="./assets/images/banner/1.jpg" alt="BANNER KIM CÚC SPORTS"></figure></a></div>
+						<div class="swiper-slide"><a class="swiper-inner" href="#" style="background-image: url(./assets/images/banner/2.jpg">
+								<figure class="ov-h"><img class="ofcv" src="./assets/images/banner/2.jpg" alt="BANNER KIM CÚC SPORTS"></figure></a></div>
+						<div class="swiper-slide"><a class="swiper-inner" href="#" style="background-image: url(./assets/images/banner/3.jpg">
+								<figure class="ov-h"><img class="ofcv" src="./assets/images/banner/3.jpg" alt="BANNER KIM CÚC SPORTS"></figure></a></div>
+						<div class="swiper-slide"><a class="swiper-inner" href="#" style="background-image: url(./assets/images/banner/4.jpg">
+								<figure class="ov-h"><img class="ofcv" src="./assets/images/banner/4.jpg" alt="BANNER KIM CÚC SPORTS"></figure></a></div>
+						<div class="swiper-slide"><a class="swiper-inner" href="#" style="background-image: url(./assets/images/banner/5.jpg">
+								<figure class="ov-h"><img class="ofcv" src="./assets/images/banner/5.jpg" alt="BANNER KIM CÚC SPORTS"></figure></a></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</section>
+		<div class="wow fadeInDown" id="breadcrumb-wrapper" data-wow-delay=".2s">
+			<div class="container">
+				<ul class="breadcrumb">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Text</a></li>
+					<li class="active"><a href="#">Name Page</a></li>
+				</ul>
+			</div>
+		</div>
+		<main>
+			<section class="block-policy">
+				<div class="container tab-container">
+					<div class="block-title">
+						<h2>CHÍNH SÁCH</h2>
+					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<aside class="aside-filter">
+								<div class="nav-filter mobile">
+									<div class="item" toggle-view="#"></div>
+									<div class="item" toggle-view="category">danh mục chính sách</div>
+								</div>
+								<div class="block-filter category" toggle-id="category">
+									<div class="title-filter" icon="category">danh mục chính sách</div>
+									<div class="block">
+										<ul class="list-item-category">
+											<li class="item-category"><a class="item active" href="#">Điều kiện bảo hành</a></li>
+											<li class="item-category"><a class="item" href="#">Chính sách bảo mật</a></li>
+											<li class="item-category"><a class="item" href="#">Chính sách bảo hành</a></li>
+										</ul>
+									</div>
+								</div>
+							</aside>
+						</div>
+						<div class="col-lg-9">
+							<div class="content-policy">
+								<div class="content">
+									<div class="title-policy">
+										<h3>Điều kiện bảo hành:</h3>
+									</div>
+									<div class="description">
+										<div class="demo-ckeditor content-policy-detail">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="policy-page" id="js-page-verify" hidden></div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="row ai-fe">
+					<div class="col-lg-5 col-md-6">
+						<div class="title-footer">Liên Hệ</div>
+						<ul class="list-info">
+							<li class="item-info">
+								<div class="icon"><img class="lazyload blur-up" data-src="./assets/icons/phone-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
+								<div class="text"><a href="tel:0906523876">0906.523.876</a></div>
+							</li>
+							<li class="item-info">
+								<div class="icon"><img class="lazyload blur-up" data-src="./assets/icons/mail-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
+								<div class="text"><a href="mailto:kimcucsport@gmail.com">kimcucsport@gmail.com</a></div>
+							</li>
+							<li class="item-info">
+								<div class="icon"><img class="lazyload blur-up" data-src="./assets/icons/address-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
+								<div class="text"><a href="javascript:void(0)">133 - 143 Hùng Vương, t.p Quảng Ngãi</a></div>
+							</li>
+							<li class="item-info">
+								<div class="icon"><img class="lazyload blur-up" data-src="./assets/icons/facebook-footer.svg" alt="ICON ĐIỆN THOẠI"></div>
+								<div class="text"><a target="_blank" href="https://www.facebook.com/kimcucsports/">https://www.facebook.com/kimcucsports/</a></div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="title-footer">Sản Phẩm</div>
+						<ul class="list-link-product">
+							<li class="item-link-product"><a href="danh-sach-san-pham.html">Phụ kiện thể thao</a></li>
+							<li class="item-link-product"><a href="danh-sach-san-pham.html">Xe đạp tập</a></li>
+							<li class="item-link-product"><a href="danh-sach-san-pham.html">Máy chạy bộ điện</a></li>
+							<li class="item-link-product"><a href="danh-sach-san-pham.html">Ghế massage</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4 col-md-12 ta-r">
+						<div class="fb-page" data-href="https://www.facebook.com/kimcucsports/" data-tabs="" data-width="" data-height="120" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false">
+							<blockquote class="fb-xfbml-parse-ignore" cite="https://www.facebook.com/kimcucsports/"><a href="https://www.facebook.com/kimcucsports/">Kim Cu&#x301;c Sports</a></blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="copy-right">
+			<div class="container">
+				<ul class="list-link">
+					<li class="item-link"><a href="#">Điều kiện</a></li>
+					<li class="item-link"><a href="#">Điều khoản</a></li>
+					<li class="item-link"><a href="#">Chính sách bảo mật</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="overlay"></div>
+		<div id="phone-call"><a href="tel:0906523876">
+				<div class="phone-fixed is-animating"></div></a></div>
+		<div id="back-to-top"><img src="./assets/icons/back-to-top.svg" alt="NÚT TRỞ VỀ ĐẦU TRANG KIM CÚC SPORTS"></div>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyAq6ag0zUMblc-Wk5Z5S8KWkHpT3ak1LzI"></script>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v6.0&amp;appId=774359209430335&amp;autoLogAppEvents=1"></script>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+	</body>
+</html>
