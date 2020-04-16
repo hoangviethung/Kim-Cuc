@@ -12,8 +12,9 @@
 		border-bottom  : 1px solid #dedede;
 
 		.item-tab-product-detail {
-			cursor    : pointer;
-			background: #F2F2F2;
+			cursor     : pointer;
+			background : #F2F2F2;
+			user-select: none;
 
 			.item {
 				padding       : 10px 25px;
@@ -39,6 +40,8 @@
 	}
 
 	@media (max-width: 1024.98px) {
+		padding: 50px 0;
+
 		.list-tab-product-detail {
 			.item-tab-product-detail {
 				.item {
@@ -49,6 +52,8 @@
 	}
 
 	@media (max-width: 767.98px) {
+		padding: 25px 0;
+
 		.list-tab-product-detail {
 			.item-tab-product-detail {
 				.item {

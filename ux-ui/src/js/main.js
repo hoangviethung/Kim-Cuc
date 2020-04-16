@@ -181,7 +181,6 @@ const productDetailSlider = () => {
 			imagesReady: function() {
 				if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
 					const heightReview = $('.slider-product-detail .review-image .swiper-slide').height();
-					console.log(heightReview);
 					$('.thumbnail-image').css('height', `${heightReview}px`);
 				}
 				thumbnail.init();
@@ -229,7 +228,6 @@ const productOtherSlider = () => {
 		},
 	})
 }
-
 
 // SLIDER NHÀ PHÂN PHỐI !!!
 const distributorSlider = () => {
@@ -629,7 +627,7 @@ const keyupAsideFilter = () => {
 
 const ZoomImageProductDetail = () => {
 	if ($(window).width() > 1025) {
-		$('.zoomdkm').elevateZoom({
+		$('.zoomSelector').elevateZoom({
 			zoomWindowFadeIn: 500,
 			zoomWindowFadeOut: 500,
 			lensFadeIn: 500,
@@ -643,14 +641,14 @@ const ZoomImageProductDetail = () => {
 
 	if ($(window).width() >= 768 && $(window).width() < 1025) {
 		console.log(1);
-		$('.zoomdkm').elevateZoom({
+		$('.zoomSelector').elevateZoom({
 			zoomType: "inner",
 			cursor: "crosshair"
 		})
 	}
 
 	if ($(window).width() < 768) {
-		$('.zoomdkm').elevateZoom({
+		$('.zoomSelector').elevateZoom({
 			zoomWindowFadeIn: 500,
 			zoomWindowFadeOut: 500,
 			lensFadeIn: 500,
@@ -673,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 	});
 
-	// ZoomImageProductDetail();
+	ZoomImageProductDetail();
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
