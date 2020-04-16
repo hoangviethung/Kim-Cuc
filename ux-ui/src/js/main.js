@@ -117,6 +117,14 @@ const mainSlider = () => {
 }
 
 const productDetailSlider = () => {
+
+	const setHeightThumbnailSliderProductDetail = () => {
+		if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
+			const heightReview = $('.slider-product-detail .review-image .swiper-slide').height();
+			$('.thumbnail-image').css('height', `${heightReview}px`);
+		}
+	}
+
 	var thumbnail = new Swiper('.slider-product-detail .thumbnail-image .swiper-container', {
 		spaceBetween: 15,
 		init: false,
@@ -170,8 +178,12 @@ const productDetailSlider = () => {
 			prevEl: '.thumbnail-image.swiper-button-prev',
 		},
 		on: {
-			init: function() {
-				setHeightThumbnailSliderProductDetail();
+			imagesReady: function() {
+				if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
+					const heightReview = $('.slider-product-detail .review-image .swiper-slide').height();
+					console.log(heightReview);
+					$('.thumbnail-image').css('height', `${heightReview}px`);
+				}
 				thumbnail.init();
 			},
 			resize: function() {
@@ -218,12 +230,6 @@ const productOtherSlider = () => {
 	})
 }
 
-const setHeightThumbnailSliderProductDetail = () => {
-	if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
-		const heightReview = $('.slider-product-detail .review-image img').height();
-		$('.thumbnail-image').css('height', heightReview);
-	}
-}
 
 // SLIDER NHÀ PHÂN PHỐI !!!
 const distributorSlider = () => {
@@ -633,13 +639,17 @@ const ZoomImageProductDetail = () => {
 			easing: true,
 			responsive: true,
 		})
-	} else if ($(window).width() >= 768 && $(window).width() < 1025) {
+	}
+
+	if ($(window).width() >= 768 && $(window).width() < 1025) {
 		console.log(1);
 		$('.zoomdkm').elevateZoom({
 			zoomType: "inner",
 			cursor: "crosshair"
 		})
-	} else {
+	}
+
+	if ($(window).width() < 768) {
 		$('.zoomdkm').elevateZoom({
 			zoomWindowFadeIn: 500,
 			zoomWindowFadeOut: 500,
@@ -661,10 +671,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		new WOW().init();
 		// GET HEIGHT SOMWE ELEMENT
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
-		// setHeightThumbnailSliderProductDetail();
 	});
 
-	ZoomImageProductDetail();
+	// ZoomImageProductDetail();
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
@@ -700,5 +709,4 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('resize', () => {
 	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
-	// setHeightThumbnailSliderProductDetail();
 })
