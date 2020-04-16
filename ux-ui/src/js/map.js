@@ -2,7 +2,7 @@ let mapSelector = document.querySelector('#map');
 let dealerLocatorList = document.querySelector('.dealer-locator-list .list');
 let map, lastItemClickedIndex, locations, infoWindow, markers = [];
 let mapOption = {
-	zoom: 12,
+	zoom: 16,
 	// styles: [
 	// 	{
 	// 		"featureType": "all",
@@ -257,8 +257,8 @@ const initialize = () => {
 	map = new google.maps.Map(mapSelector, mapOption);
 	addMarkers();
 	let listener = google.maps.event.addListener(map, 'idle', () => {
-		if (map.getZoom() > 12) {
-			map.setZoom(12);
+		if (map.getZoom() > 16) {
+			map.setZoom(16);
 		}
 		google.maps.event.removeListener(listener);
 	});
