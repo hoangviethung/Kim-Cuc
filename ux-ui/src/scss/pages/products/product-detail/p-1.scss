@@ -1,5 +1,6 @@
 .product-detail-1 {
-	margin-top: 70px;
+	margin-top   : 70px;
+	margin-bottom: 100px;
 
 	.slider-product-detail {
 		display  : flex;
@@ -227,7 +228,8 @@
 	}
 
 	@media (max-width: 1024.98px) {
-		margin-top: 50px;
+		margin-top   : 50px;
+		margin-bottom: 50px;
 
 		.slider-product-detail {
 			.thumbnail-image {
@@ -318,7 +320,8 @@
 	}
 
 	@media (max-width: 767.98px) {
-		margin-top: 25px;
+		margin-top   : 25px;
+		margin-bottom: 25px;
 
 		.slider-product-detail {
 			margin-right: 0;

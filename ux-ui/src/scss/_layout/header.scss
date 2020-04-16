@@ -141,6 +141,12 @@ header {
 			.form-group {
 				width: 221px;
 
+				label {
+					position  : absolute;
+					visibility: hidden;
+					opacity   : 0;
+				}
+
 				.form-control {
 					font-size    : 14px;
 					line-height  : 27px;
@@ -660,6 +666,7 @@ header {
 
 				.form-group {
 					width: 100%;
+
 
 					.form-control {
 						background: rgba($color: map-get($mau, main), $alpha: .5);
