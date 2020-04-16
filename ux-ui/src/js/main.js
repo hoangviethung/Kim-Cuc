@@ -119,6 +119,7 @@ const mainSlider = () => {
 const productDetailSlider = () => {
 	var thumbnail = new Swiper('.slider-product-detail .thumbnail-image .swiper-container', {
 		spaceBetween: 15,
+		init: false,
 		slidesPerView: 2,
 		observer: true,
 		observeParents: true,
@@ -167,6 +168,15 @@ const productDetailSlider = () => {
 		navigation: {
 			nextEl: '.thumbnail-image.swiper-button-next',
 			prevEl: '.thumbnail-image.swiper-button-prev',
+		},
+		on: {
+			init: function() {
+				setHeightThumbnailSliderProductDetail();
+				thumbnail.init();
+			},
+			resize: function() {
+				setHeightThumbnailSliderProductDetail();
+			}
 		}
 	});
 
@@ -651,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		new WOW().init();
 		// GET HEIGHT SOMWE ELEMENT
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
-		setHeightThumbnailSliderProductDetail();
+		// setHeightThumbnailSliderProductDetail();
 	});
 
 	ZoomImageProductDetail();
@@ -690,5 +700,5 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('resize', () => {
 	setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
-	setHeightThumbnailSliderProductDetail();
+	// setHeightThumbnailSliderProductDetail();
 })
