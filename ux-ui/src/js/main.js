@@ -116,8 +116,25 @@ const mainSlider = () => {
 	})
 }
 
-const productDetailSlider = () => {
+const ZoomImageProductDetailMoblie = () => {
 
+	if ($(window).width() >= 768 && $(window).width() < 1025) {
+		$('.zoomSelector').elevateZoom({
+			zoomType: "inner",
+			cursor: "crosshair"
+		})
+	}
+
+	if ($(window).width() < 768) {
+		$('.zoomSelector').elevateZoom({
+			tint: true,
+			zoomWindowWidth: 100,
+			zoomWindowHeight: 100
+		})
+	}
+}
+
+const productDetailSlider = () => {
 	const setHeightThumbnailSliderProductDetail = () => {
 		if (window.innerWidth >= 1025 || window.innerWidth <= 575) {
 			const heightReview = $('.slider-product-detail .review-image .swiper-slide').height();
@@ -194,6 +211,16 @@ const productDetailSlider = () => {
 	$(".slider-product-detail .review-image .swiper-container").hover(function() {
 		thumbnail.autoplay.stop();
 		review.autoplay.stop();
+	})
+
+	$(".slider-product-detail .review-image .swiper-container").on('mouseenter', function() {
+		if ($(window).width() > 1025) {
+			$('.zoomSelector').elevateZoom({
+				tint: true,
+			})
+		}
+	}).on('mouseout', function() {
+		$('body').find('.zoomContainer').remove()
 	})
 }
 
@@ -625,43 +652,6 @@ const keyupAsideFilter = () => {
 	});
 }
 
-const ZoomImageProductDetail = () => {
-	if ($(window).width() > 1025) {
-		$('.zoomSelector').elevateZoom({
-			zoomWindowFadeIn: 500,
-			zoomWindowFadeOut: 500,
-			lensFadeIn: 500,
-			lensFadeOut: 500,
-			scrollZoom: true,
-			tint: true,
-			easing: true,
-			responsive: true,
-		})
-	}
-
-	if ($(window).width() >= 768 && $(window).width() < 1025) {
-		console.log(1);
-		$('.zoomSelector').elevateZoom({
-			zoomType: "inner",
-			cursor: "crosshair"
-		})
-	}
-
-	if ($(window).width() < 768) {
-		$('.zoomSelector').elevateZoom({
-			zoomWindowFadeIn: 500,
-			zoomWindowFadeOut: 500,
-			lensFadeIn: 500,
-			lensFadeOut: 500,
-			scrollZoom: true,
-			tint: true,
-			easing: true,
-			responsive: true,
-			zoomWindowWidth: 100,
-			zoomWindowHeight: 100
-		})
-	}
-}
 
 document.addEventListener('DOMContentLoaded', () => {
 	// LOADING !!!
@@ -671,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		setHeightOverFolowBySomeElement('.about-1,.about-3,.product-detail-1');
 	});
 
-	ZoomImageProductDetail();
+	ZoomImageProductDetailMoblie();
 	checkLayoutBanner();
 	toggleMenuMobile();
 	toggleCartMenu();
