@@ -495,7 +495,7 @@ const viewMoreNewsOthers = () => {
 		});
 	}
 
-	$('.list-news-other .view-more-news-other').on('click', function(e) {
+	$('body').on('click', '.list-news-other .view-more-news-other', function(e) {
 		e.preventDefault();
 		const urlRequest = getUrl();
 		ajaxLoadMoreNewsOther(urlRequest);
